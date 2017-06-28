@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="applicable-device"content="">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="shortcut icon" href="__ROOT__/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="touch-icon-iphone.png"/>  
+<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png"/>  
+<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png"/>    
+<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-ipad3-144.png"/>
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/img/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+<link href="__PUBLIC__/Home/PC/img/owl.theme.default.min.css" type="text/css" rel="stylesheet">
+<link href="__PUBLIC__/Home/PC/img/c.css" rel="stylesheet" type="text/css"/>
+</head>
+<style>
+td img {display: block;}
+</style>
+<body>
+<!--header-->
+<div class="layout_fb header">
+	<div class="layout_ab clearfix">
+		<h1 class="logo"><a href="__ROOT__/" style="background:url(__ROOT__/Uploads/{$config_data.logo}) no-repeat center;background-size:100% 100%;"></a></h1>
+		<a href="javascript:void(0);" class="nav-toggle-1"></a>
+		<div class="country">
+			<a href="__ROOT__/" class="ch">中文</a><a href="__ROOT__/" class="en">EN</a>
+		</div>		
+		<ul class="nav-list nav-list-2 clearfix">
+			<include file="PC/Public/nav" />
+		</ul>
+	</div>
+	<div class="h_bor"></div>
+</div>
+<!--768以下导航-->
+<div class="cmqnav-1 clearfix" >
+	<h3 class="c_logo"><a href="__ROOT__/" style="background:url(__ROOT__/Uploads/{$config_data.logo}) no-repeat center;background-size:100% 100%;"></a></h3>
+	<img src="__PUBLIC__/Home/PC/img/cmq-nav-1-close.png" class="closeBtn">
+	<ul class="navlist">
+		<include file="PC/Public/nav" />
+	</ul>
+</div>
+<div class="banner">
+	<img src="__ROOT__/Uploads/{$column_data.pc_pic}">
+</div>
+<!--count-->
+<div class="layout_fb count_b pb30">
+	<div class="people-2">
+		<img src="__PUBLIC__/Home/PC/img/pe_2.png">
+	</div>
+	<div class="layout_ab pt10">
+		<p class="crumbs-txt"><a href="__ROOT__/">首页</a> &gt; <a href="{:U('Index/column',array('column_id'=>18))}">销售地域</a> &gt; <a href="{:U('Index/column',array('column_id'=>$column_data['id']))}">{$column_data.name}</a></p>
+		<h2 class="h2title-1 pt30 mb20"><a href="{:U('Index/column',array('column_id'=>18))}"><img src="__PUBLIC__/Home/PC/img/h2title_alzs.png"></a></h2>
+	</div>
+	<div class="layout_ab mb30">
+		<div class="list-1block mb10">
+			<ul class="list-1">
+        <li>
+					<div class="mr0">
+						<a href="{:U('Index/column',array('column_id'=>18))}" class="on">销售地域</a>
+					</div>
+				</li>
+				<li>
+					<div class="mr0">
+						<a href="{:U('Index/column',array('column_id'=>17))}">案例介绍</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="list-8block">
+			<ul class="list-8">
+        <volist name="column_list" id="vo">
+				<li><div class="mr0"><a href="{:U('Index/column',array('column_id'=>$vo['id']))}" class="<eq name='vo.id' value='$column_data.id'>on</eq>">{$vo.name}</a></div></li>
+        </volist>
+			</ul>
+		</div>
+	</div>
+	<div class="layout_ab">
+		<div class="count_map">
+			<table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="910">
+				<!-- fwtable fwsrc="中国地图3.png" fwpage="页面 1" fwbase="map.png" fwstyle="Dreamweaver" fwdocid = "463667778" fwnested="0" -->
+				<tr>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="183" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="12" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="33" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="18" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="89" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="42" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="25" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="29" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="18" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="5" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="23" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="5" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="4" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="17" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="13" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="8" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="4" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="6" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="8" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="7" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="10" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="5" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="9" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="14" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="5" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="2" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="11" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="11" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="6" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="2" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="8" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="2" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="3" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="6" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="2" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="2" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="12" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="14" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="2" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="3" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="4" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="3" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="4" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="8" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="15" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="6" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="2" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="3" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="3" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="17" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="3" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="7" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="3" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="10" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="8" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="5" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="2" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="16" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="7" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="10" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="25" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="13" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="53" height="1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="1" alt="" /></td>
+				</tr>
+				<tr>
+					<td colspan="68"><img name="map_r1_c1" src="__PUBLIC__/Home/PC/images_ch/map_r1_c1.png" width="910" height="99" id="map_r1_c1" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="99" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="4" colspan="62"><img name="map_r2_c1" src="__PUBLIC__/Home/PC/images_ch/map_r2_c1.png" width="801" height="106" id="map_r2_c1" alt="" /></td>
+					<td rowspan="2" colspan="5"><img name="map_r2_c63" src="__PUBLIC__/Home/PC/images_ch/map_r2_c63.png" width="56" height="52" id="map_r2_c63" usemap="#m_map_r2_c63" alt="" /></td>
+					<td rowspan="64"><img name="map_r2_c68" src="__PUBLIC__/Home/PC/images_ch/map_r2_c68.png" width="53" height="669" id="map_r2_c68" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="41" alt="" /></td>
+				</tr>
+				<tr>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="11" alt="" /></td>
+				</tr>
+				<tr>
+					<td colspan="5"><img name="map_r4_c63" src="__PUBLIC__/Home/PC/images_ch/map_r4_c63.png" width="56" height="35" id="map_r4_c63" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="35" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="3" colspan="2"><img name="map_r5_c63" src="__PUBLIC__/Home/PC/images_ch/map_r5_c63.png" width="8" height="55" id="map_r5_c63" alt="" /></td>
+					<td rowspan="2" colspan="2"><img name="map_r5_c65" src="__PUBLIC__/Home/PC/images_ch/map_r5_c65.png" width="35" height="41" id="map_r5_c65" usemap="#m_map_r5_c65" alt="" /></td>
+					<td rowspan="61"><img name="map_r5_c67" src="__PUBLIC__/Home/PC/images_ch/map_r5_c67.png" width="13" height="582" id="map_r5_c67" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="19" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="60"><img name="map_r6_c1" src="__PUBLIC__/Home/PC/images_ch/map_r6_c1.png" width="183" height="563" id="map_r6_c1" alt="" /></td>
+					<td rowspan="6" colspan="2"><img name="map_r6_c2" src="__PUBLIC__/Home/PC/images_ch/map_r6_c2.png" width="45" height="72" id="map_r6_c2" usemap="#m_map_r6_c2" alt="" /></td>
+					<td rowspan="2" colspan="59"><img name="map_r6_c4" src="__PUBLIC__/Home/PC/images_ch/map_r6_c4.png" width="573" height="36" id="map_r6_c4" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="22" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="45" colspan="2"><img name="map_r7_c65" src="__PUBLIC__/Home/PC/images_ch/map_r7_c65.png" width="35" height="365" id="map_r7_c65" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="14" alt="" /></td>
+				</tr>
+				<tr>
+					<td colspan="55"><img name="map_r8_c4" src="__PUBLIC__/Home/PC/images_ch/map_r8_c4.png" width="542" height="15" id="map_r8_c4" alt="" /></td>
+					<td rowspan="5" colspan="5"><img name="map_r8_c59" src="__PUBLIC__/Home/PC/images_ch/map_r8_c59.png" width="32" height="41" id="map_r8_c59" usemap="#m_map_r8_c59" alt="" /></td>
+					<td rowspan="44"><img name="map_r8_c64" src="__PUBLIC__/Home/PC/images_ch/map_r8_c64.png" width="7" height="351" id="map_r8_c64" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="15" alt="" /></td>
+				</tr>
+				<tr>
+					<td colspan="41"><img name="map_r9_c4" src="__PUBLIC__/Home/PC/images_ch/map_r9_c4.png" width="459" height="6" id="map_r9_c4" alt="" /></td>
+					<td rowspan="5" colspan="4"><img name="map_r9_c45" src="__PUBLIC__/Home/PC/images_ch/map_r9_c45.png" width="33" height="48" id="map_r9_c45" usemap="#m_map_r9_c45" alt="" /></td>
+					<td rowspan="12" colspan="10"><img name="map_r9_c49" src="__PUBLIC__/Home/PC/images_ch/map_r9_c49.png" width="50" height="92" id="map_r9_c49" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="6" alt="" /></td>
+				</tr>
+				<tr>
+					<td colspan="33"><img name="map_r10_c4" src="__PUBLIC__/Home/PC/images_ch/map_r10_c4.png" width="418" height="11" id="map_r10_c4" alt="" /></td>
+					<td rowspan="4" colspan="5"><img name="map_r10_c37" src="__PUBLIC__/Home/PC/images_ch/map_r10_c37.png" width="31" height="42" id="map_r10_c37" usemap="#m_map_r10_c37" alt="" /></td>
+					<td rowspan="5" colspan="3"><img name="map_r10_c42" src="__PUBLIC__/Home/PC/images_ch/map_r10_c42.png" width="10" height="51" id="map_r10_c42" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="11" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="7" colspan="9"><img name="map_r11_c4" src="__PUBLIC__/Home/PC/images_ch/map_r11_c4.png" width="254" height="54" id="map_r11_c4" alt="" /></td>
+					<td rowspan="5" colspan="6"><img name="map_r11_c13" src="__PUBLIC__/Home/PC/images_ch/map_r11_c13.png" width="52" height="44" id="map_r11_c13" usemap="#m_map_r11_c13" alt="" /></td>
+					<td rowspan="6" colspan="18"><img name="map_r11_c19" src="__PUBLIC__/Home/PC/images_ch/map_r11_c19.png" width="112" height="46" id="map_r11_c19" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="4" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="19" colspan="2"><img name="map_r12_c2" src="__PUBLIC__/Home/PC/images_ch/map_r12_c2.png" width="45" height="142" id="map_r12_c2" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="5" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="19" colspan="5"><img name="map_r13_c59" src="__PUBLIC__/Home/PC/images_ch/map_r13_c59.png" width="32" height="158" id="map_r13_c59" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="22" alt="" /></td>
+				</tr>
+				<tr>
+					<td colspan="5"><img name="map_r14_c37" src="__PUBLIC__/Home/PC/images_ch/map_r14_c37.png" width="31" height="9" id="map_r14_c37" alt="" /></td>
+					<td rowspan="7" colspan="4"><img name="map_r14_c45" src="__PUBLIC__/Home/PC/images_ch/map_r14_c45.png" width="33" height="44" id="map_r14_c45" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="9" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="13"><img name="map_r15_c37" src="__PUBLIC__/Home/PC/images_ch/map_r15_c37.png" width="2" height="91" id="map_r15_c37" alt="" /></td>
+					<td rowspan="7" colspan="5"><img name="map_r15_c38" src="__PUBLIC__/Home/PC/images_ch/map_r15_c38.png" width="32" height="42" id="map_r15_c38" usemap="#m_map_r15_c38" alt="" /></td>
+					<td rowspan="6" colspan="2"><img name="map_r15_c43" src="__PUBLIC__/Home/PC/images_ch/map_r15_c43.png" width="7" height="35" id="map_r15_c43" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="4" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="2" colspan="6"><img name="map_r16_c13" src="__PUBLIC__/Home/PC/images_ch/map_r16_c13.png" width="52" height="10" id="map_r16_c13" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="2" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="12" colspan="9"><img name="map_r17_c19" src="__PUBLIC__/Home/PC/images_ch/map_r17_c19.png" width="61" height="91" id="map_r17_c19" alt="" /></td>
+					<td rowspan="6" colspan="6"><img name="map_r17_c28" src="__PUBLIC__/Home/PC/images_ch/map_r17_c28.png" width="40" height="56" id="map_r17_c28" usemap="#m_map_r17_c28" alt="" /></td>
+					<td rowspan="11" colspan="3"><img name="map_r17_c34" src="__PUBLIC__/Home/PC/images_ch/map_r17_c34.png" width="11" height="85" id="map_r17_c34" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="8" alt="" /></td>
+				</tr>
+				<tr>
+					<td colspan="6"><img name="map_r18_c4" src="__PUBLIC__/Home/PC/images_ch/map_r18_c4.png" width="221" height="12" id="map_r18_c4" alt="" /></td>
+					<td rowspan="6" colspan="4"><img name="map_r18_c10" src="__PUBLIC__/Home/PC/images_ch/map_r18_c10.png" width="37" height="60" id="map_r18_c10" usemap="#m_map_r18_c10" alt="" /></td>
+					<td rowspan="2" colspan="5"><img name="map_r18_c14" src="__PUBLIC__/Home/PC/images_ch/map_r18_c14.png" width="48" height="17" id="map_r18_c14" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="12" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="12" colspan="2"><img name="map_r19_c4" src="__PUBLIC__/Home/PC/images_ch/map_r19_c4.png" width="107" height="80" id="map_r19_c4" alt="" /></td>
+					<td rowspan="8"><img name="map_r19_c6" src="__PUBLIC__/Home/PC/images_ch/map_r19_c6.png" width="42" height="62" id="map_r19_c6" usemap="#m_map_r19_c6" alt="" /></td>
+					<td rowspan="18" colspan="3"><img name="map_r19_c7" src="__PUBLIC__/Home/PC/images_ch/map_r19_c7.png" width="72" height="134" id="map_r19_c7" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="5" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="46"><img name="map_r20_c14" src="__PUBLIC__/Home/PC/images_ch/map_r20_c14.png" width="17" height="424" id="map_r20_c14" alt="" /></td>
+					<td rowspan="5" colspan="3"><img name="map_r20_c15" src="__PUBLIC__/Home/PC/images_ch/map_r20_c15.png" width="25" height="48" id="map_r20_c15" usemap="#m_map_r20_c15" alt="" /></td>
+					<td rowspan="18"><img name="map_r20_c18" src="__PUBLIC__/Home/PC/images_ch/map_r20_c18.png" width="6" height="133" id="map_r20_c18" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="4" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="23"><img name="map_r21_c43" src="__PUBLIC__/Home/PC/images_ch/map_r21_c43.png" width="4" height="184" id="map_r21_c43" alt="" /></td>
+					<td rowspan="5" colspan="7"><img name="map_r21_c44" src="__PUBLIC__/Home/PC/images_ch/map_r21_c44.png" width="41" height="46" id="map_r21_c44" usemap="#m_map_r21_c44" alt="" /></td>
+					<td rowspan="6" colspan="8"><img name="map_r21_c51" src="__PUBLIC__/Home/PC/images_ch/map_r21_c51.png" width="45" height="53" id="map_r21_c51" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="7" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="6" colspan="5"><img name="map_r22_c38" src="__PUBLIC__/Home/PC/images_ch/map_r22_c38.png" width="32" height="49" id="map_r22_c38" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="20" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="5" colspan="6"><img name="map_r23_c28" src="__PUBLIC__/Home/PC/images_ch/map_r23_c28.png" width="40" height="29" id="map_r23_c28" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="12" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="13" colspan="4"><img name="map_r24_c10" src="__PUBLIC__/Home/PC/images_ch/map_r24_c10.png" width="37" height="86" id="map_r24_c10" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="5" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="13" colspan="3"><img name="map_r25_c15" src="__PUBLIC__/Home/PC/images_ch/map_r25_c15.png" width="25" height="85" id="map_r25_c15" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="2" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="6" colspan="7"><img name="map_r26_c44" src="__PUBLIC__/Home/PC/images_ch/map_r26_c44.png" width="41" height="46" id="map_r26_c44" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="7" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="39"><img name="map_r27_c6" src="__PUBLIC__/Home/PC/images_ch/map_r27_c6.png" width="42" height="367" id="map_r27_c6" alt="" /></td>
+					<td rowspan="5"><img name="map_r27_c51" src="__PUBLIC__/Home/PC/images_ch/map_r27_c51.png" width="3" height="39" id="map_r27_c51" alt="" /></td>
+					<td rowspan="5" colspan="5"><img name="map_r27_c52" src="__PUBLIC__/Home/PC/images_ch/map_r27_c52.png" width="29" height="39" id="map_r27_c52" usemap="#m_map_r27_c52" alt="" /></td>
+					<td rowspan="5" colspan="2"><img name="map_r27_c57" src="__PUBLIC__/Home/PC/images_ch/map_r27_c57.png" width="13" height="39" id="map_r27_c57" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="3" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="8" colspan="4"><img name="map_r28_c28" src="__PUBLIC__/Home/PC/images_ch/map_r28_c28.png" width="30" height="60" id="map_r28_c28" alt="" /></td>
+					<td rowspan="6" colspan="7"><img name="map_r28_c32" src="__PUBLIC__/Home/PC/images_ch/map_r28_c32.png" width="35" height="44" id="map_r28_c32" usemap="#m_map_r28_c32" alt="" /></td>
+					<td rowspan="16" colspan="4"><img name="map_r28_c39" src="__PUBLIC__/Home/PC/images_ch/map_r28_c39.png" width="20" height="128" id="map_r28_c39" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="6" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="6" colspan="6"><img name="map_r29_c19" src="__PUBLIC__/Home/PC/images_ch/map_r29_c19.png" width="40" height="43" id="map_r29_c19" usemap="#m_map_r29_c19" alt="" /></td>
+					<td rowspan="17" colspan="3"><img name="map_r29_c25" src="__PUBLIC__/Home/PC/images_ch/map_r29_c25.png" width="21" height="128" id="map_r29_c25" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="2" alt="" /></td>
+				</tr>
+				<tr>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="7" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="35"><img name="map_r31_c2" src="__PUBLIC__/Home/PC/images_ch/map_r31_c2.png" width="12" height="349" id="map_r31_c2" alt="" /></td>
+					<td rowspan="8" colspan="2"><img name="map_r31_c3" src="__PUBLIC__/Home/PC/images_ch/map_r31_c3.png" width="51" height="66" id="map_r31_c3" usemap="#m_map_r31_c3" alt="" /></td>
+					<td rowspan="35"><img name="map_r31_c5" src="__PUBLIC__/Home/PC/images_ch/map_r31_c5.png" width="89" height="349" id="map_r31_c5" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="21" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="12" colspan="2"><img name="map_r32_c44" src="__PUBLIC__/Home/PC/images_ch/map_r32_c44.png" width="7" height="92" id="map_r32_c44" alt="" /></td>
+					<td rowspan="8" colspan="7"><img name="map_r32_c46" src="__PUBLIC__/Home/PC/images_ch/map_r32_c46.png" width="38" height="48" id="map_r32_c46" usemap="#m_map_r32_c46" alt="" /></td>
+					<td rowspan="17" colspan="2"><img name="map_r32_c53" src="__PUBLIC__/Home/PC/images_ch/map_r32_c53.png" width="18" height="120" id="map_r32_c53" alt="" /></td>
+					<td rowspan="5" colspan="5"><img name="map_r32_c55" src="__PUBLIC__/Home/PC/images_ch/map_r32_c55.png" width="31" height="33" id="map_r32_c55" usemap="#m_map_r32_c55" alt="" /></td>
+					<td rowspan="9" colspan="4"><img name="map_r32_c60" src="__PUBLIC__/Home/PC/images_ch/map_r32_c60.png" width="24" height="59" id="map_r32_c60" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="3" alt="" /></td>
+				</tr>
+				<tr>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="5" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="2" colspan="7"><img name="map_r34_c32" src="__PUBLIC__/Home/PC/images_ch/map_r34_c32.png" width="35" height="16" id="map_r34_c32" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="5" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="3" colspan="6"><img name="map_r35_c19" src="__PUBLIC__/Home/PC/images_ch/map_r35_c19.png" width="40" height="24" id="map_r35_c19" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="11" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="10"><img name="map_r36_c28" src="__PUBLIC__/Home/PC/images_ch/map_r36_c28.png" width="11" height="74" id="map_r36_c28" alt="" /></td>
+					<td rowspan="6" colspan="7"><img name="map_r36_c29" src="__PUBLIC__/Home/PC/images_ch/map_r36_c29.png" width="38" height="45" id="map_r36_c29" usemap="#m_map_r36_c29" alt="" /></td>
+					<td rowspan="19" colspan="3"><img name="map_r36_c36" src="__PUBLIC__/Home/PC/images_ch/map_r36_c36.png" width="16" height="154" id="map_r36_c36" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="9" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="17" colspan="2"><img name="map_r37_c7" src="__PUBLIC__/Home/PC/images_ch/map_r37_c7.png" width="54" height="134" id="map_r37_c7" alt="" /></td>
+					<td rowspan="6" colspan="3"><img name="map_r37_c9" src="__PUBLIC__/Home/PC/images_ch/map_r37_c9.png" width="46" height="58" id="map_r37_c9" usemap="#m_map_r37_c9" alt="" /></td>
+					<td rowspan="29" colspan="2"><img name="map_r37_c12" src="__PUBLIC__/Home/PC/images_ch/map_r37_c12.png" width="9" height="295" id="map_r37_c12" alt="" /></td>
+					<td rowspan="4" colspan="5"><img name="map_r37_c55" src="__PUBLIC__/Home/PC/images_ch/map_r37_c55.png" width="31" height="26" id="map_r37_c55" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="4" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="10" colspan="2"><img name="map_r38_c15" src="__PUBLIC__/Home/PC/images_ch/map_r38_c15.png" width="21" height="80" id="map_r38_c15" alt="" /></td>
+					<td rowspan="7" colspan="7"><img name="map_r38_c17" src="__PUBLIC__/Home/PC/images_ch/map_r38_c17.png" width="41" height="57" id="map_r38_c17" usemap="#m_map_r38_c17" alt="" /></td>
+					<td rowspan="18"><img name="map_r38_c24" src="__PUBLIC__/Home/PC/images_ch/map_r38_c24.png" width="9" height="147" id="map_r38_c24" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="8" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="27" colspan="2"><img name="map_r39_c3" src="__PUBLIC__/Home/PC/images_ch/map_r39_c3.png" width="51" height="283" id="map_r39_c3" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="3" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="4" colspan="7"><img name="map_r40_c46" src="__PUBLIC__/Home/PC/images_ch/map_r40_c46.png" width="38" height="44" id="map_r40_c46" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="11" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="8"><img name="map_r41_c55" src="__PUBLIC__/Home/PC/images_ch/map_r41_c55.png" width="3" height="61" id="map_r41_c55" alt="" /></td>
+					<td rowspan="6" colspan="6"><img name="map_r41_c56" src="__PUBLIC__/Home/PC/images_ch/map_r41_c56.png" width="35" height="43" id="map_r41_c56" usemap="#m_map_r41_c56" alt="" /></td>
+					<td rowspan="11" colspan="2"><img name="map_r41_c62" src="__PUBLIC__/Home/PC/images_ch/map_r41_c62.png" width="17" height="93" id="map_r41_c62" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="10" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="4" colspan="7"><img name="map_r42_c29" src="__PUBLIC__/Home/PC/images_ch/map_r42_c29.png" width="38" height="29" id="map_r42_c29" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="22" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="11" colspan="3"><img name="map_r43_c9" src="__PUBLIC__/Home/PC/images_ch/map_r43_c9.png" width="46" height="76" id="map_r43_c9" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="1" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="11" colspan="2"><img name="map_r44_c39" src="__PUBLIC__/Home/PC/images_ch/map_r44_c39.png" width="15" height="86" id="map_r44_c39" alt="" /></td>
+					<td rowspan="6" colspan="7"><img name="map_r44_c41" src="__PUBLIC__/Home/PC/images_ch/map_r44_c41.png" width="39" height="51" id="map_r44_c41" usemap="#m_map_r44_c41" alt="" /></td>
+					<td rowspan="5" colspan="5"><img name="map_r44_c48" src="__PUBLIC__/Home/PC/images_ch/map_r44_c48.png" width="15" height="28" id="map_r44_c48" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="2" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="3" colspan="7"><img name="map_r45_c17" src="__PUBLIC__/Home/PC/images_ch/map_r45_c17.png" width="41" height="23" id="map_r45_c17" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="4" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="10" colspan="2"><img name="map_r46_c25" src="__PUBLIC__/Home/PC/images_ch/map_r46_c25.png" width="19" height="86" id="map_r46_c25" alt="" /></td>
+					<td rowspan="5" colspan="8"><img name="map_r46_c27" src="__PUBLIC__/Home/PC/images_ch/map_r46_c27.png" width="45" height="47" id="map_r46_c27" usemap="#m_map_r46_c27" alt="" /></td>
+					<td rowspan="9"><img name="map_r46_c35" src="__PUBLIC__/Home/PC/images_ch/map_r46_c35.png" width="6" height="80" id="map_r46_c35" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="4" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="2" colspan="6"><img name="map_r47_c56" src="__PUBLIC__/Home/PC/images_ch/map_r47_c56.png" width="35" height="18" id="map_r47_c56" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="15" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="18"><img name="map_r48_c15" src="__PUBLIC__/Home/PC/images_ch/map_r48_c15.png" width="13" height="211" id="map_r48_c15" alt="" /></td>
+					<td rowspan="5" colspan="7"><img name="map_r48_c16" src="__PUBLIC__/Home/PC/images_ch/map_r48_c16.png" width="44" height="49" id="map_r48_c16" usemap="#m_map_r48_c16" alt="" /></td>
+					<td rowspan="8"><img name="map_r48_c23" src="__PUBLIC__/Home/PC/images_ch/map_r48_c23.png" width="5" height="67" id="map_r48_c23" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="3" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="9" colspan="2"><img name="map_r49_c48" src="__PUBLIC__/Home/PC/images_ch/map_r49_c48.png" width="8" height="100" id="map_r49_c48" alt="" /></td>
+					<td rowspan="4" colspan="8"><img name="map_r49_c50" src="__PUBLIC__/Home/PC/images_ch/map_r49_c50.png" width="38" height="46" id="map_r49_c50" usemap="#m_map_r49_c50" alt="" /></td>
+					<td rowspan="3" colspan="4"><img name="map_r49_c58" src="__PUBLIC__/Home/PC/images_ch/map_r49_c58.png" width="25" height="32" id="map_r49_c58" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="23" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="8" colspan="7"><img name="map_r50_c41" src="__PUBLIC__/Home/PC/images_ch/map_r50_c41.png" width="39" height="77" id="map_r50_c41" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="2" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="4" colspan="8"><img name="map_r51_c27" src="__PUBLIC__/Home/PC/images_ch/map_r51_c27.png" width="45" height="33" id="map_r51_c27" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="7" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="14" colspan="3"><img name="map_r52_c58" src="__PUBLIC__/Home/PC/images_ch/map_r52_c58.png" width="23" height="176" id="map_r52_c58" alt="" /></td>
+					<td rowspan="7" colspan="5"><img name="map_r52_c61" src="__PUBLIC__/Home/PC/images_ch/map_r52_c61.png" width="36" height="79" id="map_r52_c61" usemap="#m_map_r52_c61" alt="" /></td>
+					<td rowspan="14"><img name="map_r52_c66" src="__PUBLIC__/Home/PC/images_ch/map_r52_c66.png" width="25" height="176" id="map_r52_c66" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="14" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="3" colspan="7"><img name="map_r53_c16" src="__PUBLIC__/Home/PC/images_ch/map_r53_c16.png" width="44" height="18" id="map_r53_c16" alt="" /></td>
+					<td rowspan="5" colspan="8"><img name="map_r53_c50" src="__PUBLIC__/Home/PC/images_ch/map_r53_c50.png" width="38" height="54" id="map_r53_c50" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="1" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="12"><img name="map_r54_c7" src="__PUBLIC__/Home/PC/images_ch/map_r54_c7.png" width="25" height="161" id="map_r54_c7" alt="" /></td>
+					<td rowspan="3" colspan="3"><img name="map_r54_c8" src="__PUBLIC__/Home/PC/images_ch/map_r54_c8.png" width="52" height="48" id="map_r54_c8" usemap="#m_map_r54_c8" alt="" /></td>
+					<td rowspan="12"><img name="map_r54_c11" src="__PUBLIC__/Home/PC/images_ch/map_r54_c11.png" width="23" height="161" id="map_r54_c11" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="11" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="6" colspan="6"><img name="map_r55_c27" src="__PUBLIC__/Home/PC/images_ch/map_r55_c27.png" width="40" height="68" id="map_r55_c27" alt="" /></td>
+					<td rowspan="4" colspan="8"><img name="map_r55_c33" src="__PUBLIC__/Home/PC/images_ch/map_r55_c33.png" width="42" height="53" id="map_r55_c33" usemap="#m_map_r55_c33" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="6" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="10" colspan="4"><img name="map_r56_c16" src="__PUBLIC__/Home/PC/images_ch/map_r56_c16.png" width="26" height="144" id="map_r56_c16" alt="" /></td>
+					<td rowspan="4" colspan="6"><img name="map_r56_c20" src="__PUBLIC__/Home/PC/images_ch/map_r56_c20.png" width="46" height="51" id="map_r56_c20" usemap="#m_map_r56_c20" alt="" /></td>
+					<td rowspan="7"><img name="map_r56_c26" src="__PUBLIC__/Home/PC/images_ch/map_r56_c26.png" width="5" height="96" id="map_r56_c26" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="31" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="9" colspan="3"><img name="map_r57_c8" src="__PUBLIC__/Home/PC/images_ch/map_r57_c8.png" width="52" height="113" id="map_r57_c8" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="5" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="8" colspan="3"><img name="map_r58_c41" src="__PUBLIC__/Home/PC/images_ch/map_r58_c41.png" width="9" height="108" id="map_r58_c41" alt="" /></td>
+					<td rowspan="4" colspan="10"><img name="map_r58_c44" src="__PUBLIC__/Home/PC/images_ch/map_r58_c44.png" width="46" height="46" id="map_r58_c44" usemap="#m_map_r58_c44" alt="" /></td>
+					<td rowspan="8" colspan="4"><img name="map_r58_c54" src="__PUBLIC__/Home/PC/images_ch/map_r58_c54.png" width="30" height="108" id="map_r58_c54" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="11" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="2" colspan="8"><img name="map_r59_c33" src="__PUBLIC__/Home/PC/images_ch/map_r59_c33.png" width="42" height="15" id="map_r59_c33" alt="" /></td>
+					<td rowspan="7" colspan="5"><img name="map_r59_c61" src="__PUBLIC__/Home/PC/images_ch/map_r59_c61.png" width="36" height="97" id="map_r59_c61" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="4" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="3" colspan="6"><img name="map_r60_c20" src="__PUBLIC__/Home/PC/images_ch/map_r60_c20.png" width="46" height="45" id="map_r60_c20" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="11" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="2" colspan="4"><img name="map_r61_c27" src="__PUBLIC__/Home/PC/images_ch/map_r61_c27.png" width="30" height="34" id="map_r61_c27" alt="" /></td>
+					<td rowspan="3" colspan="9"><img name="map_r61_c31" src="__PUBLIC__/Home/PC/images_ch/map_r61_c31.png" width="38" height="48" id="map_r61_c31" usemap="#m_map_r61_c31" alt="" /></td>
+					<td rowspan="5"><img name="map_r61_c40" src="__PUBLIC__/Home/PC/images_ch/map_r61_c40.png" width="14" height="82" id="map_r61_c40" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="20" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="4" colspan="10"><img name="map_r62_c44" src="__PUBLIC__/Home/PC/images_ch/map_r62_c44.png" width="46" height="62" id="map_r62_c44" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="14" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="3" colspan="2"><img name="map_r63_c20" src="__PUBLIC__/Home/PC/images_ch/map_r63_c20.png" width="17" height="48" id="map_r63_c20" alt="" /></td>
+					<td rowspan="2" colspan="8"><img name="map_r63_c22" src="__PUBLIC__/Home/PC/images_ch/map_r63_c22.png" width="58" height="46" id="map_r63_c22" usemap="#m_map_r63_c22" alt="" /></td>
+					<td rowspan="3"><img name="map_r63_c30" src="__PUBLIC__/Home/PC/images_ch/map_r63_c30.png" width="6" height="48" id="map_r63_c30" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="14" alt="" /></td>
+				</tr>
+				<tr>
+					<td rowspan="2" colspan="9"><img name="map_r64_c31" src="__PUBLIC__/Home/PC/images_ch/map_r64_c31.png" width="38" height="34" id="map_r64_c31" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="32" alt="" /></td>
+				</tr>
+				<tr>
+					<td colspan="8"><img name="map_r65_c22" src="__PUBLIC__/Home/PC/images_ch/map_r65_c22.png" width="58" height="2" id="map_r65_c22" alt="" /></td>
+					<td><img src="__PUBLIC__/Home/PC/images_ch/spacer.gif" width="1" height="2" alt="" /></td>
+				</tr>
+			</table>
+			<map name="m_map_r2_c63" id="m_map_r2_c63" alt="黑龙江省">
+				<area shape="poly" coords="21,0,10,11,4,25,0,36,0,44,12,52,34,52,54,49,56,27,42,5,21,0" href="javascript:;"  />
+			</map>
+			<map name="m_map_r5_c65" id="m_map_r5_c65" alt="吉林省" >
+				<area shape="poly" coords="5,0,2,11,1,19,0,29,0,35,4,40,12,41,22,41,30,38,33,33,35,18,29,3,20,1,5,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r6_c2" id="m_map_r6_c2" alt="新疆维吾尔自治区" >
+				<area shape="poly" coords="6,0,0,28,1,64,9,72,36,61,45,36,32,1,6,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r8_c59" id="m_map_r8_c59" alt="辽宁省">
+				<area shape="poly" coords="10,0,3,11,1,20,0,25,0,31,1,37,4,41,17,39,18,39,25,39,29,36,29,35,31,31,31,30,32,21,29,7,27,2,23,0,10,0" href="javascript:;" />
+			</map>
+			<map name="m_map_r9_c45" id="m_map_r9_c45" alt="天津市">
+				<area shape="poly" coords="13,1,15,4,18,8,21,12,24,18,28,22,31,28,33,37,31,44,28,48,21,48,16,46,15,42,15,42,14,35,12,31,11,25,10,21,7,18,7,18,4,16,1,13,0,5,8,0,13,1" href="javascript:;"/>
+			</map>
+			<map name="m_map_r10_c37" id="m_map_r10_c37" alt="北京市">
+				<area shape="poly" coords="21,0,17,2,14,4,12,8,7,11,3,12,1,16,1,19,2,25,1,28,0,32,0,36,1,39,3,41,5,42,11,42,14,41,14,38,14,37,15,33,15,30,17,25,20,22,22,20,24,18,26,17,30,12,31,6,27,2,21,0" href="javascript:;" />
+			</map>
+			<map name="m_map_r11_c13" id="m_map_r11_c13" alt="内蒙古自治区">
+				<area shape="poly" coords="20,0,15,6,5,14,1,24,0,30,4,39,6,43,13,44,21,44,31,43,46,41,51,41,52,19,39,0,29,0,20,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r15_c38" id="m_map_r15_c38" alt="河北省">
+				<area shape="poly" coords="8,3,2,9,1,21,0,27,1,31,2,35,2,35,2,39,1,42,9,42,9,42,19,41,20,41,24,40,24,40,27,40,27,40,29,40,29,40,30,40,31,38,31,38,31,30,32,18,30,1,13,0,8,3" href="javascript:;"  />
+			</map>
+			<map name="m_map_r17_c28" id="m_map_r17_c28" alt="山西省">
+				<area shape="poly" coords="16,0,2,15,0,29,2,41,8,56,28,49,40,39,28,16,27,3,16,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r18_c10" id="m_map_r18_c10" alt="甘肃省" >
+				<area shape="poly" coords="2,5,0,10,0,18,5,25,8,32,10,40,14,47,16,53,17,58,20,60,35,59,37,51,34,36,26,29,26,28,21,23,18,13,18,12,20,0,2,5" href="javascript:;"/>
+			</map>
+			<map name="m_map_r19_c6" id="m_map_r19_c6" alt="青海省">
+				<area shape="poly" coords="5,0,0,30,0,56,12,62,42,58,42,20,30,2,5,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r20_c15" id="m_map_r20_c15" alt="宁夏回族自治区">
+				<area shape="poly" coords="12,0,8,4,5,9,0,18,0,23,2,28,3,32,4,36,4,39,3,44,4,46,4,46,7,48,7,48,13,48,18,46,19,42,17,37,16,35,16,28,16,28,17,19,21,13,25,9,20,2,12,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r21_c44" id="m_map_r21_c44" alt="山东省">
+				<area shape="poly" coords="16,0,7,13,0,28,0,38,5,44,17,46,34,44,41,34,36,6,32,0,16,0" href="javascript:;" />
+			</map>
+			<map name="m_map_r27_c52" id="m_map_r27_c52" alt="江苏省">
+				<area shape="poly" coords="7,0,1,7,0,16,0,25,0,25,1,32,3,39,3,39,5,37,8,35,12,35,12,35,16,36,16,36,22,36,22,36,29,34,29,22,24,13,19,6,17,3,17,2,13,1,12,1,7,0" href="javascript:;"  />
+			</map>
+			<map name="m_map_r28_c32" id="m_map_r28_c32" alt="河南省">
+				<area shape="poly" coords="5,3,1,17,0,34,2,44,16,44,35,44,35,23,33,0,5,3" href="javascript:;" />
+			</map>
+			<map name="m_map_r29_c19" id="m_map_r29_c19" alt="陕西省" >
+				<area shape="poly" coords="15,1,8,9,0,26,4,43,5,43,15,43,37,43,40,25,35,0,15,1" href="javascript:;"/>
+			</map>
+			<map name="m_map_r31_c3" id="m_map_r31_c3" alt="西藏自治区" >
+				<area shape="poly" coords="3,2,0,53,9,66,51,61,40,24,28,0,3,2" href="javascript:;"/>
+			</map>
+			<map name="m_map_r32_c46" id="m_map_r32_c46" alt="安徽省" >
+				<area shape="poly" coords="6,23,0,33,0,33,5,43,5,43,4,48,4,48,10,48,10,48,29,46,38,42,37,29,34,17,27,2,16,0,7,14,6,23" href="javascript:;"/>
+			</map>
+			<map name="m_map_r32_c55" id="m_map_r32_c55" alt="上海市">
+				<area shape="poly" coords="11,0,7,2,3,7,2,13,0,23,1,31,2,32,2,32,6,32,6,32,10,32,17,33,25,33,30,29,31,17,25,6,17,0,11,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r36_c29" id="m_map_r36_c29" alt="湖北省">
+				<area shape="poly" coords="5,2,1,17,1,17,0,36,0,36,4,41,4,41,16,42,16,42,35,45,38,17,28,0,5,2" href="javascript:;"/>
+			</map>
+			<map name="m_map_r37_c9" id="m_map_r37_c9" alt="四川省" >
+				<area shape="poly" coords="6,0,1,34,0,58,26,57,46,49,46,12,34,0,6,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r38_c17" id="m_map_r38_c17" alt="重庆市" >
+				<area shape="poly" coords="25,0,19,7,14,20,8,28,4,35,1,40,0,51,2,57,9,57,17,56,20,51,22,46,26,43,28,40,29,31,32,23,37,17,41,8,35,1,25,0" href="javascript:;" />
+			</map>
+			<map name="m_map_r41_c56" id="m_map_r41_c56" alt="浙江省">
+				<area shape="poly" coords="14,0,5,11,2,23,0,29,0,34,2,39,5,43,20,43,28,41,31,39,35,28,33,15,27,0,14,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r44_c41" id="m_map_r44_c41" alt="江西省" >
+				<area shape="poly" coords="5,1,4,20,0,36,7,51,21,48,32,43,37,34,39,7,35,0,5,1" href="javascript:;"/>
+			</map>
+			<map name="m_map_r46_c27" id="m_map_r46_c27" alt="湖南省">
+				<area shape="poly" coords="9,0,7,20,0,27,2,42,8,47,40,45,45,32,39,1,9,0" href="javascript:;" />
+			</map>
+			<map name="m_map_r48_c16" id="m_map_r48_c16" alt="贵州省" >
+				<area shape="poly" coords="14,0,11,10,3,24,0,44,12,49,31,46,40,41,44,29,40,8,37,0,14,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r49_c50" id="m_map_r49_c50" alt="福建省">
+				<area shape="poly" coords="9,0,2,17,0,37,6,46,27,45,29,44,36,42,38,23,31,8,30,1,9,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r52_c61" id="m_map_r52_c61" alt="台湾省">
+				<area shape="poly" coords="10,6,0,40,0,72,19,79,23,74,31,49,36,26,36,3,27,0,13,3,10,6" href="javascript:;"/>
+			</map>
+			<map name="m_map_r54_c8" id="m_map_r54_c8" alt="云南省">
+				<area shape="poly" coords="12,1,3,18,0,43,12,48,46,44,52,14,35,0,12,1" href="javascript:;"/>
+			</map>
+			<map name="m_map_r55_c33" id="m_map_r55_c33" alt="广东省">
+				<area shape="poly" coords="24,0,18,4,9,11,0,22,0,44,7,53,26,47,29,43,33,43,38,45,41,40,42,20,34,2,24,0" href="javascript:;" />
+			</map>
+			<map name="m_map_r56_c20" id="m_map_r56_c20" alt="广西壮族自治区">
+				<area shape="poly" coords="8,0,2,25,0,47,20,51,46,47,46,13,43,0,8,0" href="javascript:;"/>
+			</map>
+			<map name="m_map_r58_c44" id="m_map_r58_c44" alt="香港特别行政区">
+				<area shape="poly" coords="22,0,12,8,3,26,0,43,13,46,36,45,46,33,41,7,22,0" href="javascript:;" />
+			</map>
+			<map name="m_map_r61_c31" id="m_map_r61_c31" alt="澳门特别行政区">
+				<area shape="poly" coords="3,5,0,26,0,48,35,45,38,14,23,0,13,1,3,5" href="javascript:;"/>
+			</map>
+			<map name="m_map_r63_c22" id="m_map_r63_c22" alt="海南省">
+				<area shape="poly" coords="0,11,9,42,23,46,24,46,38,42,40,41,52,31,56,24,58,6,51,0,39,1,25,2,8,8,0,11" href="javascript:;" />
+			</map>		
+		<!--地图相对应列表-->
+		
+		</div> 
+ 		<div class="map_list_wrap">
+			<a href="javascript:void(0)" class="close"></a>
+				<div class="h_scroll">
+				<div class="list-9block">
+					 <ul class="list-9 clearfix">
+            
+						<li><a href="javascript:;" alt="北京市">北京市</a></li>
+            
+						<li><a href="javascript:;" alt="天津市">天津市</a></li>
+            
+						<li><a href="javascript:;" alt="河南省">河南省</a></li>
+            
+						<li><a href="javascript:;" alt="河北省">河北省</a></li>
+            
+						<li><a href="javascript:;" alt="山西省">山西省</a></li>
+            
+						<li><a href="javascript:;" alt="内蒙古自治区">内蒙古自治区</a></li>
+            
+						<li><a href="javascript:;" alt="辽宁省">辽宁省</a></li>
+            
+						<li><a href="javascript:;" alt="吉林省">吉林省</a></li>
+            
+						<li><a href="javascript:;" alt="黑龙江省">黑龙江省</a></li>
+            
+						<li><a href="javascript:;" alt="上海市">上海市</a></li>
+            
+						<li><a href="javascript:;" alt="江苏省">江苏省</a></li>
+            
+						<li><a href="javascript:;" alt="浙江省">浙江省</a></li>
+            
+						<li><a href="javascript:;" alt="安徽省">安徽省</a></li>
+            
+						<li><a href="javascript:;" alt="福建省">福建省</a></li>
+            
+						<li><a href="javascript:;" alt="江西省">江西省</a></li>
+            
+						<li><a href="javascript:;" alt="山东省">山东省</a></li>
+            
+						<li><a href="javascript:;" alt="湖南省">湖南省</a></li>
+            
+						<li><a href="javascript:;" alt="湖北省">湖北省</a></li>
+            
+						<li><a href="javascript:;" alt="广东省">广东省</a></li>
+            
+						<li><a href="javascript:;" alt="广西壮族自治区">广西壮族自治区</a></li>
+            
+						<li><a href="javascript:;" alt="海南省">海南省</a></li>
+            
+						<li><a href="javascript:;" alt="重庆市">重庆市</a></li>
+            
+						<li><a href="javascript:;" alt="四川省">四川省</a></li>
+            
+						<li><a href="javascript:;" alt="贵州省">贵州省</a></li>
+            
+						<li><a href="javascript:;" alt="云南省">云南省</a></li>
+            
+						<li><a href="javascript:;" alt="西藏自治区">西藏自治区</a></li>
+            
+						<li><a href="javascript:;" alt="陕西省">陕西省</a></li>
+            
+						<li><a href="javascript:;" alt="甘肃省">甘肃省</a></li>
+            
+						<li><a href="javascript:;" alt="青海省">青海省</a></li>
+            
+						<li><a href="javascript:;" alt="宁夏回族自治区">宁夏回族自治区</a></li>
+            
+						<li><a href="javascript:;" alt="新疆维吾尔自治区">新疆维吾尔自治区</a></li>
+            
+						<li><a href="javascript:;" alt="香港特别行政区">香港特别行政区</a></li>
+            
+						<li><a href="javascript:;" alt="澳门特别行政区">澳门特别行政区</a></li>
+            
+						<li><a href="javascript:;" alt="台湾省">台湾省</a></li>
+            
+					 </ul>
+				</div>
+        <div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/beijingshi/7.html" class="title">北京咕咪乐园</a>
+              <p class="txt">地址：北京市</p>
+              <!--<p class="txt">电话：010-01001000</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/tianjinshi/47.html" class="title">天津市河东区万达广场万</a>
+              <p class="txt">地址：天津市河东区</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/henansheng/48.html" class="title">河南省郑州市悦达神童乐</a>
+              <p class="txt">地址：河南省郑州市</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/hebeisheng/49.html" class="title">河北保定市曲阳县凯佳购</a>
+              <p class="txt">地址：河北保定市曲阳县凯佳购物中心</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/shanxisheng/50.html" class="title">山西临汾儿童乐园</a>
+              <p class="txt">地址：山西临汾儿童乐园</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/namengguzizhiqu/51.html" class="title">内蒙古通辽市开鲁县开源</a>
+              <p class="txt">地址：内蒙古通辽市开鲁县开源商业城</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/liaoningsheng/85.html" class="title">本溪市蓝宝童儿童乐园</a>
+              <p class="txt">地址：辽宁省本溪市蓝宝童儿童乐园</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+<li>
+            <div class="mr0">
+              <a href="/liaoningsheng/20.html" class="title">辽宁省大连市大都会儿童</a>
+              <p class="txt">地址：辽宁省大连市大都会</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/jilinsheng/19.html" class="title">吉林省公主岭市头道街家</a>
+              <p class="txt">地址：吉林省公主岭市头道街家得乐超市</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/heilongjiangsheng/16.html" class="title">黑龙江省绥化市哆来咪童</a>
+              <p class="txt">地址：黑龙江省绥化市</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/shanghaishi/52.html" class="title">上海酷派熊主题乐园</a>
+              <p class="txt">地址：上海市酷派熊主题乐园</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/jiangsusheng/107.html" class="title">连云港市万达广场</a>
+              <p class="txt">地址：连云港市凌州东路七号万达广场</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/zhejiangsheng/53.html" class="title">浙江省临海市百姓购物中</a>
+              <p class="txt">地址：浙江省临海市百姓购物中心</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/anhuisheng/54.html" class="title">安徽省淮北市东方城市广</a>
+              <p class="txt">地址：安徽省淮北市东方城市广场</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/fujiansheng/55.html" class="title">福建省三明市万达宝贝王</a>
+              <p class="txt">地址：福建省三明市万达宝贝王</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/jiangxisheng/56.html" class="title">江西省宜春万达广场</a>
+              <p class="txt">地址：江西宜春万达广场</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/shandongsheng/21.html" class="title">山东省济南市迪乐堡</a>
+              <p class="txt">地址：山东省济南市迪乐堡</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/hunansheng/57.html" class="title">湖南省桃源县盘塘镇阳光</a>
+              <p class="txt">地址：湖南省桃源县盘塘镇阳光名品服饰二楼</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/hubeisheng/17.html" class="title">湖北省孝感市孝感银泰城</a>
+              <p class="txt">地址：湖北省孝感市</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+<li>
+            <div class="mr0">
+              <a href="/hubeisheng/18.html" class="title">湖北孝感汉川金色儿童乐</a>
+              <p class="txt">地址：湖北孝感汉川金色儿童乐园</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/guangdongsheng/58.html" class="title">广东韶关南雄鹏涛儿童乐</a>
+              <p class="txt">地址：广东韶关南雄鹏涛儿童乐园</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/guangxizhuangzuzizhiqu/59.html" class="title">广西柳州万达广场万达宝</a>
+              <p class="txt">地址：广西柳州万达广场万达宝贝王</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/hainansheng/60.html" class="title">海南省海口市万达宝贝王</a>
+              <p class="txt">地址：海南省海口市万达宝贝王</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/zhongqingshi/61.html" class="title">成都市双流县万达广场</a>
+              <p class="txt">地址：成都市双流县万达广场</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/sichuansheng/62.html" class="title">四川乐山万达广场宝贝王</a>
+              <p class="txt">地址：四川乐山万达广场宝贝王</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/guizhousheng/108.html" class="title">遵义市聚福隆超市</a>
+              <p class="txt">地址：贵州省遵义市凤岗县聚福隆超市</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/yunnansheng/63.html" class="title">玉溪市小大人儿童乐园</a>
+              <p class="txt">地址：云南省玉溪市小大人儿童乐园</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/shanxisheng/22.html" class="title">陕西省延安市安塞县安塞</a>
+              <p class="txt">地址：陕西省延安市陕西省延安市安塞县安塞儿童智能主题乐园</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/gansusheng/103.html" class="title">甘肃省华润万家</a>
+              <p class="txt">地址：张掖市甘州区青年东街华润万家超市三楼</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/qinghaisheng/106.html" class="title">青海省德景华湾商业中心</a>
+              <p class="txt">地址：​德令哈市景华湾商业中心</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/xinjiangweiwuerzizhiqu/104.html" class="title">新疆贝斯欢乐谷</a>
+              <p class="txt">地址：新疆乌鲁木齐市区百园路新天润国际罗马天街商业楼3号楼雅贝斯欢乐谷</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          
+        </ul>
+        </div><div class="list-16block">
+        <ul class="list-16 clearfix">
+          <li>
+            <div class="mr0">
+              <a href="/taiwansheng/105.html" class="title">台北市飞宝儿童乐园</a>
+              <p class="txt">地址：市民大道四京华城购物中心6楼飞宝儿童乐园</p>
+              <!--<p class="txt">电话：</p>-->
+            </div>
+          </li>
+
+        </ul>
+        </div>
+				</div>
+		</div>
+	</div>
+</div>
+<!--footer-->
+<include file="PC/Public/foot" />
+
+</body>
+<script src="__PUBLIC__/Home/PC/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/PC/js/jquery.dotdotdot.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/PC/js/effect.js" type="text/javascript"></script>
+<script>
+$(function(){
+  $("map").click(function(){
+		$(".list-16").width('100%');
+	 	var _name=$(this).attr("alt");
+	  	$(".list-9 li").find("a").each(function(index, element) {
+			$(this).removeClass("on");
+			if(_name==$(this).attr("alt")){
+			   $(this).addClass("on");
+			   $(".list-16block").css({"display":"none"});
+			   $(".list-16block").eq($(this).parent().index()).css({"display":"block"});
+			}
+			
+		});
+		$(".map_list_wrap").slideDown();
+		
+	});
+	$(".list-9 li").click(function(){
+		var _index=$(this).index();
+	  	$(".list-16block").css({"display":"none"});
+	    $(".list-16block").eq(_index).css({"display":"block"});
+	});
+	$(".map_list_wrap .close").click(function(){
+		$(".map_list_wrap").slideUp();
+	});
+	$(".list-9 li").click(function(){
+		$(".list-9 li a").removeClass("on");
+		$(this).find("a").addClass("on");
+	});
+	 thumbnailist(".list-1block",".list-1");
+	 thumbnailist(".list-3block",".list-3");	 
+	 $(window).resize(function(){
+		 thumbnailist(".list-1block",".list-1");	
+		 thumbnailist(".list-3block",".list-3");	  
+	 });
+});
+</script>

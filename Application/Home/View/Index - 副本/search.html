@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="applicable-device"content="">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="shortcut icon" href="__ROOT__/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="touch-icon-iphone.png"/>  
+<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png"/>  
+<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png"/>    
+<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-ipad3-144.png"/>
+<title>童游</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="__PUBLIC__/Home/PC/img/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+<link href="__PUBLIC__/Home/PC/img/owl.theme.default.min.css" type="text/css" rel="stylesheet">
+<link href="__PUBLIC__/Home/PC/img/c.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!--header-->
+<div class="layout_fb header">
+	<div class="layout_ab clearfix">
+		<h1 class="logo"><a href="__ROOT__/" style="background:url(__ROOT__/Uploads/{$config_data.logo}) no-repeat center;background-size:100% 100%;"></a></h1>
+		<a href="javascript:void(0);" class="nav-toggle-1"></a>
+		<div class="country">
+			<a href="__ROOT__/" class="ch">中文</a><a href="__ROOT__/" class="en">EN</a>
+		</div>		
+		<ul class="nav-list nav-list-3 clearfix">
+			<include file="PC/Public/nav" />
+		</ul>
+	</div>
+	<div class="h_bor"></div>
+</div>
+<!--768以下导航-->
+<div class="cmqnav-1 clearfix" >
+	<h3 class="c_logo"><a href="__ROOT__/" style="background:url(__ROOT__/Uploads/{$config_data.logo}) no-repeat center;background-size:100% 100%;"></a></h3>
+	<img src="__PUBLIC__/Home/PC/img/cmq-nav-1-close.png" class="closeBtn">
+	<ul class="navlist">
+		<include file="PC/Public/nav" />
+	</ul>
+</div>	
+
+<div class="layout_fb count_h" style="min-height:600px;">
+	<div class="layout_ab pt10 mb20">
+		<p class="crumbs-txt"><a href="__ROOT__/">首页</a> &gt; 搜索 "{$title}" 结果</p>
+	</div>
+    <div class="layout_ab mb30">
+		<div class="list-3block">
+			<ul class="list-3 clearfix">
+				<volist name="list" id="vo" empty="没有搜索结果">
+				<li>
+					<div class="mr0">
+						<a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}" class="pic"><img src="__ROOT__/Uploads/{$vo.thumb}"></a>
+						<div class="wrap">
+							<a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}" class="title">{$vo.title}</a>
+							<p class="txt">{$vo.descriptions}</p>
+							<div class="btn_wrap clearfix">
+								<a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}" class="xx">查看详情 ></a>
+							</div>
+						</div>
+					</div>
+				</li>
+				</volist>			
+			</ul>
+		</div>
+		<div class="xpage">{$page}</div>
+	</div>
+</div>
+<include file="PC/Public/foot" />
+</body>
+<script src="__PUBLIC__/Home/PC/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/PC/js/jquery.dotdotdot.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/PC/js/effect.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(e) {
+	/*文字省略*/
+    $(".ellipsis").dotdotdot();
+    $.post('/member/ajax_userstatus.php',[],function(returndata){
+        $(".country").prepend(returndata);
+    },'html');
+ 
+});
+</script>
+</html>

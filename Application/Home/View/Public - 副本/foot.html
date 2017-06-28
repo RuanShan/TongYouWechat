@@ -1,0 +1,94 @@
+<div class="layout_fb footer">
+  <div class="layout_ab clearfix">
+    <div class="footer_wrap1 clearfix">
+      <h2 class="footer_logo"> <a href="#.html"></a> </h2>
+      <div class="search">
+        <form name="formsearch" action="{:U('search')}" method="post" id="complain">
+          <input name="title" id="search-keyword" type="text" class="sea_inp" placeholder="站内搜索">
+          <input type="submit" class="sea_tj" value="">
+        </form>
+      </div>
+      <div class="footer_tell"> <a href="#.html"></a> </div>
+      <div class="line_1"></div>
+      <div class="footer_nav">
+        <ul class="clearfix">
+          <li><a href="__ROOT__/">网站首页</a></li>
+          <li><a href="{:U('Index/column',array('column_id'=>9))}">产品中心</a></li>
+          <li><a href="{:U('Index/column',array('column_id'=>18))}">案例展示</a></li>
+          <li><a href="{:U('Index/column',array('column_id'=>20))}">公司资讯</a></li>
+          <li><a href="{:U('Index/article',array('column_id'=>24,'id'=>1))}">关于童游</a></li>
+          <li><a href="{:U('Index/article',array('column_id'=>5,'id'=>2))}">售后服务</a></li>
+          <li class="mr0"><a href="{:U('Index/article',array('column_id'=>6,'id'=>3))}">联系我们</a></li>
+        </ul>
+      </div>
+      <div class="footer_bq"> <span>地址：{$config_data.address}</span><span>电话: {$config_data.phone}</span><span>版权所有：{$config_data.company}</span><span> 备案序号：{$config_data.record}</span> </div>
+      <div class="line_2"></div>
+      <div class="flink">
+        <p>友情链接:</p>
+      </div>
+    </div>
+    <div class="footer_wrap2"> <img src="__ROOT__/Uploads/{$config_data.foot_code}"> </div>
+  </div>
+</div>
+<div class="baidutongji"> 
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?35ec73d55ca7467477484631e5e30824";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+</div>
+<!--nav_right-->
+<div class="nav-right">
+  <ul class="sharetools1">
+    <li class="share"><a class="v" href="javascript:void(0)">热门<br>
+      分享</a>
+      <ul class="sharemore">
+        <li class="sinaweibo">
+          <div class="bshare-custom"><a class="bshare-sinaminiblog" href="javascript:void(0)">新浪<br>
+            微博</a></div>
+        </li>
+        <li class="qzone">
+          <div class="bshare-custom"><a class="bshare-qzone" href="javascript:void(0)">QQ<br>
+            空间</a></div>
+        </li>
+        <li class="weixin">
+          <div class="bshare-custom"><a class="bshare-weixin" href="javascript:void(0)">微信<br>
+            分享</a></div>
+        </li>
+        <li class="all">
+          <div class="bshare-custom"><a class="bshare-bsharesync" href="javascript:void(0)">一键<br>
+            分享</a></div>
+        </li>
+      </ul>
+    </li>
+    <li class="qq" title="我在线"><a class="qq v" href="tencent://message/?uin=1111111111&amp;Site=winnet.cc&amp;Menu=yes">QQ<br>
+      咨询</a></li>
+    <li class="tel"><a class="tela v" href="javascript:void(0)">联系<br>
+      电话</a><img src="{dede:global.cfg_templets_skin/}/img/sharetools1-tel.png"></li>
+    <li class="wxm"><a class="v" href="javascript:void(0);">关注<br>
+      公众号<span class="erweima"><img src="{dede:global.cfg_templets_skin/}/img/sharetools1-erweima.jpg" width="120" height="120"><br>
+      扫描二维码关注公众号<i></i></span></a></li>
+    <li class="returntop"><a class="v" href="javascript:void(0)">返回<br>
+      顶部</a></li>
+    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=eec6aff2-b1f6-46ae-a9dc-f23716eaed52&amp;pophcol=2&amp;lang=zh"></script> 
+    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+  </ul>
+</div>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script> 

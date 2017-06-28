@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="applicable-device"content="">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="shortcut icon" href="__ROOT__/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="touch-icon-iphone.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png"/>
+<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png"/>
+<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-ipad3-144.png"/>
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/img/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+<link href="__PUBLIC__/Home/PC/img/owl.theme.default.min.css" type="text/css" rel="stylesheet">
+<link href="__PUBLIC__/Home/PC/img/c.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!--header-->
+<div class="layout_fb header">
+	<div class="layout_ab clearfix">
+		<h1 class="logo"><a href="__ROOT__/" style="background:url(__ROOT__/Uploads/{$config_data.logo}) no-repeat center;background-size:100% 100%;"></a></h1>
+		<a href="javascript:void(0);" class="nav-toggle-1"></a>
+		<div class="country"> <a href="__ROOT__/" class="ch">中文</a><a href="__ROOT__/" class="en">EN</a> </div>
+		<ul class="nav-list nav-list-7 clearfix">
+			<include file="PC/Public/nav" />
+		</ul>
+	</div>
+	<div class="h_bor"></div>
+</div>
+<!--768以下导航-->
+<div class="cmqnav-1 clearfix" >
+	<h3 class="c_logo"><a href="__ROOT__/" style="background:url(__ROOT__/Uploads/{$config_data.logo}) no-repeat center;background-size:100% 100%;"></a></h3>
+	<img src="__PUBLIC__/Home/PC/img/cmq-nav-1-close.png" class="closeBtn">
+	<ul class="navlist">
+		<include file="PC/Public/nav" />
+	</ul>
+</div>
+<div class="banner">
+	<img src="__ROOT__/Uploads/{$column_data.pc_pic}">
+</div>
+<!--count-->
+<div class="layout_fb count_l pb30">
+	<div class="people-11"> <img src="__PUBLIC__/Home/PC/img/pe_11.png"> </div>
+  <div class="people-12"> <img src="__PUBLIC__/Home/PC/img/pe_12.png"> </div>
+  <div class="people-13"> <img src="__PUBLIC__/Home/PC/img/pe_13.png"> </div>
+  <div class="people-14"> <img src="__PUBLIC__/Home/PC/img/pe_14.png"> </div>
+	<div class="layout_ab pt10">
+		<p class="crumbs-txt"><a href="/">首页</a> &gt; <a href="{:U('Index/article',array('column_id'=>$column_data['id'],'id'=>$data['id']))}">{$column_data.name}</a></p>
+		<h2 class="h2title-1 pt30 mb40"><a href="{:U('Index/article',array('column_id'=>$column_data['id'],'id'=>$data['id']))}"><img src="__PUBLIC__/Home/PC/img/h2title_lxwm.png"></a></h2>
+	</div>
+	<div class="layout_ab mb30">
+		<div class="lx_wrap">
+			<div class="lianxi"> {$data.content} </div>
+			<div id="dituContent" class="baidumap"></div>
+			<div class="formblock1">
+				<h2>在线留言</h2>
+				<form>
+					<div class="warp">
+						<input type="text" placeholder="姓名" name="uname">
+					</div>
+					<div class="warp">
+						<input type="text" placeholder="电话" name="uphone">
+					</div>
+					<textarea placeholder="留言内容" name="ucommend"></textarea>
+					<div class="yanzheng">
+						<div class="warp2" style="margin-bottom:0px;">
+							<input type="text" placeholder="验证码" name="verify">
+						</div>
+						<span class="icode clearfix"><img id="verify" src="{:U('verify')}" width="150"></span><div id="verify_btn" style="padding-bottom:20px;"><i class="clip-spinner-4"></i> 看不清，点击此处换一张验证码</div> </div>
+					<button type="button" class="submit">发送 ›</button> 
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--win tan-->
+<div class="win_warp">
+	<div class="tanchuang">
+    	<img alt="" src="__PUBLIC__/Home/PC/img/icon_close.jpg" class="off">
+        <div class="shibai">
+        	<div class="lose"></div>
+            <p class="tishi">感谢您的留言<br>由于网络原因留言失败</p>
+        	<a href="#.html" class="again">重新留言</a>
+        </div>
+    	<div class="chenggong">
+        	<div class="lose"></div>
+            <p class="tishi">感谢您的留言</p>
+        	<a href="#.html" class="again">返回</a>
+        </div>
+    </div>
+</div>
+<!--footer--> 
+<include file="PC/Public/foot" />
+</body>
+<script src="__PUBLIC__/Home/PC/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=lTGG0IwvqpN04hejrpnKY6f6kUFTwrbS"></script>
+<script src="__PUBLIC__/Home/PC/js/jquery.dotdotdot.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/PC/js/effect.js" type="text/javascript"></script>
+
+<script>
+$(function(){
+	
+	$('#verify_btn').css('cursor','pointer')
+	$('#verify_btn').click(function(){
+		$('#verify').attr('src',"{:U('verify')}?a="+Math.random());
+	})
+
+  var map = new BMap.Map("dituContent");
+	var point = new BMap.Point(121.53105,38.860872);
+	var marker = new BMap.Marker(point);  // 创建标注
+	map.addOverlay(marker);              // 将标注添加到地图中
+	map.centerAndZoom(point, 15);
+	var opts = {
+	  width : 250,     // 信息窗口宽度
+	  height:110,     // 信息窗口高度
+	  title : "大连童游科技" , // 信息窗口标题
+	  enableMessage:true,//设置允许信息窗发送短息
+	  message:"地址：大连市高新区黄浦路701号银海万向写字楼704<br/>电话：400-8250-900<br/>手机:15942882188<br/>"
+	}
+	var infoWindow = new BMap.InfoWindow("地址：大连市高新区黄浦路701号银海万向写字楼704<br/>电话：400-8250-900<br/>手机：15942882188<br/>", opts);  // 创建信息窗口对象         
+	map.openInfoWindow(infoWindow,point); //开启信息窗口
+	marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+	marker.addEventListener("click", function(){          
+	map.openInfoWindow(infoWindow,point); //开启信息窗口
+	});
+	/*表单*/
+	$(".off").click(function(){
+		$(".win_warp").hide();
+		$(".formblock1 input[name='uname']").val("");
+		$(".formblock1 input[name='uphone']").val("");
+		$(".formblock1 textarea[name='ucommend']").val("");
+		$(".formblock1 input[name='verify']").val("");
+		changeAuthCode();
+	});
+	$(".win_warp .off").click(function(){
+		$(".win_warp").hide();
+		$(".formblock1 input[name='uname']").val("");
+		$(".formblock1 input[name='uphone']").val("");
+		$(".formblock1 textarea[name='ucommend']").val("");
+		$(".formblock1 input[name='verify']").val("");
+		changeAuthCode();
+	});
+	$(".shibai .again").click(function(){
+		$(".win_warp").hide();
+		$(".formblock1 input[name='verify']").val("");
+		changeAuthCode();
+	});
+	$(".chenggong .again").click(function(){
+		$(".win_warp").hide();
+		$(".formblock1 input[name='uname']").val("");
+		$(".formblock1 input[name='uphone']").val("");
+		$(".formblock1 textarea[name='ucommend']").val("");
+		$(".formblock1 input[name='verify']").val("");
+		changeAuthCode();
+	});
+	$(".formblock1 input").focus(function(){
+		$(this).removeClass("red");
+		$(this).parent().removeClass("red_boder");
+	
+	});
+	$("#yanzhengma").click(function(){
+		changeAuthCode();
+	});			
+	$(".formblock1 .submit").click(function(){
+		var fomoff=true;
+		var uname = $(".formblock1 input[name='uname']").val();
+		var uphone = $(".formblock1  input[name='uphone']").val();
+		var ucommend = $(".formblock1  textarea[name='ucommend']").val();
+		var verify = $(".formblock1  input[name='verify']").val();
+		if(uname ==""){
+			$(".formblock1 input[name='uname']").addClass("red");
+			$(".formblock1 input[name='uname']").parent().addClass("red_boder");
+			fomoff=false;
+		}else{
+			$(".formblock1 input[name='uname']").removeClass("red");
+			$(".formblock1 input[name='uname']").parent().removeClass("red_boder");
+			
+		}
+		if(uphone == ""||!/^1[34578]{1}\d{9}$/.test(uphone)){
+			$(".formblock1  input[name='uphone']").addClass("red");
+			$(".formblock1 input[name='uphone']").parent().addClass("red_boder");
+			fomoff=false;
+		}else{
+			$(".formblock1  input[name='uphone']").removeClass("red");
+			$(".formblock1 input[name='uphone']").parent().removeClass("red_boder");
+			
+		}
+		if(verify == ""){
+			$(".formblock1  input[name='verify']").addClass("red");
+			$(".formblock1 input[name='verify']").parent().addClass("red_boder");
+			fomoff=false;
+		}else{
+			$(".formblock1  input[name='verify']").removeClass("red");
+			$(".formblock1 input[name='verify']").parent().removeClass("red_boder");
+			
+		}
+		if(!fomoff){
+			 return false;
+		}else{
+				 uname = $(".formblock1 input[name='uname']").val();
+				 uphone = $(".formblock1 input[name='uphone']").val();
+				 ucommend = $(".formblock1 textarea[name='ucommend']").val();
+				 verify = $(".formblock1 input[name='verify']").val();
+				$.ajax({
+					url:"{:U('message')}",
+					type:"POST",
+					data:{uname:uname,uphone:uphone,ucommend:ucommend,verify:verify},
+					success:function(data){
+						if(data == "pass"){
+							$('#verify_btn').click();
+							$(".win_warp").show();
+							$(".win_warp .chenggong").show();
+							$(".win_warp .shibai").hide();
+						}else if(data == "yzm-wrong"){
+							$('#verify_btn').click();
+							$(".win_warp .shibai .tishi").text("验证码错误，提交失败！");
+							$(".win_warp").show();
+							$(".win_warp .shibai").show();
+							$(".win_warp .chenggong").hide();
+						}else{
+							$(".win_warp").show();
+							$(".win_warp .shibai").show();
+							$(".win_warp .chenggong").hide();
+						}
+						changeAuthCode();
+					},
+					error: function() {
+						$(".win_warp").show();
+						$(".win_warp .shibai").show();
+					}
+				});
+		}
+	});
+	 thumbnailist(".list-1block",".list-1"); 
+	 $(window).resize(function(){
+		 thumbnailist(".list-1block",".list-1");	  
+	 });
+	 	
+});
+</script>

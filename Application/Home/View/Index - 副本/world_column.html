@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="applicable-device"content="">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="shortcut icon" href="__ROOT__/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="touch-icon-iphone.png"/>  
+<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png"/>  
+<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png"/>    
+<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-ipad3-144.png"/>
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/img/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+<link href="__PUBLIC__/Home/PC/img/owl.theme.default.min.css" type="text/css" rel="stylesheet">
+<link href="__PUBLIC__/Home/PC/img/c.css" rel="stylesheet" type="text/css"/>
+</head>
+<style>
+td img {display: block;}
+</style>
+<body>
+<!--header-->
+<div class="layout_fb header">
+	<div class="layout_ab clearfix">
+		<h1 class="logo"><a href="__ROOT__/" style="background:url(__ROOT__/Uploads/{$config_data.logo}) no-repeat center;background-size:100% 100%;"></a></h1>
+		<a href="javascript:void(0);" class="nav-toggle-1"></a>
+		<div class="country">
+			<a href="__ROOT__/" class="ch">中文</a><a href="__ROOT__/" class="en">EN</a>
+		</div>		
+		<ul class="nav-list nav-list-2 clearfix">
+			<include file="PC/Public/nav" />
+		</ul>
+	</div>
+	<div class="h_bor"></div>
+</div>
+<!--768以下导航-->
+<div class="cmqnav-1 clearfix" >
+	<h3 class="c_logo"><a href="__ROOT__/" style="background:url(__ROOT__/Uploads/{$config_data.logo}) no-repeat center;background-size:100% 100%;"></a></h3>
+	<img src="__PUBLIC__/Home/PC/img/cmq-nav-1-close.png" class="closeBtn">
+	<ul class="navlist">
+		<include file="PC/Public/nav" />
+	</ul>
+</div>
+<div class="banner">
+	<img src="__ROOT__/Uploads/{$column_data.pc_pic}">
+</div>
+<!--count-->
+<div class="layout_fb count_b pb30">
+	<div class="people-2">
+		<img src="__PUBLIC__/Home/PC/img/pe_2.png">
+	</div>
+	<div class="layout_ab pt10">
+		<p class="crumbs-txt"><a href="__ROOT__/">首页</a> &gt; <a href="{:U('Index/column',array('column_id'=>18))}">销售地域</a> &gt; <a href="{:U('Index/column',array('column_id'=>$column_data['id']))}">{$column_data.name}</a></p>
+		<h2 class="h2title-1 pt30 mb20"><a href="{:U('Index/column',array('column_id'=>18))}"><img src="__PUBLIC__/Home/PC/img/h2title_alzs.png"></a></h2>
+	</div>
+	<div class="layout_ab mb30">
+		<div class="list-1block mb10">
+			<ul class="list-1">
+				<li>
+					<div class="mr0">
+						<a href="{:U('Index/column',array('column_id'=>18))}" class="on">销售地域</a>
+					</div>
+				</li>
+				<li>
+					<div class="mr0">
+						<a href="{:U('Index/column',array('column_id'=>17))}">案例介绍</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="list-8block">
+			<ul class="list-8">
+				<volist name="column_list" id="vo">
+				<li><div class="mr0"><a href="{:U('Index/column',array('column_id'=>$vo['id']))}" class="<eq name='vo.id' value='$column_data.id'>on</eq>">{$vo.name}</a></div></li>
+        </volist>
+			</ul>
+		</div>
+	</div>
+	<div class="layout_ab">
+		<div class="count_map">
+			<table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="1095">
+				<!-- fwtable fwsrc="未命名" fwpage="页面 1" fwbase="map3.png" fwstyle="Dreamweaver" fwdocid = "174963852" fwnested="0" -->
+				  <tr>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="171" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="76" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="79" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="65" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="165" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="55" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="33" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="58" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="74" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="20" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="47" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="60" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="62" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="130" height="1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="1" alt="" /></td>
+				  </tr>
+				
+				  <tr>
+				   <td colspan="14"><img name="map3_r1_c1" src="__PUBLIC__/Home/PC/images/map3_r1_c1.png" width="1095" height="119" id="map3_r1_c1" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="119" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="2" colspan="9"><img name="map3_r2_c1" src="__PUBLIC__/Home/PC/images/map3_r2_c1.png" width="776" height="46" id="map3_r2_c1" alt="" /></td>
+				   <td rowspan="4" colspan="2"><img name="map3_r2_c10" src="__PUBLIC__/Home/PC/images/map3_r2_c10.png" width="67" height="78" id="map3_r2_c10" usemap="#m_map3_r2_c10" alt="" /></td>
+				   <td rowspan="10" colspan="3"><img name="map3_r2_c12" src="__PUBLIC__/Home/PC/images/map3_r2_c12.png" width="252" height="339" id="map3_r2_c12" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="10" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="36" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="11"><img name="map3_r4_c1" src="__PUBLIC__/Home/PC/images/map3_r4_c1.png" width="171" height="477" id="map3_r4_c1" alt="" /></td>
+				   <td rowspan="4"><img name="map3_r4_c2" src="__PUBLIC__/Home/PC/images/map3_r4_c2.png" width="76" height="81" id="map3_r4_c2" usemap="#m_map3_r4_c2" alt="" /></td>
+				   <td colspan="7"><img name="map3_r4_c3" src="__PUBLIC__/Home/PC/images/map3_r4_c3.png" width="529" height="1" id="map3_r4_c3" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="1" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="4" colspan="5"><img name="map3_r5_c3" src="__PUBLIC__/Home/PC/images/map3_r5_c3.png" width="397" height="155" id="map3_r5_c3" alt="" /></td>
+				   <td rowspan="2"><img name="map3_r5_c8" src="__PUBLIC__/Home/PC/images/map3_r5_c8.png" width="58" height="63" id="map3_r5_c8" usemap="#m_map3_r5_c8" alt="" /></td>
+				   <td rowspan="10"><img name="map3_r5_c9" src="__PUBLIC__/Home/PC/images/map3_r5_c9.png" width="74" height="476" id="map3_r5_c9" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="31" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="9" colspan="2"><img name="map3_r6_c10" src="__PUBLIC__/Home/PC/images/map3_r6_c10.png" width="67" height="445" id="map3_r6_c10" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="32" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="8"><img name="map3_r7_c8" src="__PUBLIC__/Home/PC/images/map3_r7_c8.png" width="58" height="413" id="map3_r7_c8" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="17" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="7"><img name="map3_r8_c2" src="__PUBLIC__/Home/PC/images/map3_r8_c2.png" width="76" height="396" id="map3_r8_c2" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="75" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="2" colspan="3"><img name="map3_r9_c3" src="__PUBLIC__/Home/PC/images/map3_r9_c3.png" width="309" height="100" id="map3_r9_c3" alt="" /></td>
+				   <td><img name="map3_r9_c6" src="__PUBLIC__/Home/PC/images/map3_r9_c6.png" width="55" height="70" id="map3_r9_c6" usemap="#m_map3_r9_c6" alt="" /></td>
+				   <td rowspan="6"><img name="map3_r9_c7" src="__PUBLIC__/Home/PC/images/map3_r9_c7.png" width="33" height="321" id="map3_r9_c7" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="70" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="5"><img name="map3_r10_c6" src="__PUBLIC__/Home/PC/images/map3_r10_c6.png" width="55" height="251" id="map3_r10_c6" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="30" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="4"><img name="map3_r11_c3" src="__PUBLIC__/Home/PC/images/map3_r11_c3.png" width="79" height="221" id="map3_r11_c3" alt="" /></td>
+				   <td rowspan="2"><img name="map3_r11_c4" src="__PUBLIC__/Home/PC/images/map3_r11_c4.png" width="65" height="64" id="map3_r11_c4" usemap="#m_map3_r11_c4" alt="" /></td>
+				   <td rowspan="4"><img name="map3_r11_c5" src="__PUBLIC__/Home/PC/images/map3_r11_c5.png" width="165" height="221" id="map3_r11_c5" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="37" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="3"><img name="map3_r12_c12" src="__PUBLIC__/Home/PC/images/map3_r12_c12.png" width="60" height="184" id="map3_r12_c12" alt="" /></td>
+				   <td rowspan="2"><img name="map3_r12_c13" src="__PUBLIC__/Home/PC/images/map3_r12_c13.png" width="62" height="60" id="map3_r12_c13" usemap="#m_map3_r12_c13" alt="" /></td>
+				   <td rowspan="3"><img name="map3_r12_c14" src="__PUBLIC__/Home/PC/images/map3_r12_c14.png" width="130" height="184" id="map3_r12_c14" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="27" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td rowspan="2"><img name="map3_r13_c4" src="__PUBLIC__/Home/PC/images/map3_r13_c4.png" width="65" height="157" id="map3_r13_c4" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="33" alt="" /></td>
+				  </tr>
+				  <tr>
+				   <td><img name="map3_r14_c13" src="__PUBLIC__/Home/PC/images/map3_r14_c13.png" width="62" height="124" id="map3_r14_c13" alt="" /></td>
+				   <td><img src="__PUBLIC__/Home/PC/images/spacer.gif" width="1" height="124" alt="" /></td>
+				  </tr>
+				</table>
+				<map name="m_map3_r2_c10" id="m_map3_r2_c10" alt="亚洲">
+				<area shape="poly" coords="12,10,0,43,5,78,49,77,67,43,56,0,12,10" href="javascript:;"  />
+				</map>
+				<map name="m_map3_r4_c2" id="m_map3_r4_c2" alt="北美洲">
+				<area shape="poly" coords="4,10,1,52,0,81,58,76,76,34,60,0,4,10" href="javascript:;" alt="" />
+				</map>
+				<map name="m_map3_r5_c8" id="m_map3_r5_c8" alt="欧洲">
+				<area shape="poly" coords="8,1,0,33,2,63,20,63,48,62,58,11,54,0,8,1" href="javascript:;" alt="" />
+				</map>
+				<map name="m_map3_r9_c6" id="m_map3_r9_c6" alt="非洲">
+				<area shape="poly" coords="13,1,2,27,0,51,14,70,50,60,55,12,19,0,13,1" href="javascript:;" alt="" />
+				</map>
+				<map name="m_map3_r11_c4" id="m_map3_r11_c4" alt="南美洲">
+				<area shape="poly" coords="5,0,0,47,6,64,49,57,63,48,65,19,52,0,5,0" href="javascript:;" alt="" />
+				</map>
+				<map name="m_map3_r12_c13" id="m_map3_r12_c13" alt="大洋洲">
+				<area shape="poly" coords="34,0,19,5,7,33,0,53,3,59,12,56,18,53,25,53,33,55,46,59,62,60,62,25,48,1,34,0" href="javascript:;" alt="" />
+				</map>
+		</div>
+		<div class="map_list_wrap">
+				<a href="javascript:void(0)" class="close"></a>
+				<div class="h_scroll">
+					<div class="list-9block">
+						<ul class="list-9 clearfix">
+							<li><a href="javascript:;" alt="欧洲" class="on">欧洲</a></li><!--29-->
+							<li><a href="javascript:;" alt="北美洲">北美洲</a></li><!--23-->
+							<li><a href="javascript:;" alt="南美洲">南美洲</a></li><!--24-->
+							<li><a href="javascript:;" alt="亚洲">亚洲</a></li><!--28-->			
+							<li><a href="javascript:;" alt="非洲">非洲</a></li><!--25-->
+							<li><a href="javascript:;" alt="大洋洲">大洋洲</a></li><!--27-->
+							<li><a href="javascript:;" alt="南极洲">南极洲</a></li><!--26-->
+						</ul>
+					</div>
+					<div class="list-16block">
+						<ul class="list-16 clearfix">
+							<li>
+								<div class="mr0">
+									<a href="/anlizhanshi/xiaoshoubuju/shijie/ouzhou/41.html" class="title">乌克兰</a>
+									<p class="txt">地址：欧洲乌克兰基辅</p>
+									<!--<p class="txt">电话：</p>-->
+								</div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="list-16block">
+						<ul class="list-16 clearfix">
+							<li>
+								<div class="mr0">
+									<a href="/anlizhanshi/xiaoshoubuju/shijie/beimeizhou/110.html" class="title">奥兰多</a>
+									<p class="txt">地址：美国奥兰多</p>
+									<!--<p class="txt">电话：</p>-->
+								</div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="list-16block">
+						<ul class="list-16 clearfix">
+							<li>
+								<div class="mr0">
+									<a href="/anlizhanshi/xiaoshoubuju/shijie/nanmeizhou/111.html" class="title">巴拿马</a>
+									<p class="txt">地址：南美洲巴拿马</p>
+									<!--<p class="txt">电话：</p>-->
+								</div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="list-16block">
+						<ul class="list-16 clearfix">
+							<li>
+								<div class="mr0">
+									<a href="/anlizhanshi/xiaoshoubuju/shijie/yazhou/109.html" class="title">班加罗尔</a>
+									<p class="txt">地址：印度班加罗尔</p>
+									<!--<p class="txt">电话：</p>-->
+								</div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="list-16block">
+						<ul class="list-16 clearfix">
+							
+						</ul>
+					</div>
+					<div class="list-16block">
+						<ul class="list-16 clearfix">
+							
+						</ul>
+					</div>
+					<div class="list-16block">
+						<ul class="list-16 clearfix">
+							
+						</ul>
+					</div>
+		</div>
+		</div> 
+ 		
+	</div>
+</div>
+<!--footer-->
+<include file="PC/Public/foot" />
+</body>
+<script src="__PUBLIC__/Home/PC/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/PC/js/jquery.dotdotdot.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/PC/js/effect.js" type="text/javascript"></script>
+<script>
+$(function(){
+  $("map").click(function(){
+		$(".list-16").width('100%');
+	 	var _name=$(this).attr("alt");
+	  	$(".list-9 li").find("a").each(function(index, element) {
+			$(this).removeClass("on");
+			if(_name==$(this).attr("alt")){
+			   $(this).addClass("on");
+			   $(".list-16block").css({"display":"none"});
+			   $(".list-16block").eq($(this).parent().index()).css({"display":"block"});
+			}
+			
+		});
+		$(".map_list_wrap").slideDown();
+		
+	});
+	$(".list-9 li").click(function(){
+		var _index=$(this).index();
+	  	$(".list-16block").css({"display":"none"});
+	    $(".list-16block").eq(_index).css({"display":"block"});
+	});
+	$(".map_list_wrap .close").click(function(){
+		$(".map_list_wrap").slideUp();
+	});
+	$(".list-9 li").click(function(){
+		$(".list-9 li a").removeClass("on");
+		$(this).find("a").addClass("on");
+	});
+	 thumbnailist(".list-1block",".list-1");
+	 thumbnailist(".list-3block",".list-3");	
+	 thumbnailist(".list-16block",".list-16");	
+	 $(window).resize(function(){
+		 thumbnailist(".list-1block",".list-1");	
+		 thumbnailist(".list-3block",".list-3");
+		 thumbnailist(".list-16block",".list-16");	
+	 });
+     	 	
+});
+</script>

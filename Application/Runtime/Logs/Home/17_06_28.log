@@ -1,0 +1,468 @@
+[ 2017-06-28T18:25:57+08:00 ] ::1 /TongYouErWeiMaSaoMao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002425s ]
+SQL: SHOW COLUMNS FROM `think_config` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `think_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020478s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020693s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001597s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001722s ]
+
+[ 2017-06-28T20:40:26+08:00 ] ::1 /TongYouErWeiMaSaoMao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001407s ]
+SQL: SHOW COLUMNS FROM `think_config` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `think_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011957s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012080s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000985s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001213s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001313s ]
+
+[ 2017-06-28T20:40:34+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000869s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0045s ]
+ERR: 1054:Unknown column '李四' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `think_member` WHERE ( username=李四 AND telephone=132456675677 ) LIMIT 1  
+ERR: 1054:Unknown column '李四' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `think_member` WHERE ( username=李四 AND telephone=132456675677 ) LIMIT 1  
+
+[ 2017-06-28T20:48:29+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001628s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `think_member` WHERE ( username='李四' AND telephone='132456675677' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: INSERT INTO `think_member` (`username`,`telephone`) VALUES ('李四','132456675677') [ RunTime:0.0008s ]
+SQL: INSERT INTO `think_auth_group_access` (`uid`,`group_id`) VALUES ('2','1') [ RunTime:0.0008s ]
+
+[ 2017-06-28T20:48:30+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/code/base/NDU2NzgtMS0y.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000940s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0044s ]
+SQL: INSERT INTO `think_machine` (`machine_id`,`customer_id`,`permanent_code`) VALUES ('45678','2','44545454545') [ RunTime:0.0008s ]
+
+[ 2017-06-28T20:48:31+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMS0y.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001338s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0051s ]
+SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 4 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 8 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010373s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010479s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000935s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001132s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001229s ]
+
+[ 2017-06-28T20:49:21+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001401s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `think_member` WHERE ( username='王五' AND telephone='12321321' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: INSERT INTO `think_member` (`username`,`telephone`) VALUES ('王五','12321321') [ RunTime:0.0009s ]
+SQL: INSERT INTO `think_auth_group_access` (`uid`,`group_id`) VALUES ('3','2') [ RunTime:0.0009s ]
+
+[ 2017-06-28T20:49:22+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/code/base/NDU2NzgtMi0z.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001169s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0055s ]
+SQL: INSERT INTO `think_machine` (`machine_id`,`engineer_id`,`temporary_code`) VALUES ('45678','3','44545454545') [ RunTime:0.0012s ]
+
+[ 2017-06-28T20:49:23+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMi0z.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002105s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002253s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0041s ]
+ERR: 1054:Unknown column 'temporary_codes' in 'field list'
+ [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1  
+ERR: 1054:Unknown column 'temporary_codes' in 'field list'
+ [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1  
+
+[ 2017-06-28T20:50:22+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMi0z.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000882s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003083s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0060s ]
+ERR: 1054:Unknown column 'temporary_codes' in 'field list'
+ [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1  
+ERR: 1054:Unknown column 'temporary_codes' in 'field list'
+ [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1  
+
+[ 2017-06-28T20:52:02+08:00 ] ::1 /TongYouErWeiMaSaoMao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003192s ]
+SQL: SHOW COLUMNS FROM `think_config` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `think_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011717s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001377s ]
+
+[ 2017-06-28T21:00:50+08:00 ] ::1 /TongYouErWeiMaSaoMao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001378s ]
+SQL: SHOW COLUMNS FROM `think_config` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `think_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019540s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000965s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001341s ]
+
+[ 2017-06-28T21:01:31+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002254s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `think_member` WHERE ( username='张三' AND telephone='13245656789' ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: INSERT INTO `think_member` (`username`,`telephone`) VALUES ('张三','13245656789') [ RunTime:0.0017s ]
+SQL: INSERT INTO `think_auth_group_access` (`uid`,`group_id`) VALUES ('2','1') [ RunTime:0.0018s ]
+
+[ 2017-06-28T21:01:32+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/code/base/NDU2NzgtMS0y.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000948s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002497s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `think_machine` WHERE ( machine_id='45678' ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: INSERT INTO `think_machine` (`machine_id`,`customer_id`,`permanent_code`) VALUES ('45678','2','44545454545') [ RunTime:0.0032s ]
+
+[ 2017-06-28T21:01:34+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMS0y.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002156s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002287s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0102s ]
+SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 4 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 8 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016855s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002616s ]
+
+[ 2017-06-28T21:01:59+08:00 ] ::1 /TongYouErWeiMaSaoMao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000968s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002998s ]
+SQL: SHOW COLUMNS FROM `think_config` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `think_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013436s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013570s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001954s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002065s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002103s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002203s ]
+
+[ 2017-06-28T21:02:11+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000101s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002609s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `think_member` WHERE ( username='王五' AND telephone='1345456767' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `think_member` (`username`,`telephone`) VALUES ('王五','1345456767') [ RunTime:0.0007s ]
+SQL: INSERT INTO `think_auth_group_access` (`uid`,`group_id`) VALUES ('3','2') [ RunTime:0.0008s ]
+
+[ 2017-06-28T21:02:12+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/code/base/NDU2NzgtMi0z.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000981s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002310s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `think_machine` WHERE ( machine_id='45678' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: UPDATE `think_machine` SET `machine_id`='45678',`engineer_id`='3',`temporary_code`='44545454545' WHERE ( machine_id='45678' ) [ RunTime:0.0008s ]
+
+[ 2017-06-28T21:02:13+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMi0z.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000968s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002340s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0113s ]
+SQL: SELECT `temporary_code` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 4 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 8 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019046s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019216s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001723s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001815s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002069s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002168s ]
+
+[ 2017-06-28T21:02:37+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002409s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `think_member` WHERE ( username='王五' AND telephone='1345456767' ) LIMIT 1   [ RunTime:0.0018s ]
+NOTIC: [8] Undefined variable: result D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Home\Controller\IndexController.class.php 第 57 行.
+
+[ 2017-06-28T21:02:38+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMi0%253D.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002206s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0062s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `think_member` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `think_member` WHERE ( id= ) LIMIT 1  
+
+[ 2017-06-28T21:04:04+08:00 ] ::1 /TongYouErWeiMaSaoMao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000800s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001435s ]
+SQL: SHOW COLUMNS FROM `think_config` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `think_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0038s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017336s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017529s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000936s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001444s ]
+
+[ 2017-06-28T21:04:06+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001196s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `think_member` WHERE ( username='王五' AND telephone='1345456767' ) LIMIT 1   [ RunTime:0.0018s ]
+
+[ 2017-06-28T21:04:07+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMi0z.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001202s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0103s ]
+SQL: SELECT `temporary_code` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 4 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 8 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017821s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017994s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001192s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001291s ]
+
+[ 2017-06-28T21:04:30+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001472s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `think_member` WHERE ( username='张三' AND telephone='13245656789' ) LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-06-28T21:04:31+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMS0y.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001503s ]
+SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0099s ]
+SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 4 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 8 行.
+NOTIC: [8] Undefined variable: config_data D:\phpStudy\WWW\TongYouErWeiMaSaoMao\Application\Runtime\Cache\Home\db68c3a91dda2936ed1804e7deb69227.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013758s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013922s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001441s ]
+
