@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "overtrue/wechat": "~3.1"
     },
     "minimum-stability": "dev"
 }
