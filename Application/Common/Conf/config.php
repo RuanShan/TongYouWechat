@@ -31,4 +31,6 @@ return array(
             'callback' => '',
         ],
     ],
+		'app_debug' =>  false,
+
 );

@@ -12,3 +12,6 @@ https://easywechat.org/zh-cn/docs
 
 # easywechat安装
 composer require overtrue/wechat:~3.1 -vvv
+
+#
+https://easywechat.org/zh-cn/docs/troubleshooting.html

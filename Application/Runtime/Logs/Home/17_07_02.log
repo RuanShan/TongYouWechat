@@ -115,3 +115,114 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
 
+[ 2017-07-02T22:57:30+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+ERR: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+[ 2017-07-02T22:57:31+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+[ 2017-07-02T23:09:29+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+[ 2017-07-02T23:13:42+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+ERR: 1146:Table 'tongyou_wechat_dev.think_doctrine_cache' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `think_doctrine_cache`
+ERR: 1146:Table 'tongyou_wechat_dev.think_doctrine_cache' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `think_doctrine_cache`
+
+[ 2017-07-02T23:26:52+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `think_doctrine_cache` [ RunTime:0.0510s ]
+SQL: SELECT * FROM `think_doctrine_cache` WHERE `label` = 'easywechat.common.access_token.wxc4a9b776dfa6840d' ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+ERR: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+[ 2017-07-02T23:27:14+08:00 ] 127.0.0.1 /home/wechat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `think_doctrine_cache` [ RunTime:0.0140s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\workspace\TongYouWechat\vendor\overtrue\wechat\src\Support\XML.php 第 137 行.
+ERR: Invalid request.
+
+[ 2017-07-02T23:27:24+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `think_doctrine_cache` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `think_doctrine_cache` WHERE `label` = 'easywechat.common.access_token.wxc4a9b776dfa6840d' ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+ERR: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+[ 2017-07-02T23:58:57+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: ch D:\workspace\TongYouWechat\Application\Home\Controller\WechatBaseController.class.php 第 14 行.
+NOTIC: [2] curl_setopt() expects parameter 1 to be resource, null given D:\workspace\TongYouWechat\Application\Home\Controller\WechatBaseController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `think_doctrine_cache` [ RunTime:0.0690s ]
+SQL: SELECT * FROM `think_doctrine_cache` WHERE `label` = 'easywechat.common.access_token.wxc4a9b776dfa6840d' ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+ERR: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+[ 2017-07-02T23:58:58+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined variable: ch D:\workspace\TongYouWechat\Application\Home\Controller\WechatBaseController.class.php 第 14 行.
+NOTIC: [2] curl_setopt() expects parameter 1 to be resource, null given D:\workspace\TongYouWechat\Application\Home\Controller\WechatBaseController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `think_doctrine_cache` [ RunTime:0.0410s ]
+SQL: SELECT * FROM `think_doctrine_cache` WHERE `label` = 'easywechat.common.access_token.wxc4a9b776dfa6840d' ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+ERR: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
+[ 2017-07-02T23:58:59+08:00 ] 127.0.0.1 /home/user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+NOTIC: [8] Undefined variable: ch D:\workspace\TongYouWechat\Application\Home\Controller\WechatBaseController.class.php 第 14 行.
+NOTIC: [2] curl_setopt() expects parameter 1 to be resource, null given D:\workspace\TongYouWechat\Application\Home\Controller\WechatBaseController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `think_doctrine_cache` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `think_doctrine_cache` WHERE `label` = 'easywechat.common.access_token.wxc4a9b776dfa6840d' ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+ERR: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)
+
