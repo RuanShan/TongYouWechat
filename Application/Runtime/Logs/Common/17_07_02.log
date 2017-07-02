@@ -1,0 +1,30 @@
+[ 2017-07-02T22:07:27+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Favicon
+
+[ 2017-07-02T22:11:16+08:00 ] 127.0.0.1 /wechat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:Wechat
+
+[ 2017-07-02T22:35:26+08:00 ] 127.0.0.1 /wechat?signature=17a3fef67e2c0e0be31d7d055a4a912781f1a58e&echostr=8114587233200967091&timestamp=1499006129&nonce=1011823718
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:Wechat
+
+[ 2017-07-02T22:46:48+08:00 ] 127.0.0.1 /wechat?signature=7ada00ec58bb6f4ca86ffbeac6ef499088f2a012&echostr=7400008815243517946&timestamp=1499006810&nonce=2081152170
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:Wechat
+
+[ 2017-07-02T22:49:47+08:00 ] 127.0.0.1 /wechat?signature=96d052d414d393243fc420bf3cb9c4f903fa5c33&echostr=3267336470124895471&timestamp=1499006990&nonce=1723291765
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:Wechat
+

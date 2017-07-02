@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Login</title>
+</head>
+<body>
+
+<img src="{:U('qr')}&url={$url}">
+<script src="/Public/js/jquery.min.js"></script>
+<script>
+    setInterval("checkLogin()",5000);
+    function checkLogin()
+    {
+        var token = '{$randStr}';
+        $.post(
+            "{:U('checkLogin')}",
+            {token: token},
+            function(result)
+            {
+                if(result === 1)
+                {
+                    window.location.href = "{:U('home')}";
+                }
+            }
+        );
+    }
+</script>
+</body>
+</html>

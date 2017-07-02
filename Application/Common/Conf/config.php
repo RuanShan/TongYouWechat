@@ -14,5 +14,21 @@ return array(
 	'DB_DEBUG'  =>  TRUE, // 数据库调试模式 开启后可以记录SQL日志
 
 	//URL模式
-	'URL_MODEL' => 2
+	'URL_MODEL' => 2,
+	// easywechat 配置
+	'EASY_WECHAT' => [
+        'debug' => true,
+        'app_id' => 'wxc4a9b776dfa6840d',
+        'secret' => '64eecb1b6a738377ed8c3918a0d20c1e',
+        'token' => 'mytoken',
+        'aes_key' => null,
+        'log' => [
+            'level' => 'debug',
+            'file' => 'D:\workspace\TongYouWechat\Application\Runtime\Logs\easywechat.log',
+        ],
+        'oauth' => [
+            'scopes' => ['snsapi_userinfo'],
+            'callback' => '',
+        ],
+    ],
 );

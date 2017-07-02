@@ -3,8 +3,9 @@
 ## composer 配置
 https://pkg.phpcomposer.com
 
-## thinkphp 入门
-https://www.kancloud.cn/thinkphp/thinkphp5_quickstart/145249
+## thinkphp 3.2手册
+http://document.thinkphp.cn/manual_3_2.html#load_config
+
 
 ## easywechat 文档
 https://easywechat.org/zh-cn/docs
