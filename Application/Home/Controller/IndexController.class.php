@@ -42,10 +42,15 @@ class IndexController extends CommonController {
 
 	public function send_vcode()
 	{
+		$mobile = '13322280797';
 		$sms = new Sms();
-		$ret = $sms->send_code('13322280797');
-		Log::write( $ret );
+		$code = $sms->send_code($mobile);
+		$sms_data = ['vcode'=>$code, 'mobile'=>$mobile, 'created_at'=>time() ];
+		Log::write( print_r($sms_data,true) );
+		session('sms_data',$sms_data);
 
+		$data['status']  = 1;
+		$this->ajaxReturn($data);
 		//$this->ajaxReturn('1','添加信息成功',1);
 	}
 	//登陆处理

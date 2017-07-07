@@ -22,3 +22,6 @@ https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1433747234
 
 ## 初始化用户标签
 http://localhost/home/tag
+
+##密码正则
+https://zhidao.baidu.com/question/747037576902337012.html

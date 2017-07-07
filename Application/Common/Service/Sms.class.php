@@ -12,6 +12,7 @@ class Sms {
 
   }
     public function send_code($mobile) {
+      return  1234;
       //https://github.com/flc1125/alidayu
       // 使用方法二
       $config = C('ALIDAYU');
@@ -20,9 +21,9 @@ class Sms {
       $resp = Client::request('alibaba.aliqin.fc.sms.num.send', function (IRequest $req) {
           $req->setRecNum($mobile)
               ->setSmsParam([
-                  'number' => rand(100000, 999999)
+                  'number' => mt_rand(1000, 9999)
               ])
-              //->setSmsFreeSignName('叶子坑')
+              ->setSmsFreeSignName('大连软山')
               ->setSmsTemplateCode('SMS_21680327');
       });
 

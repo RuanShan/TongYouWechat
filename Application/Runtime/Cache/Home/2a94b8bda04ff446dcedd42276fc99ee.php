@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <!--/ metas -->
 <link href="/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
-<script src="/Public/Home/js/weui.min.js"></script>
+<script src="/Public/Home/js/weui.js"></script>
 <script src="/Public/Home/js/zepto.min.js"></script>
 <script src="/Public/Home/js/app.js"></script>
 
@@ -19,6 +19,9 @@ body {
     color: #111;
     background-color: #fdfdfd;
     -webkit-text-size-adjust: 100%;
+}
+.demos-header {
+    padding: 35px 0;
 }
 .demos-title {
     text-align: center;
@@ -60,9 +63,11 @@ body {
 	</head>
 
 	<body ontouchstart>
-		<div class="demos-title">
-       设备激活
-    </div>
+		<header class="demos-header">
+			<div class="demos-title">
+	       设备激活
+	    </div>
+		</header>
 		<div class="">
 
 				<form action="<?php echo U('login');?>" method="post">

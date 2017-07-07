@@ -6,19 +6,24 @@
 	</head>
 
 	<body>
+		<header class="demos-header">
+			<div class="demos-title">
+				 登录
+			</div>
+		</header>
 		<div class="weui-cells weui-cells_form">
 
 			<form id="session_form" class="js__form" action="{:U('login')}" method="post">
 				<div class="weui-cell">
-					<div class="weui-cell__hd"><label for="" class="weui-label">用户名</label></div>
+					<div class="weui-cell__hd"><label for="" class="weui-label">手机号</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" type="text" value="" name="username" >
+						<input class="weui-input" type="text" value="" name="telephone" placeholder="请输入手机号">
 					</div>
 				</div>
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label for="" class="weui-label">密码</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" type="password" value="" name="password" >
+						<input class="weui-input" type="password" value="" name="password" placeholder="请输入密码">
 					</div>
 				</div>
 
