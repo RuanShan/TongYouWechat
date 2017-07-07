@@ -1,53 +1,21 @@
 <?php
 namespace Home\Controller;
-use EasyWeChat\Foundation\Application;
 use Home\Common\Controller\CommonController;
-use Common\Service\Sms;
-use Think\Log;
+use EasyWeChat\Foundation\Application;
 
-class IndexController extends CommonController {
-
-	//激活入口页面
+class SessionController extends WechatBaseController {
+	//登陆页面
 	public function index(){
- 		//WeChat API
-		$options = C('EASY_WECHAT');
-		$app = new Application( $options);
-		$js = $app->js;
+		$Config     = M('Config');
+		//配置
+		$config_data = $Config->where('id=1')->find();
+		$this->assign('config_data',$config_data);
 
-		$this->check_login();
-		$this->assign('member',$meber);
-		$this->assign('js',$js);
+		$app = new Application($this->options);
+
 		$this->display();
 	}
 
-
-	// 激活页面
-	public function test_index()
-	{
-		$this->check_login();
-
-		$this->display('index');
-	}
-
-	public function test_jihuo()
-	{
-		$code = I('code');
-		$path = $_SERVER['DOCUMENT_ROOT'].'/exe/ConsoleApplication1.exe';
-		exec($path, $arr);
-		var_dump( $arr );
-		$info = $arr[0];
-		$this->assign('info',$info);
-		$this->display('jihuo');
-	}
-
-	public function send_vcode()
-	{
-		$sms = new Sms();
-		$ret = $sms->send_code('13322280797');
-		Log::write( $ret );
-
-		//$this->ajaxReturn('1','添加信息成功',1);
-	}
 	//登陆处理
 	public function login(){
 		if(I('machine_id')==''){
@@ -232,17 +200,4 @@ class IndexController extends CommonController {
 		$this->display();
 	}
 
-	protected function check_login(){
-
-		if( session('mid') == null){
-			$this->error('您还没有登录！',U('/Home/Session/'));
-		}
-		$Member = M('Member');
-		$member = $Member->where('id=%d', array(session('mid')))->find();
-		if( $member == null)
-		{
-			session('mid', null);
-			$this->error('您还没有登录！',U('/Home/Session/'));
-		}
-	}
 }

@@ -1,69 +1,75 @@
 <?php
 namespace Home\Controller;
-use EasyWeChat\Foundation\Application;
-use Home\Common\Controller\CommonController;
-use Common\Service\Sms;
 use Think\Log;
+use EasyWeChat\Foundation\Application;
 
-class IndexController extends CommonController {
+class MemberController extends WechatBaseController {
 
-	//激活入口页面
+	//客户注册页面
 	public function index(){
- 		//WeChat API
-		$options = C('EASY_WECHAT');
-		$app = new Application( $options);
-		$js = $app->js;
+		$Config     = M('Config');
+		$config_data = $Config->where('id=1')->find();
+		$this->assign('config_data',$config_data);
 
-		$this->check_login();
-		$this->assign('member',$meber);
-		$this->assign('js',$js);
+		$app = new Application($this->options);
+		$oauth = $app->oauth;
+		// 未登录
+		if (empty(session('wechat_user'))) {
+			session('target_url', '/home/member/index');
+			$response = $oauth->scopes(['snsapi_userinfo'])->redirect();
+			// $user 可以用的方法:
+			// $user->getId();  // 对应微信的 OPENID
+			// $user->getNickname(); // 对应微信的 nickname
+			// $user->getName(); // 对应微信的 nickname
+			// $user->getAvatar(); // 头像网址
+			// $user->getOriginal(); // 原始API返回的结果
+			// $user->getToken(); // access_token， 比如用于地址共享时使用
+			$response->send();
+			//var_dump($response);
+
+		}
+		$user = session('wechat_user');
+		$address = $user['original']['country'].$user['original']['province'].$user['original']['city'];
+		$member = [ 'openid'=>$user['id'], 'username'=> $user['nickname'], 'address'=>$address ];
+		var_dump( $user);
+		$this->assign('member', $member);
 		$this->display();
 	}
 
-
-	// 激活页面
-	public function test_index()
+	public function oauth_callback()
 	{
-		$this->check_login();
+			$app = new Application($this->options);
+			$oauth = $app->oauth;
+			$user = $oauth->user();
 
-		$this->display('index');
+			session('wechat_user', $user->toArray());
+			$targetUrl = empty(session('target_url')) ? '/' : session('target_url');
+			header('location:'. $targetUrl); // 跳转到 user/profile
 	}
 
-	public function test_jihuo()
-	{
-		$code = I('code');
-		$path = $_SERVER['DOCUMENT_ROOT'].'/exe/ConsoleApplication1.exe';
-		exec($path, $arr);
-		var_dump( $arr );
-		$info = $arr[0];
-		$this->assign('info',$info);
-		$this->display('jihuo');
-	}
-
-	public function send_vcode()
-	{
-		$sms = new Sms();
-		$ret = $sms->send_code('13322280797');
-		Log::write( $ret );
-
-		//$this->ajaxReturn('1','添加信息成功',1);
-	}
-	//登陆处理
-	public function login(){
-		if(I('machine_id')==''){
-			$this->error('操作失败！');
-		}
+	//创建客户
+	public function create(){
 
 		$Member     = M('Member');
-		$Machine     = M('Machine');
 		$AuthGroupAccess     = M('AuthGroupAccess');
+		Log::write( print_r($_POST, true ));
+		//[group_id] => 1
+    //[username] => testnickname
+    //[telephone] => 13812345678
+    //[vcode] => 123456
+    //[password] => abcdef
+    //[address] => 大连沙河口
 
 		$data = array(
+			'openid' => I('openid'),
+			'group_id' => I('group_id'),
 			'username'  => I('username'),
 			'telephone' => I('telephone'),
+			'address' => I('address'),
+			'password' => md5(I('password')),
 		);
 
-		$user_info = $Member->where('username=\''.I('username').'\' AND telephone=\''.I('telephone').'\'')->find();
+		$user_info = $Member->where("username='%s' AND telephone='%s'", array($data.username, $data.telephone ) )->find();
 
 		if(!$user_info){
 			$result = $Member->add($data);
@@ -76,25 +82,30 @@ class IndexController extends CommonController {
 				$access_result = $AuthGroupAccess->add($access_data);
 
 				if($access_result) {
-					//加密
-					$base = urlencode(base64_encode(I('machine_id').'-'.I('group_id').'-'.$result));
-
-					$this->redirect('Index/code', array('base' => $base));
+					session('mid', $result.id);
+					$this->redirect('/Home/Index');
 				}else{
 					$this->error('操作失败！');
 				}
-
 
 			}else{
 				$this->error('操作失败！');
 			}
 		}else{
-			//加密
-			$base = urlencode(base64_encode(I('machine_id').'-'.I('group_id').'-'.$user_info['id']));
-
-			$this->redirect('Index/display_code', array('base' => $base));
+			//用户已存在，去登录
+			$this->redirect('/Home/Session');
 		}
 	}
+
+	//客户注册页面
+	public function test_index(){
+
+		$address = '大连沙河口';
+		$member = [ 'openid'=>'testopenid', 'username'=> 'testnickname', 'address'=>$address ];
+		$this->assign('member', $member);
+		$this->display('index');
+	}
+
 
 	//计算激活码并插入机器数据表
 	public function code(){
@@ -232,17 +243,4 @@ class IndexController extends CommonController {
 		$this->display();
 	}
 
-	protected function check_login(){
-
-		if( session('mid') == null){
-			$this->error('您还没有登录！',U('/Home/Session/'));
-		}
-		$Member = M('Member');
-		$member = $Member->where('id=%d', array(session('mid')))->find();
-		if( $member == null)
-		{
-			session('mid', null);
-			$this->error('您还没有登录！',U('/Home/Session/'));
-		}
-	}
 }

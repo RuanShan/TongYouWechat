@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{$config_data.name}</title>
+
+		<!-- metas -->
+		<meta charset="utf-8">
+		<meta name="keywords" content="{$config_data.keywords}" />
+		<meta name="description" content="{$config_data.description}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<link href="/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
+		<script src="/Public/Home/js/zepto.min.js"></script>
+		<script src="/Public/Home/js/app.js"></script>
+
+		<!--/ metas -->
+	</head>
+
+	<body>
+		<div class="weui-cells weui-cells_form">
+
+		<form action="{:U('create')}" method="post">
+			<input name="group_id" type="hidden" value="1">
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">昵称</label></div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" name="username"   value="{$member['username']}">
+				</div>
+			</div>
+			<div class="weui-cell weui-cell_vcode">
+				<div class="weui-cell__hd">
+					<label class="weui-label">手机号</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" name="telephone"  type="tel" placeholder="请输入手机号">
+				</div>
+				<div class="weui-cell__ft">
+					<button id="get_vcode" type="button" class="weui-vcode-btn">获取验证码</button>
+				</div>
+			</div>
+
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">地址</label></div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" name="address"   value="{$member['address']}">
+				</div>
+			</div>
+
+			<div class="weui-cell">
+				<button type="submit"  class="weui-btn weui-btn_primary">注册</button>
+      </div>
+    </form>
+		</div>
+	</body>
+</html>

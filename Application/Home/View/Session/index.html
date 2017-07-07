@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{$config_data.name}</title>
+		<include file="Public/head" />
+	</head>
+
+	<body>
+		<div class="weui-cells weui-cells_form">
+
+			<form id="session_form" class="js__form" action="{:U('login')}" method="post">
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label for="" class="weui-label">用户名</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" value="" name="username" >
+					</div>
+				</div>
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label for="" class="weui-label">密码</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="password" value="" name="password" >
+					</div>
+				</div>
+
+	      <div class="weui-btn-area">
+  	      <input id="submit_btn" type="submit" class="weui-btn weui-btn_primary" value="登录">
+	      </div>
+	    </form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{$config_data.name}</title>
+
+		<!-- metas -->
+		<meta charset="utf-8">
+		<meta name="keywords" content="{$config_data.keywords}" />
+		<meta name="description" content="{$config_data.description}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<!--/ metas -->
+
+	</head>
+
+	<body>
+		<form action="{:U('login')}" method="post">
+
+      <div>
+      姓名:<input name="username" type="text">
+      </div>
+      <div>
+      电话:<input name="telephone" type="text">
+      </div>
+      <div>
+      激活码<input type="text" value="{$info}">
+      </div>
+    </form>
+	</body>
+</html>

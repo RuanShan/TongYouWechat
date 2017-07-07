@@ -15,3 +15,10 @@ composer require overtrue/wechat:~3.1 -vvv
 
 #
 https://easywechat.org/zh-cn/docs/troubleshooting.html
+
+#微信全局返回码说明
+https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1433747234
+
+
+## 初始化用户标签
+http://localhost/home/tag

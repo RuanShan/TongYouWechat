@@ -4,8 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "de3d988c54c9d5f0e39d2532b37f35d0",
+    "content-hash": "e6b7168ec9b6fe3ecb7876b6b76db521",
     "packages": [
+        {
+            "name": "anerg2046/helper",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anerg2046/helper.git",
+                "reference": "f357af19f2c911734adef96193d37ef068791117"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/anerg2046/helper/f357af19f2c911734adef96193d37ef068791117.zip",
+                "reference": "f357af19f2c911734adef96193d37ef068791117",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "anerg\\helper\\": "src"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Coeus",
+                    "email": "r.anerg@gmail.com"
+                }
+            ],
+            "description": "some helper libaray function",
+            "time": "2017-02-06T07:23:31+00:00"
+        },
         {
             "name": "doctrine/cache",
             "version": "1.6.x-dev",
@@ -75,6 +114,40 @@
                 "caching"
             ],
             "time": "2016-10-29 11:16:17"
+        },
+        {
+            "name": "flc/alidayu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flc1125/alidayu.git",
+                "reference": "997e59daf9cb8e50f11c7bfeb8df111c58590816"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/flc1125/alidayu/997e59daf9cb8e50f11c7bfeb8df111c58590816.zip",
+                "reference": "997e59daf9cb8e50f11c7bfeb8df111c58590816",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Flc\\Alidayu\\": "src/Alidayu/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "阿里大于(鱼)API-SDK；适用任何PHP项目，包括Laravel、Yii、Thinkphp等...",
+            "keywords": [
+                "alidayu",
+                "flc"
+            ],
+            "time": "2017-01-25 08:20:31"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -765,7 +838,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "flc/alidayu": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

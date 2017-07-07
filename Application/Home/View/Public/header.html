@@ -1,0 +1,97 @@
+			<!-- page header top -->
+			<header class="page-header-top">
+				<div class="grid-row">
+					<!-- main nav -->
+					<nav id="main-nav" class="main-nav">
+						<a href="#" class="switcher">Menu<i class="fa fa-bars"></i></a>
+						<ul>
+							<li class="<eq name='column_data.id' value=''>active</eq>">
+								<a href="__ROOT__/"><span>01.</span> 首页</a>
+							</li>
+							<li class="<eq name='big_column_data.id' value='1'>active</eq>">
+								<a href="{:U('Index/column',array('column_id'=>7))}"><span>02.</span> 公司新闻</a>
+								<ul>
+									<li><a href="{:U('Index/column',array('column_id'=>7))}">产品新闻</a></li>
+									<li><a href="{:U('Index/column',array('column_id'=>8))}">产品技术</a></li>
+								</ul>
+							</li>
+							<li class="<eq name='big_column_data.id' value='2'>active</eq>">
+								<a href="{:U('Index/column',array('column_id'=>9))}"><span>03.</span> 公司产品</a>
+								<ul class="product_menu">
+									<volist name="product_Column" id="vo">
+									<li><a href="{:U('Index/column',array('column_id'=>$vo['id']))}">{$vo.name}</a></li>
+									</volist>
+								</ul>
+							</li>
+							<li class="<eq name='column_data.id' value='3'>active</eq>">
+								<a href="{:U('Index/column',array('column_id'=>3))}"><span>04.</span> 产品特卖</a>
+							</li>
+							<li class="<eq name='column_data.id' value='4'>active</eq>">
+								<a href="{:U('Index/column',array('column_id'=>4))}"><span>05.</span> 工程设计</a>
+							</li>
+							<li class="<eq name='column_data.id' value='5'>active</eq>">
+								<a href="{:U('Index/article',array('column_id'=>5,'id'=>1))}"><span>05.</span> 售后服务</a>
+							</li>
+							<li class="<eq name='column_data.id' value='6'>active</eq>">
+								<a href="{:U('Index/article',array('column_id'=>6,'id'=>2))}"><span>06.</span> 联系我们</a>
+							</li>
+						</ul>
+					</nav>
+					<!--/ main nav -->
+					
+					<!-- search -->
+					<form action="{:U('search')}" id="search" class="search">
+						<div class="input"><input name="title" type="text"></div>
+						<button type="submit"><i class="fa fa-search"></i></button>
+						<a href="#" class="opener"><i class="fa fa-search"></i></a>
+						<a href="#" class="closer"><i class="fa fa-times"></i></a>
+					</form>
+					<!--/ search -->
+				</div>
+			</header>
+			<!--/ page header top -->
+			
+			<!-- page header bottom -->
+			<header class="page-header-bottom">
+				<div class="grid-row">
+					<!-- logo -->
+					<a href="__ROOT__" class="logo">{$config_data.name}</a>
+					<!--/ logo -->
+					
+
+					<div class="mobile-wrap">
+						<div class="toogle-switcher"><i class="fa fa-chevron-down"></i></div>
+						<div class="secondary-nav-wrapper">
+							<!-- secondary nav -->
+							<ul class="secondary-nav">
+								<li data-number-filter="1">
+									<a href="__ROOT__/"><span>01</span>首页</a>
+								</li><!--
+								--><li data-number-filter="2"> 
+									<a href="{:U('Index/column',array('column_id'=>7))}"><span>02</span>公司新闻</a>
+								</li><!--
+								--><li data-number-filter="3">
+									<a href="{:U('Index/column',array('column_id'=>9))}"><span>03</span>公司产品</a>
+									
+								</li><!--
+								--><li data-number-filter="4">
+									<a href="{:U('Index/column',array('column_id'=>3))}"><span>04</span>产品特卖</a>
+								</li><!--
+								--><li data-number-filter="5">
+									<a href="{:U('Index/column',array('column_id'=>4))}"><span>05</span>工程设计</a>
+								</li><!--
+								--><li data-number-filter="6">
+									<a href="{:U('Index/article',array('column_id'=>5,'id'=>1))}"><span>06</span>售后服务</a>
+								</li><!--
+								--><li data-number-filter="7">
+									<a href="{:U('Index/article',array('column_id'=>6,'id'=>2))}"><span>07</span>联系我们</a>
+								</li>
+							</ul>
+							<!--/ secondary nav -->
+						</div>
+						<div class="dropdown-menu-wrapper"></div>
+					</div>
+					
+				</div>
+			</header>
+			<!--/ page header bottom -->
