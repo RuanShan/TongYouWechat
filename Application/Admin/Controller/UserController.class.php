@@ -17,10 +17,17 @@ class UserController extends CommonController {
 
     $groups = $AuthGroup->select();
 		$count      = $Member->where( $map )->count();
-		$Page       = new \Think\Page($count,5);
+		$Page       = new \Think\Page($count,12);
+		//分页跳转的时候保证查询条件
+		foreach($map as $key=>$val) {
+		    $Page->parameter[$key]   =   urlencode($val);
+		}
 		$show       = $Page->show();
  		$list = $Member->where($map)->limit($Page->firstRow.','.$Page->listRows)->select();
 
+		$p = I('p', 1);
+
+		$this->assign('p',$p);
 		$this->assign('groups',$groups);
 		$this->assign('list',$list);
 		$this->assign('page',$show);
@@ -30,12 +37,14 @@ class UserController extends CommonController {
 		$this->display();
 	}
 
-	public function form($type,$id=0){
+	public function form($id=0){
 		$p = I('p', 1);
 		$group_id = I('group_id', 0);
-		
+		$this->assign('group_id',$group_id);
+		$this->assign('p',$p);
+
 		$AuthGroup = M('AuthGroup');
-		if($type=='edit'){
+		{
 			$Member = M('Member');
 			$groups = $AuthGroup->select();
 			$data = $Member->where('id='.$id)->find();
@@ -77,6 +86,10 @@ class UserController extends CommonController {
 	}
 	public function delete(){
 		$Member = M('Member');
+		if( I('id') == 1)
+		{
+			$this->error('禁止删除超级管理员！');
+		}
 
 		$result = $Member->delete(I('id'));
 		if($result){

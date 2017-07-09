@@ -423,8 +423,8 @@
               </li>
               <li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
                 <span class="column_item">
-                <i class="clip-user-5"></i>
-                  <span class="title"> <a href="<?php echo U('User/lists',array('group_id'=>2));?>">工程师</a> </span><span class="selected"></span>
+                <i class="clip-gamepad"></i>
+                  <span class="title"> <a href="<?php echo U('Machine/index');?>">设备</a> </span><span class="selected"></span>
                 </span>
               </li>
               <li>
@@ -453,8 +453,8 @@
 									</a>
 								</li>
 								<li class="active">
-									<?php echo ($group_data["title"]); ?>列表
-								</li>
+ 									用户列表
+ 								</li>
 								<li class="search-box">
 									<form class="sidebar-search">
 										<div class="form-group">
@@ -517,8 +517,8 @@
 												</td>
 												<td class="center">
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
-													<a href="<?php echo U('User/form',array('type'=>'edit','column_id'=>$vo['column_id'],'id'=>$vo['id']));?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="修改"><i class="fa fa-edit"></i></a>
-													<a href="<?php echo U('User/delete',array('id'=>$vo['id']));?>"  onclick="if(confirm('确定删除?')==false)return false;" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="删除"><i class="fa fa-times fa fa-white"></i></a>
+													<a href="<?php echo U('User/form',array( 'id'=>$vo['id'], 'p'=>$p ));?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="修改"><i class="fa fa-edit"></i></a>
+													<a href="<?php echo U('User/delete',array('id'=>$vo['id'], 'p'=>$p ));?>"  onclick="if(confirm('确定删除?')==false)return false;" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="删除"><i class="fa fa-times fa fa-white"></i></a>
 												</div>
 												</td>
 											</tr><?php endforeach; endif; else: echo "" ;endif; ?>
