@@ -51,7 +51,17 @@ body {
 											  success: function (res) {
 											    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
 													alert( result );
-													//$.ajax
+													$.ajax({type:'POST', url:'/Home/Index/jihuo',
+													  data:{machine_id: result},
+														success: function(data){
+															 if(data.status== 1)
+															 {
+																 weui.alert(data.code);
+															 }else{
+																 weui.alert(data.error);
+															 }
+														}
+												  })
 												}
 											});
 										})

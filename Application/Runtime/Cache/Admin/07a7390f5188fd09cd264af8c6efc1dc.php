@@ -418,13 +418,13 @@
               <li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
                 <span class="column_item">
                 <i class="clip-user-5"></i>
-                  <span class="title"> <a href="<?php echo U('User/lists',array('id'=>1));?>">客户</a> </span><span class="selected"></span>
+                  <span class="title"> <a href="<?php echo U('User/lists');?>">用户</a> </span><span class="selected"></span>
                 </span>
               </li>
               <li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
                 <span class="column_item">
                 <i class="clip-user-5"></i>
-                  <span class="title"> <a href="<?php echo U('User/lists',array('id'=>2));?>">工程师</a> </span><span class="selected"></span>
+                  <span class="title"> <a href="<?php echo U('User/lists',array('group_id'=>2));?>">工程师</a> </span><span class="selected"></span>
                 </span>
               </li>
               <li>
@@ -436,6 +436,7 @@
 					<!-- end: MAIN NAVIGATION MENU -->
 				</div>
 				<!-- end: SIDEBAR -->
+
 			</div>
 			<!-- start: PAGE -->
 			<div class="main-content">
@@ -481,20 +482,46 @@
 									<?php echo ($group_data["title"]); ?>列表
 								</div>
 								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-6">
+										  </div>
+										<div class="col-md-6">
+											<div class="dataTables_filter" id="sample_1_filter">
+											  <label>
+													<select name="group_id" class="form-control">
+														<option value="0">请选择分组 </option>
+													<?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i;?><option value="<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?> </option><?php endforeach; endif; else: echo "" ;endif; ?>
+												  </select>
+												</label>
+											</div>
+										</div>
+									</div>
+
 									<table class="table table-striped table-bordered table-hover" id="sample-table-2">
 										<thead>
 											<tr>
 												<th width="100" class="center">ID</th>
-												<th class="center"><?php echo ($group_data["title"]); ?>姓名</th>
-                        <th class="center"><?php echo ($group_data["title"]); ?>电话</th>
+												<th class="center"> 姓名</th>
+												<th class="center"> 电话</th>
+												<th class="center"> 分组</th>
+												<th width="100" class="center">编辑</th>
 											</tr>
 										</thead>
 										<tbody>
                     	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 												<td class="center"><?php echo ($vo["id"]); ?></td>
 												<td class="center"><?php echo ($vo["username"]); ?></td>
-                        <td class="center"><?php echo ($vo["telephone"]); ?></td>
-											</tr><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
+												<td class="center"><?php echo ($vo["telephone"]); ?></td>
+												<td class="center">
+													<?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i; if(($vo['group_id']) == $group['id']): echo ($group["title"]); endif; endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
+												</td>
+												<td class="center">
+												<div class="visible-md visible-lg hidden-sm hidden-xs">
+													<a href="<?php echo U('User/form',array('type'=>'edit','column_id'=>$vo['column_id'],'id'=>$vo['id']));?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="修改"><i class="fa fa-edit"></i></a>
+													<a href="<?php echo U('User/delete',array('id'=>$vo['id']));?>"  onclick="if(confirm('确定删除?')==false)return false;" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="删除"><i class="fa fa-times fa fa-white"></i></a>
+												</div>
+												</td>
+											</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 										</tbody>
 									</table>
                   <div class="pages">

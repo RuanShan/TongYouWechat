@@ -40,10 +40,18 @@
         .prop("disabled", true);
 
       hal.getTime(obj.time, $(".time"), function() {
-        $(obj.context).html(obj.text).prop("disabled", false);
+        $(obj.ctx).html(obj.text).prop("disabled", false);
       });
 
-      $.post(obj.auth.url, obj.auth.data, "JSON");
+      $.post(obj.auth.url, obj.auth.data, function(response){
+				console.debug(response );
+				if( response.status ==1 )
+				{
+					weui.toast('验证短信已发送！',2000);
+				}	else{
+					weui.alert('短信发送失败，请联系客服！');
+				}
+			},"json");
     },
     //倒计时
     setInterval:function(time, fn, num){
@@ -125,7 +133,7 @@ Zepto(function($){
   $("#get_vcode").click(function(){
     var node = this;
     //发短信按键
-     		var	$phone = $("input[name=telephone]");
+     		var	$mobile = $("input[name=telephone]");
         weui.form.validate('.telephone_wrapper', function (error) {
           if (!error) {
         		_.getVerifyCode({
@@ -133,12 +141,12 @@ Zepto(function($){
         									text:"重新发送",
         									time:60,
         									sendHint:true,
-        									sendText:"动态验证码已发送到您的手机，30分钟内有效",
+        									sendText:"动态验证码已发送到您的手机，10分钟内有效",
          									ctx: node,
         									auth:{
         										url: '/home/index/send_vcode',
         										data:{
-        											"phone": $phone.val(),
+        											"mobile": $mobile.val(),
 
         										}
         									}

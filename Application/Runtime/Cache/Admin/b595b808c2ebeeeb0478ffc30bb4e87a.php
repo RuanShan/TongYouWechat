@@ -418,13 +418,13 @@
               <li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
                 <span class="column_item">
                 <i class="clip-user-5"></i>
-                  <span class="title"> <a href="<?php echo U('User/lists',array('id'=>1));?>">客户</a> </span><span class="selected"></span>
+                  <span class="title"> <a href="<?php echo U('User/lists');?>">用户</a> </span><span class="selected"></span>
                 </span>
               </li>
               <li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
                 <span class="column_item">
                 <i class="clip-user-5"></i>
-                  <span class="title"> <a href="<?php echo U('User/lists',array('id'=>2));?>">工程师</a> </span><span class="selected"></span>
+                  <span class="title"> <a href="<?php echo U('User/lists',array('group_id'=>2));?>">工程师</a> </span><span class="selected"></span>
                 </span>
               </li>
               <li>
@@ -436,6 +436,7 @@
 					<!-- end: MAIN NAVIGATION MENU -->
 				</div>
 				<!-- end: SIDEBAR -->
+
 			</div>
 			<!-- start: PAGE -->
 			<div class="main-content">

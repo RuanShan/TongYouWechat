@@ -31,7 +31,7 @@ class MemberController extends WechatBaseController {
 		$user = session('wechat_user');
 		$address = $user['original']['country'].$user['original']['province'].$user['original']['city'];
 		$member = [ 'openid'=>$user['id'], 'username'=> $user['nickname'], 'address'=>$address ];
-		var_dump( $user);
+
 		$this->assign('member', $member);
 		$this->display();
 	}
@@ -59,6 +59,8 @@ class MemberController extends WechatBaseController {
     //[vcode] => 123456
     //[password] => abcdef
     //[address] => 大连沙河口
+		$telephone = I('telephone');
+		$code = I('vcode');
 
 		$data = array(
 			'openid' => I('openid'),
@@ -69,31 +71,36 @@ class MemberController extends WechatBaseController {
 			'password' => md5(I('password')),
 		);
 
-		$user_info = $Member->where("username='%s' AND telephone='%s'", array($data.username, $data.telephone ) )->find();
+		$user_info = $Member->where("telephone='%s'", array($data['telephone'] ) )->find();
 
 		if(!$user_info){
-			$result = $Member->add($data);
-			if($result) {
-				$access_data = array(
-					'uid'      => $result,
-					'group_id' => I('group_id')
-				);
+			if($this->validate_vcode($telephone, $code))
+			{
+				$result = $Member->add($data);
+				if($result) {
+					$access_data = array(
+						'uid'      => $result,
+						'group_id' => I('group_id')
+					);
 
-				$access_result = $AuthGroupAccess->add($access_data);
+					$access_result = $AuthGroupAccess->add($access_data);
 
-				if($access_result) {
-					session('mid', $result.id);
-					$this->redirect('/Home/Index');
+					if($access_result) {
+						session('mid', $result.id);
+						$this->redirect('/Home/Index');
+					}else{
+						$this->error('操作失败！');
+					}
+
 				}else{
 					$this->error('操作失败！');
 				}
-
 			}else{
-				$this->error('操作失败！');
+				$this->error('验证码错误！');
 			}
 		}else{
 			//用户已存在，去登录
-			$this->redirect('/Home/Session');
+			$this->error('手机号码已注册，请登录!');
 		}
 	}
 
@@ -104,6 +111,32 @@ class MemberController extends WechatBaseController {
 		$member = [ 'openid'=>'testopenid', 'username'=> 'testnickname', 'address'=>$address ];
 		$this->assign('member', $member);
 		$this->display('index');
+	}
+
+
+	//
+	// 验证手机验证码
+	// return 0, 1
+	public function validate_vcode($mobile, $code)
+	{
+		$config = C('ALIDAYU');
+		$validated = false;
+		//$sms_data = ['vcode'=>$code, 'mobile'=>$mobile, 'created_at'=>time() ];
+		$sms_data = session('sms_data');
+		Log::write( print_r($sms_data, true ));
+
+			if( is_array($sms_data))
+			{
+				// 15*60  15 分钟有效
+				$seconds = time()-15*60;
+				if($sms_data['vcode']== $code && $sms_data['mobile']==$mobile && $sms_data['created_at']> $seconds )
+				{
+					$validated = true;
+				}
+			}
+   
+		//$this->ajaxReturn('1','添加信息成功',1);
+		return $validated;
 	}
 
 

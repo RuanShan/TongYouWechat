@@ -1639,7 +1639,7 @@ span.star:before {
 .tab-content {
 	border: 1px solid #DDDDDD;
 	padding: 16px 12px;
-	position: relative;	
+	position: relative;
 }
 .tabs-below > .nav-tabs {
 	border-bottom-width: 0;
@@ -1760,7 +1760,7 @@ span.star:before {
 }
 .tabs-right > .tab-teal > li.active > a, .tabs-right > .tab-teal > li.active > a:focus, .tabs-right > .tab-teal > li.active > a:hover {
 	border-color: #DDDDDD;
-	border-left: none;	
+	border-left: none;
 	border-right: 2px solid #569099;
 }
 .tab-padding.tab-teal > li > a, .tab-padding.tab-teal > li > a:focus, .tab-padding.tab-teal > li > a:hover {
@@ -4196,14 +4196,14 @@ body.header-default .daterangepicker {
     text-align: center;
     text-shadow: 0 1px 0 #FFFFFF;
     width: auto;
-   
+
     margin-left:2px;
 }
 #style_selector .images .add-on i {
     cursor: pointer;
     display: block;
     height: 20px;
-    width: 20px;   
+    width: 20px;
 }
 #style_selector .clear_style{
 	margin-right:20px;
@@ -4706,7 +4706,7 @@ a [class*=" icon-"] {
 .animation-buttons .btn{
 	margin-bottom:10px;
 }
-#object { 
+#object {
     display: block;
     margin-bottom: 100px;
     margin-left: auto;
@@ -4719,10 +4719,10 @@ a [class*=" icon-"] {
 /*	X-editable Table
 /* ---------------------------------------------------------------------- */
 td.column-left{
-	width: 25%;	
+	width: 25%;
 }
 td.column-right{
-	width: 75%;	
+	width: 75%;
 }
 /* ---------------------------------------------------------------------- */
 /*	Invoice
@@ -4771,4 +4771,8 @@ td.column-right{
 	border:1px solid #428bca;
 	margin-left:2px;
 	margin-right:2px;
+}
+
+div.dataTables_filter label {
+    float: right;
 }
