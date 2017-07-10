@@ -14,8 +14,21 @@ class StaffController extends WechatBaseController
 
         $staff = $app->staff;
 
+        $lists = $staff->lists();
+
+        var_dump($lists);
+
+    }
+
+    public function index2()
+    {
+        $app = new Application($this->options);
+
+        $staff = $app->staff;
+
 
         $message = new Text(['content'=>'现在的时间是'.date('Y-m-d H:i:s')]);
         $staff->message($message)->to('oFBEXwAkPD7EYhPyzOIVKHPB2USY')->send();
     }
+
 }

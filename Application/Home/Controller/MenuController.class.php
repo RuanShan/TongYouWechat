@@ -16,13 +16,13 @@ class MenuController extends WechatBaseController
         $buttons = [
             [
                 'type' => 'click',
-                'name' => '产品展示',
+                'name' => '走进童游',
                 'key' => 'CLICK_0001'
             ],
             [
-              'type' => 'view',
-              'name'       => '产品激活',
-              'url'  => 'http://'.$_SERVER['HTTP_HOST'].U('/Home/Index/')
+              'type' => 'click',
+              'name'       => '童游产品',
+              'key' => 'CLICK_0002'
             ],
             [
               'name' => '会员中心',
@@ -37,6 +37,21 @@ class MenuController extends WechatBaseController
                         "type"=> "view",
                         "name" => "注册",
                         'url'  => 'http://'.$_SERVER['HTTP_HOST'].U('/Home/Member/'),
+                  ],
+                  [
+                        "type"=> "view",
+                        "name" => "激活产品",
+                        'url'  => 'http://'.$_SERVER['HTTP_HOST'].U('/Home/Index/'),
+                  ],
+                  [
+                        "type"=> "click",
+                        "name" => "我的订单",
+                        'key' => 'CLICK_0003'
+                  ],
+                  [
+                        "type"=> "click",
+                        "name" => "我的客服",
+                        'key' => 'CLICK_0004'
                   ],
                 ]
             ],

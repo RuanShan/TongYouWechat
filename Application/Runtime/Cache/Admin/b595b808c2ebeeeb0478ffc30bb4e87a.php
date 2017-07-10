@@ -421,10 +421,16 @@
                   <span class="title"> <a href="<?php echo U('User/lists');?>">用户</a> </span><span class="selected"></span>
                 </span>
               </li>
-              <li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
+							<li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
+                <span class="column_item">
+                <i class="clip-list"></i>
+                  <span class="title"> <a href="<?php echo U('Category/index');?>">设备分类</a> </span><span class="selected"></span>
+                </span>
+              </li>
+							<li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
                 <span class="column_item">
                 <i class="clip-gamepad"></i>
-                  <span class="title"> <a href="<?php echo U('Machine/lists');?>">设备</a> </span><span class="selected"></span>
+                  <span class="title"> <a href="<?php echo U('Machine/index');?>">设备</a> </span><span class="selected"></span>
                 </span>
               </li>
               <li>
