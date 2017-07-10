@@ -8,7 +8,11 @@ use Think\Log;
 class IndexController extends CommonController {
 	protected $member;
 	protected $auth_group_access;
+	protected $exe_path=null;
 
+	public function _initialize(){
+		$this->exe_path = (''.$_SERVER['DOCUMENT_ROOT'].'/exe/ActiveKey.exe');
+  }
 	//激活入口页面
 	public function index(){
  		//WeChat API
@@ -38,12 +42,12 @@ class IndexController extends CommonController {
 
 		$this->check_login();
   	//二维码
-		$machine_id = I('machine_id');
+		$machine_id = I('machine_id', '1234567890');
 		$machine = $Machine->where('machine_id=\''.$machine_id.'\'')->find();
-		if( !$machine )
+		if(!isset($machine) )
 		{
-			$path = $_SERVER['DOCUMENT_ROOT'].'/exe/ConsoleApplication1.exe';
-			exec($path, $ret);
+			$cmd = $this->exe_path.' TongYou '.$machine_id;
+			exec($cmd, $ret);
 
 			$combo_info = $ret[0];
 			// status, temporary_code, permanent_code
@@ -51,31 +55,31 @@ class IndexController extends CommonController {
 			$status = intval( $splited_info[0]);
 			$permanent_code =  $splited_info[1];
 			$temporary_code =  $splited_info[2];
-			$engineer_id =  ( $this->auth_group_access['group_id'] == 2 ?  $this->auth_group_access['group_id'] : 0);
-			$customer_id =  ( $this->auth_group_access['group_id'] == 1 ?  $this->auth_group_access['group_id'] : 0);
+			$engineer_id =  ( $this->member['group_id'] == 2 ?  $this->member['id'] : 0);
+			$customer_id =  ( $this->member['group_id'] == 1 ?  $this->member['id'] : 0);
 
-					$data = array(
+					$machine = array(
 						'machine_id'     => $machine_id,//机器id
 						'engineer_id'    => $engineer_id,//工程师id
 						'customer_id'    => $customer_id,//客户id
 						'permanent_code' => $permanent_code,//永久激活码
 						'temporary_code' => $temporary_code,//临时激活码
 					);
-					$machine = $Machine->add($data);
+					$Machine->add($machine);
 		}
-		Log::write( 'before status' );
+		Log::write( print_r( $machine,true) );
 
 		$data['status']  = 0;
 		if( $machine )
 		{
 			$data['status']  = 1;
 
-			if( $this->auth_group_access['group_id'] == 2 )// 工程师
+			if( $this->member['group_id'] == 2 )// 工程师
 			{
 				$data['code']  = $machine['temporary_code'];
 			}
 
-			if( $this->auth_group_access['group_id'] == 1 )// 客户
+			if( $this->member['group_id'] == 1 )// 客户
 			{
 				$data['code']  = $machine['permanent_code'];
 			}
@@ -87,18 +91,21 @@ class IndexController extends CommonController {
 
 	public function test_jihuo()
 	{
-		$code = I('code');
-		$path = $_SERVER['DOCUMENT_ROOT'].'/exe/ConsoleApplication1.exe';
-		exec($path, $arr);
+		var_dump( $this->exe_path );
+		$machine_id = I('machine_id', '1234567890');
+		$cmd = $this->exe_path.' TongYou '.$machine_id;
+		exec($cmd, $arr);
 		var_dump( $arr );
 		$info = $arr[0];
 		$this->assign('info',$info);
 		$this->display('jihuo');
 	}
 
-  // 发送手机验证码
+	// 发送手机验证码
+	// ajax 请求
 	public function send_vcode()
 	{
+		Log::write( 'start send_code' );
 		$config = C('ALIDAYU');
 		$mobile = I('post.mobile');
 		$code = 0;
@@ -121,6 +128,7 @@ class IndexController extends CommonController {
 		$this->ajaxReturn($data);
 		//$this->ajaxReturn('1','添加信息成功',1);
 	}
+
 
 
 	//登陆处理

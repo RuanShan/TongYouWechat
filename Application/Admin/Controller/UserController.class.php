@@ -56,7 +56,7 @@ class UserController extends CommonController {
 		}
 		$this->display();
 	}
-	public function post($type){
+	public function post( ){
 		$Member = M('Member');
 
 		$data = array(
@@ -65,15 +65,6 @@ class UserController extends CommonController {
 		);
 
 
-		if($type=='add'){
-
-			$result = $Member->add($data);
-			if($result){
-				$this->success('添加成功！');
-			}else{
-				$this->error('添加失败！');
-			}
-		}else if($type=='edit'){
 
 			$data['id'] = I('id');
 			$result = $Member->save($data);
@@ -82,8 +73,8 @@ class UserController extends CommonController {
 			}else{
 				$this->error('修改失败！');
 			}
-		}
 	}
+	
 	public function delete(){
 		$Member = M('Member');
 		if( I('id') == 1)

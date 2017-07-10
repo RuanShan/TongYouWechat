@@ -37,15 +37,9 @@
 			<div class="weui-cell">
 		    <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
 		    <div class="weui-cell__bd">
-		      <input class="weui-input" type="number" name="vcode" placeholder="请输入验证码">
+		      <input class="weui-input" type="number" name="vcode" placeholder="请输入验证码" required pattern="[0-9]{4}">
 		    </div>
 		  </div>
-			<div class="weui-cell">
-				<div class="weui-cell__hd"><label for="" class="weui-label">密码</label></div>
-				<div class="weui-cell__bd">
-					<input class="weui-input" type="password" value="" name="password" placeholder="请输入密码" required emptyTips="请输入密码"  pattern="REG_PASSWORD" notMatchTips="请输入6-16个字符">
-				</div>
-			</div>
 			<div class="weui-cell">
 				<div class="weui-cell__hd"><label class="weui-label">地址</label></div>
 				<div class="weui-cell__bd">

@@ -21,13 +21,15 @@
 											  scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
 											  success: function (res) {
 											    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
-													alert( result );
+													var loading = weui.loading('当前设备码为'+result);
+
 													$.ajax({type:'POST', url:'/Home/Index/jihuo',
 													  data:{machine_id: result},
 														success: function(data){
+															loading.hide();
 															 if(data.status== 1)
 															 {
-																 weui.alert(data.code);
+																 weui.alert("设备激活码是："+data.code);
 															 }else{
 																 weui.alert(data.error);
 															 }
