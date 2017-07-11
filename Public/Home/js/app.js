@@ -177,4 +177,73 @@ Zepto(function($){
         regexp:all_regexp
     });
   });
+
+	//临时激活
+	$('#tactivate_btn').click(function () {
+		$.ajax({
+			url: "/Home/Index/jihuo2?activate=t",
+			type: "POST",
+			dataType: "JSON",
+			success: function(data){
+				weui.toast('临时激活成功', {
+				    duration: 2000,
+				    className: 'custom-classname',
+				    callback: function(){ //wx.closeWindow();
+						}
+				});
+			},
+			error:function(xhr, error, msg){
+				console.info(msg);
+			}
+		});
+	});
+	//永久激活
+	$('#pactivate_btn').click(function () {
+		$.ajax({
+			url: "/Home/Index/jihuo2?activate=p",
+			type: "POST",
+			dataType: "JSON",
+			success: function(data){
+				weui.toast('永久激活成功', {
+						duration: 2000,
+						className: 'custom-classname',
+						callback: function(){ //wx.closeWindow();
+						}
+				});
+			},
+			error:function(xhr, error, msg){
+				console.info(msg);
+			}
+		});
+	});
+
+
+	//删除产品注册信息
+	$('#delete_btn').click(function () {
+		$.ajax({
+			url: "/Home/Index/delete_machine",
+			type: "POST",
+			dataType: "JSON",
+			success: function(data){
+				weui.toast('设备删除成功', {
+						duration: 3000,
+						className: 'custom-classname',
+						callback: function(){ wx.closeWindow();
+						}
+				});
+			},
+			error:function(xhr, error, msg){
+				console.info(msg);
+			}
+		});
+	});
+	//关闭窗口
+	$('#close_btn').click(function () {
+		wx.closeWindow();
+	});
+	//返回上一页
+	$('#back_btn').click(function () {
+		window.history.go(-1);
+	});
+
 })

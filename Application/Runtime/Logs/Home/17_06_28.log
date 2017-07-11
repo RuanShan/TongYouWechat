@@ -81,7 +81,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0049s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0011s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0044s ]
-SQL: INSERT INTO `think_machine` (`machine_id`,`customer_id`,`permanent_code`) VALUES ('45678','2','44545454545') [ RunTime:0.0008s ]
+SQL: INSERT INTO `think_machine` (`machine_code`,`customer_id`,`permanent_code`) VALUES ('45678','2','44545454545') [ RunTime:0.0008s ]
 
 [ 2017-06-28T20:48:31+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMS0y.html
 INFO: [ app_init ] --START--
@@ -93,7 +93,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001338s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0044s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0008s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0051s ]
-SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_code='45678' ) LIMIT 1   [ RunTime:0.0007s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
@@ -134,7 +134,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0047s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0009s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0055s ]
-SQL: INSERT INTO `think_machine` (`machine_id`,`engineer_id`,`temporary_code`) VALUES ('45678','3','44545454545') [ RunTime:0.0012s ]
+SQL: INSERT INTO `think_machine` (`machine_code`,`engineer_id`,`temporary_code`) VALUES ('45678','3','44545454545') [ RunTime:0.0012s ]
 
 [ 2017-06-28T20:49:23+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMi0z.html
 INFO: [ app_init ] --START--
@@ -147,9 +147,9 @@ SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0046s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0009s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0041s ]
 ERR: 1054:Unknown column 'temporary_codes' in 'field list'
- [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1  
+ [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_code='45678' ) LIMIT 1  
 ERR: 1054:Unknown column 'temporary_codes' in 'field list'
- [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1  
+ [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_code='45678' ) LIMIT 1  
 
 [ 2017-06-28T20:50:22+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMi0z.html
 INFO: [ app_init ] --START--
@@ -162,9 +162,9 @@ SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0050s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0060s ]
 ERR: 1054:Unknown column 'temporary_codes' in 'field list'
- [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1  
+ [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_code='45678' ) LIMIT 1  
 ERR: 1054:Unknown column 'temporary_codes' in 'field list'
- [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1  
+ [ SQL语句 ] : SELECT `temporary_codes` FROM `think_machine` WHERE ( engineer_id=3 AND machine_code='45678' ) LIMIT 1  
 
 [ 2017-06-28T20:52:02+08:00 ] ::1 /TongYouErWeiMaSaoMao/
 INFO: [ app_init ] --START--
@@ -234,8 +234,8 @@ INFO: [ app_begin ] --END-- [ RunTime:0.002497s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0103s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0026s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0095s ]
-SQL: SELECT * FROM `think_machine` WHERE ( machine_id='45678' ) LIMIT 1   [ RunTime:0.0019s ]
-SQL: INSERT INTO `think_machine` (`machine_id`,`customer_id`,`permanent_code`) VALUES ('45678','2','44545454545') [ RunTime:0.0032s ]
+SQL: SELECT * FROM `think_machine` WHERE ( machine_code='45678' ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: INSERT INTO `think_machine` (`machine_code`,`customer_id`,`permanent_code`) VALUES ('45678','2','44545454545') [ RunTime:0.0032s ]
 
 [ 2017-06-28T21:01:34+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMS0y.html
 INFO: [ app_init ] --START--
@@ -247,7 +247,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.002287s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0110s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0017s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0102s ]
-SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_code='45678' ) LIMIT 1   [ RunTime:0.0009s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
@@ -310,8 +310,8 @@ INFO: [ app_begin ] --END-- [ RunTime:0.002310s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0119s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0018s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0101s ]
-SQL: SELECT * FROM `think_machine` WHERE ( machine_id='45678' ) LIMIT 1   [ RunTime:0.0009s ]
-SQL: UPDATE `think_machine` SET `machine_id`='45678',`engineer_id`='3',`temporary_code`='44545454545' WHERE ( machine_id='45678' ) [ RunTime:0.0008s ]
+SQL: SELECT * FROM `think_machine` WHERE ( machine_code='45678' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: UPDATE `think_machine` SET `machine_code`='45678',`engineer_id`='3',`temporary_code`='44545454545' WHERE ( machine_code='45678' ) [ RunTime:0.0008s ]
 
 [ 2017-06-28T21:02:13+08:00 ] ::1 /TongYouErWeiMaSaoMao/Home/Index/display_code/base/NDU2NzgtMi0z.html
 INFO: [ app_init ] --START--
@@ -323,7 +323,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.002340s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0116s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0019s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0113s ]
-SQL: SELECT `temporary_code` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `temporary_code` FROM `think_machine` WHERE ( engineer_id=3 AND machine_code='45678' ) LIMIT 1   [ RunTime:0.0015s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
@@ -410,7 +410,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001202s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0127s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0017s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0103s ]
-SQL: SELECT `temporary_code` FROM `think_machine` WHERE ( engineer_id=3 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `temporary_code` FROM `think_machine` WHERE ( engineer_id=3 AND machine_code='45678' ) LIMIT 1   [ RunTime:0.0014s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
@@ -449,7 +449,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001503s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0100s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0022s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0099s ]
-SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=2 AND machine_code='45678' ) LIMIT 1   [ RunTime:0.0013s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
 INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]

@@ -39,6 +39,7 @@ class CategoryController extends CommonController {
 
 		$data = array(
 			'title'        => I('title'),
+			'desc'        => I('desc'),
 			'position'        => I('position'),
 
 		);

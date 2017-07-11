@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{$config_data.name}</title>
+		<include file="Public/head" />
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+				wx.config( {$js->config(array('scanQRCode'), false)} );
+				wx.ready(function(){});
+		</script>
+
+	</head>
+
+	<body ontouchstart>
+		<header class="demos-header">
+			<div class="demos-title">
+	       童游互动产品
+	    </div>
+		</header>
+		<div class="weui-form-preview">
+						<div class="activation-info ">
+							<eq name="member.group_id" value="2">
+								<empty name="actived_by">
+									<p style="text-align:center;">
+										激活：{$category.title}<br>
+										临时激活码：{$machine.temporary_code}<br>
+										永久激活码：{$machine.permanent_code}
+									</p>
+									<div class="weui-flex">
+										<div class="weui-flex__item">
+											<a id="tactivate_btn" href="javascript:;" class="weui-btn  weui-btn_primary" >  临时激活</a>
+										</div>
+										<div class="weui-flex__item">
+											<a id="pactivate_btn" href="javascript:;" class="weui-btn  weui-btn_primary" > 永久激活</a>
+										</div>
+									</div>
+									<else />
+
+									<p style="text-align:center;">
+										产品已经登录<br>
+										登录产品类型为：{$category.title}<br>
+										是否被用户激活：{$actived_by.username}
+									</p>
+									<br>
+									<p style="text-align:center;">
+										是否删除产品？
+									</p>
+									<div class="weui-flex">
+										<div class="weui-flex__item">
+											<a id="delete_btn" href="javascript:;" class="weui-btn  weui-btn_primary" >  删除</a>
+										</div>
+										<div class="weui-flex__item">
+											<a id="close_btn" href="javascript:;" class="weui-btn  weui-btn_primary" > 返回</a>
+										</div>
+									</div>
+									</empty>
+
+							<else/>
+							<p> 欢迎使用{$category.title}，请在游戏产品中输入以下激活码：
+								{$machine.permanent_code}
+							</p>
+							<div class="weui-btn-area">
+								<a  href="javascript:;" class="weui-btn weui-btn_primary" onclick="wx.closeWindow();"> 确定 </a>
+							</div>
+							</eq>
+						</div>
+
+
+		</div>
+	</body>
+</html>

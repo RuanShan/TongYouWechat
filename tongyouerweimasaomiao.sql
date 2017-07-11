@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `think_machine` (
   `openid` varchar(50) NOT NULL COMMENT '微信openid',
   `customer_id` int(11) NOT NULL COMMENT '客户id',
   `engineer_id` int(11) NOT NULL COMMENT '工程师id',
-  `machine_id` varchar(30) NOT NULL COMMENT '机器id',
+  `machine_code` varchar(30) NOT NULL COMMENT '机器id',
   `permanent_code` varchar(50) NOT NULL COMMENT '永久码',
   `temporary_code` varchar(50) NOT NULL COMMENT '临时码',
   PRIMARY KEY (`id`)
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `think_machine` (
 -- 转存表中的数据 `think_machine`
 --
 
-INSERT INTO `think_machine` (`id`, `openid`, `customer_id`, `engineer_id`, `machine_id`, `permanent_code`, `temporary_code`) VALUES
+INSERT INTO `think_machine` (`id`, `openid`, `customer_id`, `engineer_id`, `machine_code`, `permanent_code`, `temporary_code`) VALUES
 (1, '', 2, 3, '45678', '44545454545', '44545454545');
 
 -- --------------------------------------------------------

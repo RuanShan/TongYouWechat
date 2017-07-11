@@ -16,13 +16,17 @@ class IndexController extends CommonController {
 	//激活入口页面
 	public function index(){
  		//WeChat API
+		$Category     = M('Category');
+
 		$options = C('EASY_WECHAT');
 		$app = new Application( $options);
 		$js = $app->js;
-
-		$this->check_login();
-		$this->assign('member',$member);
 		$this->assign('js',$js);
+
+		$categories = $Category->select();
+		$this->check_login();
+		$this->assign('categories',$categories);
+		$this->assign('member',$member);
 		$this->display();
 	}
 
@@ -35,37 +39,57 @@ class IndexController extends CommonController {
 		$this->display('index');
 	}
 
+	//扫描设备码
 	public function jihuo()
 	{
+
 		$Member     = M('Member');
-	  $Machine     = M('Machine');
+		$Machine     = M('Machine');
+		$Order     = M('Order');
+		$Category     = M('Category');
 
 		$this->check_login();
+
   	//二维码
-		$machine_id = I('machine_id', '1234567890');
-		$machine = $Machine->where('machine_id=\''.$machine_id.'\'')->find();
+		$machine_code = I('machine_code', '1234567890');
+		$category_id = I('category_id' );
+		$machine = $Machine->where('machine_code=\'%s\'', array($machine_code))->find();
+		$machine_id = 0;
 		if(!isset($machine) )
 		{
-			$cmd = $this->exe_path.' TongYou '.$machine_id;
-			exec($cmd, $ret);
+			//只有工程师才能扫设备，添加machine
+			if( $this->member['group_id'] == 2)
+			{
+				$cmd = $this->exe_path.' TongYou '.$machine_code;
+				exec($cmd, $ret);
 
-			$combo_info = $ret[0];
-			// status, temporary_code, permanent_code
-			$splited_info = explode(',', $combo_info);
-			$status = intval( $splited_info[0]);
-			$permanent_code =  $splited_info[1];
-			$temporary_code =  $splited_info[2];
-			$engineer_id =  ( $this->member['group_id'] == 2 ?  $this->member['id'] : 0);
-			$customer_id =  ( $this->member['group_id'] == 1 ?  $this->member['id'] : 0);
+				$combo_info = $ret[0];
+				// status, temporary_code, permanent_code
+				$splited_info = explode(',', $combo_info);
+				$status = intval( $splited_info[0]);
+				Log::write( $cmd.$combo_info );
+				//机器码是否有效
+				if( $status == 1)
+				{
+					$permanent_code =  $splited_info[1];
+					$temporary_code =  $splited_info[2];
+					$engineer_id =    $this->member['id'];
 
 					$machine = array(
-						'machine_id'     => $machine_id,//机器id
+						'category_id'     => $category_id,//产品类型
+						'machine_code'     => $machine_code,//机器id
 						'engineer_id'    => $engineer_id,//工程师id
-						'customer_id'    => $customer_id,//客户id
+						'customer_id'    => 0,//客户id
 						'permanent_code' => $permanent_code,//永久激活码
 						'temporary_code' => $temporary_code,//临时激活码
+						'created_at' => date('Y-m-d H:i:s')
 					);
-					$Machine->add($machine);
+					$machine_id = $Machine->add($machine);
+				}
+			}
+		}else {
+			$machine_id = $machine['id'];
+			$category_id = $machine['category_id'];
 		}
 		Log::write( print_r( $machine,true) );
 
@@ -73,33 +97,200 @@ class IndexController extends CommonController {
 		if( $machine )
 		{
 			$data['status']  = 1;
-
-			if( $this->member['group_id'] == 2 )// 工程师
+			// 如果是用户，则永久激活
+			if( $this->member['group_id'] == 1 )
 			{
-				$data['code']  = $machine['temporary_code'];
+				$machine['pactivated_at'] = date('Y-m-d H:i:s');
+				$machine['pactivated_by'] = $this->member['id'] ;
+				$Machine->save($machine);
 			}
+			//工程师和客户都创建订单，以便后面确认工程师扫码了几次。
+			//$data['code']  = $machine['temporary_code'];
+			//$data['code']  = $machine['permanent_code'];
+			//创建订单
+			$order  = array(
+				'category_id' => $machine['category_id'],//产品类型
+				'member_id' => $this->member['id'],
+				'machine_id' =>$machine_id,
+				'created_at' => time()
+			);
+			$order_id = $Order->add($order);
+			session('oid',$order_id);
 
-			if( $this->member['group_id'] == 1 )// 客户
-			{
-				$data['code']  = $machine['permanent_code'];
-			}
 		}else{
 			$data['error'] = '无法识别该设备，请联系客服';
 		}
+
  		$this->ajaxReturn($data);
 	}
 
-	public function test_jihuo()
-	{
-		var_dump( $this->exe_path );
-		$machine_id = I('machine_id', '1234567890');
-		$cmd = $this->exe_path.' TongYou '.$machine_id;
-		exec($cmd, $arr);
-		var_dump( $arr );
-		$info = $arr[0];
-		$this->assign('info',$info);
-		$this->display('jihuo');
+	//工程师选择临时激活还是永久激活
+	public function jihuo2()
+  {
+		$this->check_login();
+
+		$Order     = M('Order');
+		$Machine     = M('Machine');
+		$order_id = session('oid');
+		if( empty($order_id)){
+			$this->error('操作失败！');
+		}
+
+		$order = $Order->where('id='.$order_id)->find();
+		if(!$order){
+			$this->error('操作失败！');
+		}
+
+ 		$machine_id = $order['machine_id'];
+		$machine = $Machine->where('id='.$machine_id)->find();
+
+		Log::write( print_r( $_GET,true) );
+
+		$activate = $_GET['activate']; // 取值 t：临时,p：永久
+ 		if( $activate == 'p')
+		{
+
+			$machine['pactivated_at'] = date('Y-m-d H:i:s');
+			$machine['pactivated_by'] = $this->member['id'] ;
+			$Machine->save($machine);
+		}else {
+			$machine['tactivated_at'] = date('Y-m-d H:i:s');
+			$machine['tactivated_by'] = $this->member['id'] ;
+			$Machine->save($machine);
+		}
+		$this->ajaxReturn(  array('status' => 1 ));
+
 	}
+
+	//显示激活码
+	public function display_code(){
+		// 调用 wx.closeWindow();
+		$options = C('EASY_WECHAT');
+		$app = new Application( $options);
+		$js = $app->js;
+
+		//客户和工程师激活都有订单。
+		$Member = M('Member');
+		$Order     = M('Order');
+		$Category     = M('Category');
+		$this->check_login();
+
+		$order_id = session('oid');
+		if( empty($order_id)){
+			$this->error('操作失败！');
+		}
+
+ 		$order = $Order->where('id='.$order_id)->find();
+		if(!$order){
+			$this->error('操作失败！');
+		}
+
+		$Machine     = M('Machine');
+		///机器id
+		$machine_id = $order['machine_id'];
+		$machine = $Machine->where('id='.$machine_id)->find();
+		$category = $Category->where('id='.$machine['category_id'])->find();
+		Log::write( print_r( $machine, true) );
+
+		$actived_by = $Member->where('id=%d', array($machine['pactivated_by']))->find();
+		//判断是商户还是工程师在View中
+		$this->assign('member', $this->member);
+		$this->assign('machine', $machine);
+		$this->assign('category', $category);
+		$this->assign('actived_by', $actived_by);
+		$this->assign('js',$js);
+
+		$this->display();
+	}
+
+
+
+	// 工程师删除设备
+	public function delete_machine()
+	{
+		$this->check_login();
+		$Member = M('Member');
+		$Order     = M('Order');
+		$Category     = M('Category');
+		$Machine     = M('Machine');
+
+		$order_id = session('oid');
+		if( empty($order_id)){
+			$this->error('操作失败！');
+		}
+
+		$order = $Order->where('id='.$order_id)->find();
+		if(!$order){
+			$this->error('操作失败！');
+		}
+
+		$Order->where('machine_id='.$order['machine_id'])->delete();
+		$Machine->where('id='.$order['machine_id'])->delete();
+
+		session('oid', null);
+
+		$this->ajaxReturn(  array('status' => 1 ));
+
+	}
+
+	//我的订单列表
+	public function orders()
+	{
+		$this->check_login();
+		$Member = M('Member');
+		$Order     = M('Order');
+		$Category     = M('Category');
+		$Machine     = M('Machine');
+
+		$options = C('EASY_WECHAT');
+		$app = new Application( $options);
+		$js = $app->js;
+		$this->assign('js',$js);
+
+		$count      = $Order->count();
+    $Page       = new \Think\Page($count,12);
+
+		$categories = $Category->select();
+		$orders = $Order->order("id desc")->where('member_id='.$this->member['id'])->limit($Page->firstRow.','.$Page->listRows)->select();
+
+		$this->assign('categories',$categories);
+		$this->assign('orders',$orders);
+		$this->assign('member',$this->member);
+		$this->display();
+
+	}
+
+	//我的订单列表
+	public function order_detail($order_id)
+	{
+		$this->check_login();
+		$Member = M('Member');
+		$Order = M('Order');
+		$Category     = M('Category');
+
+		if( empty($order_id)){
+			$this->error('操作失败！');
+		}
+
+		$options = C('EASY_WECHAT');
+		$app = new Application( $options);
+		$js = $app->js;
+		$this->assign('js',$js);
+
+		$order = $Order->where('id=%d AND member_id=%d', array( $order_id, $this->member['id'] ))->find();
+		if(!$order){
+			$this->error('操作失败！');
+		}
+
+		$category = $Category->where('id='.$order['category_id'])->find();
+
+		$this->assign('category',$category);
+		$this->assign('order',$order);
+		$this->assign('member',$this->member);
+		$this->display();
+
+  }
+
 
 	// 发送手机验证码
 	// ajax 请求
@@ -131,192 +322,21 @@ class IndexController extends CommonController {
 
 
 
-	//登陆处理
-	public function login(){
-		if(I('machine_id')==''){
-			$this->error('操作失败！');
-		}
-
-		$Member     = M('Member');
-		$Machine     = M('Machine');
-		$AuthGroupAccess     = M('AuthGroupAccess');
-
-		$data = array(
-			'username'  => I('username'),
-			'telephone' => I('telephone'),
-		);
-
-		$user_info = $Member->where('username=\''.I('username').'\' AND telephone=\''.I('telephone').'\'')->find();
-
-		if(!$user_info){
-			$result = $Member->add($data);
-			if($result) {
-				$access_data = array(
-					'uid'      => $result,
-					'group_id' => I('group_id')
-				);
-
-				$access_result = $AuthGroupAccess->add($access_data);
-
-				if($access_result) {
-					//加密
-					$base = urlencode(base64_encode(I('machine_id').'-'.I('group_id').'-'.$result));
-
-					$this->redirect('Index/code', array('base' => $base));
-				}else{
-					$this->error('操作失败！');
-				}
-
-
-			}else{
-				$this->error('操作失败！');
-			}
-		}else{
-			//加密
-			$base = urlencode(base64_encode(I('machine_id').'-'.I('group_id').'-'.$user_info['id']));
-
-			$this->redirect('Index/display_code', array('base' => $base));
-		}
-	}
-
-	//计算激活码并插入机器数据表
-	public function code(){
-		//解密
-		$base = base64_decode(urldecode(I('base')));
-
-		$base_arr = explode('-',$base);
-
-
-		if(!$base_arr[2]){
-			$this->error('操作失败！');
-		}
-
-		$Member     = M('Member');
-
-		if(!$Member->where('id='.$base_arr[2])->find()){
-			$this->error('操作失败！');
-		}
-
-		$Machine     = M('Machine');
-
-		///机器id
-		$machine_id = $base_arr[0];
-		//用户组id
-		$group_id   = $base_arr[1];
-		//用户id
-		$uid        = $base_arr[2];
-
-
-		//判断是商户还是工程师
-		if($group_id == 1){
-			//这里计算客户激活码,参数$machine_id,$group_id;
-
-			//这里计算客户激活码,参数$machine_id,$group_id;
-
-			$data = array(
-				'machine_id'     => $machine_id,//机器id
-				'customer_id'    => $uid,//客户id
-				'permanent_code' => '44545454545'//永久激活码，接口获得
-			);
-
-			if(!$Machine->where('machine_id=\''.$machine_id.'\'')->find()){
-				$result = $Machine->add($data);
-
-				if($result) {
-					//加密
-					$base = urlencode(base64_encode($machine_id.'-'.$group_id .'-'.$uid));
-
-					$this->redirect('Index/display_code', array('base' => $base));
-				}else{
-					$this->error('操作失败！');
-				}
-			}else{
-				$result = $Machine->where('machine_id=\''.$machine_id.'\'')->save($data);
-
-				if($result) {
-					//加密
-					$base = urlencode(base64_encode($machine_id.'-'.$group_id .'-'.$uid));
-
-					$this->redirect('Index/display_code', array('base' => $base));
-				}else{
-					$this->error('操作失败！');
-				}
-			}
-		}else{
-			//这里计算工程师激活码,参数$machine_id,$group_id
-
-			//这里计算工程师激活码,参数$machine_id,$group_id
-
-			$data = array(
-				'machine_id'     => $machine_id,//机器id
-				'engineer_id'    => $uid,//工程师id
-				'temporary_code' => '44545454545'//临时激活码，接口获得
-			);
-			if(!$Machine->where('machine_id=\''.$machine_id.'\'')->find()){
-				$result = $Machine->add($data);
-
-				if($result) {
-					//加密
-					$base = urlencode(base64_encode($machine_id.'-'.$group_id .'-'.$uid));
-
-					$this->redirect('Index/display_code', array('base' => $base));
-				}else{
-					$this->error('操作失败！');
-				}
-			}else{
-				$result = $Machine->where('machine_id=\''.$machine_id.'\'')->save($data);
-
-				if($result) {
-					//加密
-					$base = urlencode(base64_encode($machine_id.'-'.$group_id .'-'.$uid));
-
-					$this->redirect('Index/display_code', array('base' => $base));
-				}else{
-					$this->error('操作失败！');
-				}
-			}
-		}
-	}
-	//显示激活码
-	public function display_code(){
-		//解密
-		$base = base64_decode(urldecode(I('base')));
-
-		$base_arr = explode('-',$base);
-
-		if(!$base_arr[2]){
-			$this->error('操作失败！');
-		}
-
-		$Member     = M('Member');
-
-		if(!$Member->where('id='.$base_arr[2])->find()){
-			$this->error('操作失败！');
-		}
-
-		$Machine     = M('Machine');
-
-		///机器id
-		$machine_id = $base_arr[0];
-		//用户组id
-		$group_id   = $base_arr[1];
-		//用户id
-		$uid        = $base_arr[2];
-
-		//判断是商户还是工程师
-		if($group_id == 1){
-			$code = $Machine->where('customer_id='.$uid.' AND machine_id=\''.$machine_id.'\'')->getField('permanent_code');
-		}else{
-			$code = $Machine->where('engineer_id='.$uid.' AND machine_id=\''.$machine_id.'\'')->getField('temporary_code');
-		}
-
-		$this->assign('code',$code);
-
-		$this->display();
+  //测试代码
+	public function test_jihuo()
+	{
+		var_dump( $this->exe_path );
+		$machine_code = I('machine_code', '1234567890');
+		$cmd = $this->exe_path.' TongYou '.$machine_code;
+		exec($cmd, $arr);
+		var_dump( $arr );
+		$info = $arr[0];
+		$this->assign('info',$info);
+		$this->display('jihuo');
 	}
 
 	protected function check_login(){
-
+		//session('mid',2);
 		if( session('mid') == null){
 			$this->error('您还没有登录！',U('/Home/Session/'));
 		}
@@ -332,7 +352,7 @@ class IndexController extends CommonController {
 			$this->error('您还没有登录！',U('/Home/Session/'));
 		}
 
-		$this->auth_group_access = $AuthGroupAccess->where('uid=%d', array( $this->member['id']))->find();
+		//$this->auth_group_access = $AuthGroupAccess->where('uid=%d', array( $this->member['id']))->find();
 
 	}
 }

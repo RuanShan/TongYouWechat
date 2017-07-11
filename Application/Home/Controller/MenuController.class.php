@@ -44,9 +44,9 @@ class MenuController extends WechatBaseController
                         'url'  => 'http://'.$_SERVER['HTTP_HOST'].U('/Home/Index/'),
                   ],
                   [
-                        "type"=> "click",
+                        "type"=> "view",
                         "name" => "我的订单",
-                        'key' => 'CLICK_0003'
+                        'url'  => 'http://'.$_SERVER['HTTP_HOST'].U('/Home/Index/orders'),
                   ],
                   [
                         "type"=> "click",

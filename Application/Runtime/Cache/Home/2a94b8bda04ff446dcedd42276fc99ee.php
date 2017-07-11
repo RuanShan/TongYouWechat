@@ -28,8 +28,12 @@ body {
     font-size: 34px;
     color: #3cc51f;
     font-weight: 400;
-    margin: 0 15%;
+    margin: 0 10%;
 }
+.weui-cells, .weui-cells_form{ margin: 0;padding: 0 0 18px 0;}
+.activation-info{ padding: 18px 0; margin: 0 10%;  }
+.activation-info a.weui-btn{  margin: 18px;}
+.weui-form-preview__item{ text-align: left;}
 </style>
 
 		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
@@ -44,21 +48,23 @@ body {
 					        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
 									if( res.checkResult.scanQRCode)
 									{
+										$("#scan_device").removeClass('weui-btn_loading');
 										$("#scan_device").click(function(){
 											wx.scanQRCode({
 											  needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
 											  scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
 											  success: function (res) {
+													var category_id = $('#category_id').val();
 											    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
 													var loading = weui.loading('当前设备码为'+result);
 
 													$.ajax({type:'POST', url:'/Home/Index/jihuo',
-													  data:{machine_id: result},
+													  data:{machine_code: result, category_id: category_id},
 														success: function(data){
 															loading.hide();
 															 if(data.status== 1)
 															 {
-																 weui.alert("设备激活码是："+data.code);
+																  location.href = "/Home/Index/display_code";
 															 }else{
 																 weui.alert(data.error);
 															 }
@@ -77,7 +83,7 @@ body {
 	<body ontouchstart>
 		<header class="demos-header">
 			<div class="demos-title">
-	       设备激活
+	       童游互动产品
 	    </div>
 		</header>
 		<div class="">
@@ -90,16 +96,14 @@ body {
 						          <label for="" class="weui-label">设备类型</label>
 						        </div>
 						        <div class="weui-cell__bd">
-						          <select class="weui-select" name="select2">
-						            <option value="1">设备类型1</option>
-						            <option value="2">设备类型2</option>
-						            <option value="3">设备类型3</option>
+						          <select id="category_id" class="weui-select" name="category_id">
+												<?php if(is_array($categories)): $i = 0; $__LIST__ = $categories;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><option value="<?php echo ($category['id']); ?>"><?php echo ($category["title"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 						          </select>
 						        </div>
 						</div>
 
 						<div class="weui-btn-area">
-			        <input id="scan_device" type="button" class="weui-btn weui-btn_primary" value="扫描设备">
+			        <input id="scan_device" type="button" class="weui-btn weui-btn_primary weui-btn_loading" value="扫描设备">
 			      </div>
 					</div>
 		    </form>

@@ -93,8 +93,8 @@ INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0030s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0120s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0030s ]
-SQL: SELECT * FROM `think_machine` WHERE ( machine_id='45678' ) LIMIT 1   [ RunTime:0.0010s ]
-SQL: UPDATE `think_machine` SET `machine_id`='45678',`customer_id`='4',`permanent_code`='44545454545' WHERE ( machine_id='45678' ) [ RunTime:0.0240s ]
+SQL: SELECT * FROM `think_machine` WHERE ( machine_code='45678' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `think_machine` SET `machine_code`='45678',`customer_id`='4',`permanent_code`='44545454545' WHERE ( machine_code='45678' ) [ RunTime:0.0240s ]
 
 [ 2017-07-01T21:39:10+08:00 ] 127.0.0.1 /Home/Index/display_code/base/NDU2NzgtMS00.html
 INFO: [ app_init ] --START--
@@ -106,6 +106,6 @@ INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
 SQL: SHOW COLUMNS FROM `think_member` [ RunTime:0.0020s ]
 SQL: SELECT * FROM `think_member` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0010s ]
 SQL: SHOW COLUMNS FROM `think_machine` [ RunTime:0.0030s ]
-SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=4 AND machine_id='45678' ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT `permanent_code` FROM `think_machine` WHERE ( customer_id=4 AND machine_code='45678' ) LIMIT 1   [ RunTime:0.0020s ]
 ERR: 模板不存在:./Application/Home/View/Index/display_code.html
 

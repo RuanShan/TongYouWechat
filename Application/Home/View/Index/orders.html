@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{$config_data.name}</title>
+		<include file="Public/head" />
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+				wx.config( {$js->config(array('scanQRCode'), false)} );
+				wx.ready(function(){});
+		</script>
+	</head>
+
+	<body>
+		<header class="demos-header">
+			<div class="demos-title">
+				 订单列表
+			</div>
+		</header>
+		<div class="weui-cells  ">
+			<volist name="orders" id="order"  >
+				<a class="weui-cell weui-cell_access" href="{:U('order_detail', array('order_id'=>$order['id']))}}">
+          <div class="weui-cell__bd">
+              <p>
+							<volist name="categories" id="category"  >
+								<eq name="category['id']" value="$order['category_id']">{$category.title}</eq>
+							</volist>
+							</p>
+          </div>
+          <div class="weui-cell__ft"> {$order.created_at|date="y-m-d",###} </div>
+				</a>
+
+
+  		</volist>
+
+			<div class="weui-btn-area">
+				<input id="close_btn"  type="button" class="weui-btn weui-btn_primary " value="返回">
+			</div>
+
+    </div>
+	</body>
+</html>
