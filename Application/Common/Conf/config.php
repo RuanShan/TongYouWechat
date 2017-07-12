@@ -37,7 +37,7 @@ return array(
 			'access_secret' => 'xx',
 			'sign_name'     => 'xx', // 签名
 			'region_id'  =>'cn-beijing',
-			'disable'=> true
+			'disable'=> false
 		],
 
 );

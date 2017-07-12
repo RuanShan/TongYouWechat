@@ -312,26 +312,26 @@ class IndexController extends CommonController {
 		$data['status']  = 1;
 		$config = C('ALIYUN_SMS');
     //https://github.com/edoger/aliyun-sms-sdk
-		Log::write( $mobile  );
 		$aliSms = new AliSms();
-		Log::write( print_r($config,true) );
-		// Create model instanse.
-		if( !$config['disable'] ){
+ 		// Create model instanse.
+		if( !$config['disable'] )
+		{
 			$code = mt_rand(1000, 9999);
  			// Send message.
 			$response = $aliSms->send($mobile, 'SMS_76350172', ['number'=> $code]);
 
 			Log::write( print_r($response,true) );
 
-			if( $response['Code'] != 'OK')
+			if( $response->Code != 'OK')
 			{
 				$code = 0;
 			}
-		}else {
-			 $code = 9999;
+ 		}else {
+ 			 $code = 9999;
 		}
 		if( $code > 0 )
 		{
+			Log::write("yes, 2".$code);
 			$sms_data = ['vcode'=>$code, 'mobile'=>$mobile, 'created_at'=>time() ];
 			Log::write( print_r($sms_data,true) );
 			session('sms_data',$sms_data);
