@@ -15,28 +15,55 @@ class MenuController extends WechatBaseController
 
         $buttons = [
             [
-                'type' => 'click',
                 'name' => '走进童游',
-                'key' => 'CLICK_0001'
+                "sub_button"=>
+                  [
+                    [
+                        "type" => "view",
+                        "name" => "童游介绍",
+                        'url'  => 'http://mp.weixin.qq.com/s/_y1bYLlEpetskkdX3jzj5A',
+                    ],
+                    [
+                      "type" => "view",
+                      "name" => "合作流程",
+                      'url'  => 'http://mp.weixin.qq.com/s/_y1bYLlEpetskkdX3jzj5A',
+                    ],
+                    [
+                      "type" => "view",
+                      "name" => "案例展示",
+                      'url'  => 'http://mp.weixin.qq.com/s/_y1bYLlEpetskkdX3jzj5A',
+                    ],
+                    [
+                      "type" => "view",
+                      "name" => "官方网站",
+                      'url'  => 'http://www.dltongyou.com',
+                    ],
+                  ]
             ],
             [
-              'type' => 'click',
               'name'       => '童游产品',
-              'key' => 'CLICK_0002'
+              "sub_button"=>
+                [
+                  [
+                      "type" => "view",
+                      "name" => "产品介绍",
+                      'url'  => 'http://x.eqxiu.com/s/T1jcFZQ4',
+                  ],
+                  [
+                    "type" => "view",
+                    "name" => "定制开发",
+                    'url'  => 'http://mp.weixin.qq.com/s/_y1bYLlEpetskkdX3jzj5A',
+                  ]
+                ]
             ],
             [
               'name' => '会员中心',
               "sub_button"=>
                 [
                   [
-                      "type" => "view",
-                      "name" => "登录",
-                      'url'  => 'http://'.$_SERVER['HTTP_HOST'].U('/Home/Session/'),
-                  ],
-                  [
                         "type"=> "view",
-                        "name" => "注册",
-                        'url'  => 'http://'.$_SERVER['HTTP_HOST'].U('/Home/Member/'),
+                        "name" => "注册/登录",
+                        'url'  => 'http://'.$_SERVER['HTTP_HOST'].U('/Home/Session/'),
                   ],
                   [
                         "type"=> "view",

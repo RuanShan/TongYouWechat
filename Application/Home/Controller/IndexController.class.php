@@ -2,8 +2,8 @@
 namespace Home\Controller;
 use EasyWeChat\Foundation\Application;
 use Home\Common\Controller\CommonController;
-use Common\Service\Sms;
 use Think\Log;
+use Mrgoon\Dysmsapi\Request\V20170525\AliSms;
 
 class IndexController extends CommonController {
 	protected $member;
@@ -192,13 +192,23 @@ class IndexController extends CommonController {
 		$category = $Category->where('id='.$machine['category_id'])->find();
 		Log::write( print_r( $machine, true) );
 
-		$actived_by = $Member->where('id=%d', array($machine['pactivated_by']))->find();
+		$pactived_by = $Member->where('id=%d', array($machine['pactivated_by']))->find();
+		$tactived_by = $Member->where('id=%d', array($machine['tactivated_by']))->find();
 		//判断是商户还是工程师在View中
 		$this->assign('member', $this->member);
 		$this->assign('machine', $machine);
 		$this->assign('category', $category);
-		$this->assign('actived_by', $actived_by);
-		$this->assign('js',$js);
+		if( $tactived_by )
+		{
+		  $this->assign('actived_by', $tactived_by);
+			$this->assign('actived_type', '临时激活');
+	  }
+		if( $pactived_by )
+		{
+			$this->assign('actived_by', $pactived_by);
+			$this->assign('actived_type', '永久激活');
+		}
+ 		$this->assign('js',$js);
 
 		$this->display();
 	}
@@ -296,14 +306,27 @@ class IndexController extends CommonController {
 	// ajax 请求
 	public function send_vcode()
 	{
-		Log::write( 'start send_code' );
-		$config = C('ALIDAYU');
-		$mobile = I('post.mobile');
+		$mobile = I('mobile');
+		//$mobile = '13322280797';
 		$code = 0;
 		$data['status']  = 1;
+		$config = C('ALIYUN_SMS');
+    //https://github.com/edoger/aliyun-sms-sdk
+		Log::write( $mobile  );
+		$aliSms = new AliSms();
+		Log::write( print_r($config,true) );
+		// Create model instanse.
 		if( !$config['disable'] ){
-			$sms = new Sms();
-			$code = $sms->send_code($mobile);
+			$code = mt_rand(1000, 9999);
+ 			// Send message.
+			$response = $aliSms->send($mobile, 'SMS_76350172', ['number'=> $code]);
+
+			Log::write( print_r($response,true) );
+
+			if( $response['Code'] != 'OK')
+			{
+				$code = 0;
+			}
 		}else {
 			 $code = 9999;
 		}

@@ -23,6 +23,14 @@ body {
 .demos-header {
     padding: 35px 0;
 }
+.demos-header .avatar{
+  border-radius: 100%;
+  margin: 8px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
 .demos-title {
     text-align: center;
     font-size: 34px;

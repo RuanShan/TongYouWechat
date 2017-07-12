@@ -8,16 +8,27 @@
 	<body>
 		<header class="demos-header">
 			<div class="demos-title">
+				<empty name="member.telephone">
+					注册
+				<else/>
 				 登录
+			 </empty>
 			</div>
+			<div class="" style="text-align:center;">
+                        <img class="avatar" src="{$member['headimgurl']} " alt="">
+      </div>
 		</header>
 		<div class="weui-cells weui-cells_form">
 
 			<form id="session_form" class="js__form" action="{:U('login')}" method="post">
+				<input  type="hidden" name="openid" value="{$member['openid']}">
+				<input  type="hidden" name="headimgurl" value="{$member['headimgurl']}">
+				<input  type="hidden" name="username" value="{$member['username']}">
+				<input  type="hidden" name="address" value="{$member['address']}">
 				<div class="weui-cell weui-cell_vcode telephone_wrapper">
 					<div class="weui-cell__hd"><label for="" class="weui-label">手机号</label></div>
 					<div class="weui-cell__bd">
-						<input class="weui-input" type="text" value="" name="telephone" placeholder="请输入手机号" required pattern="[0-9]{11}" emptyTips="请输入手机号" notMatchTips="请输入正确的手机号">
+						<input class="weui-input" type="text" value="{$member['telephone']}" name="telephone" placeholder="请输入手机号" required pattern="[0-9]{11}" emptyTips="请输入手机号" notMatchTips="请输入正确的手机号">
 					</div>
 					<div class="weui-cell__ft">
 						<button id="get_vcode" type="button" class="weui-vcode-btn">获取验证码</button>

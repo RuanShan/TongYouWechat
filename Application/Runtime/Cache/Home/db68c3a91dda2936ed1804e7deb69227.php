@@ -30,9 +30,10 @@ body {
     font-weight: 400;
     margin: 0 10%;
 }
-.weui-cells_form{ margin: 0;padding: 0 0 18px 0;}
+.weui-cells, .weui-cells_form{ margin: 0;padding: 0 0 18px 0;}
 .activation-info{ padding: 18px 0; margin: 0 10%;  }
 .activation-info a.weui-btn{  margin: 18px;}
+.weui-form-preview__item{ text-align: left;}
 </style>
 
 		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
@@ -68,8 +69,12 @@ body {
 
 									<p style="text-align:center;">
 										产品已经登录<br>
-										登录产品类型为：<?php echo ($category["title"]); ?><br>
-										是否被用户激活：<?php echo ($actived_by["username"]); ?>
+										<table>
+											<tr><td>登录产品类型为： </td> <td><?php echo ($category["title"]); ?> </td> </tr>
+											<tr><td style="text-align:right">激活用户： </td> <td><?php echo ($actived_by["username"]); ?> </td> </tr>
+											<tr><td style="text-align:right">激活类型： </td> <td><?php echo ($actived_type); ?> </td> </tr>
+										</table>
+
 									</p>
 									<br>
 									<p style="text-align:center;">
@@ -80,7 +85,7 @@ body {
 											<a id="delete_btn" href="javascript:;" class="weui-btn  weui-btn_primary" >  删除</a>
 										</div>
 										<div class="weui-flex__item">
-											<a id="close_btn" href="javascript:;" class="weui-btn  weui-btn_primary" > 返回</a>
+											<a id="back_btn" href="javascript:;" class="weui-btn  weui-btn_primary" > 返回</a>
 										</div>
 									</div><?php endif; ?>
 

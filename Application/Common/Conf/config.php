@@ -32,12 +32,12 @@ return array(
         ],
     ],
 
-		'ALIDAYU'=>[
-			'app_key'    => '23489931',
-			'app_secret' => '49d807aa18ead1b7057ca6102f08d822',
-			//'sandbox'    => true,  // 是否为沙箱环境，默认false,
+		'ALIYUN_SMS'=>[
+			'access_key'    => 'xx',
+			'access_secret' => 'xx',
+			'sign_name'     => 'xx', // 签名
+			'region_id'  =>'cn-beijing',
 			'disable'=> true
 		],
-		'APP_DEBUG' =>  true,
 
 );

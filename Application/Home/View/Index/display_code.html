@@ -38,8 +38,12 @@
 
 									<p style="text-align:center;">
 										产品已经登录<br>
-										登录产品类型为：{$category.title}<br>
-										是否被用户激活：{$actived_by.username}
+										<table>
+											<tr><td>登录产品类型为： </td> <td>{$category.title} </td> </tr>
+											<tr><td style="text-align:right">激活用户： </td> <td>{$actived_by.username} </td> </tr>
+											<tr><td style="text-align:right">激活类型： </td> <td>{$actived_type} </td> </tr>
+										</table>
+
 									</p>
 									<br>
 									<p style="text-align:center;">
@@ -50,7 +54,7 @@
 											<a id="delete_btn" href="javascript:;" class="weui-btn  weui-btn_primary" >  删除</a>
 										</div>
 										<div class="weui-flex__item">
-											<a id="close_btn" href="javascript:;" class="weui-btn  weui-btn_primary" > 返回</a>
+											<a id="back_btn" href="javascript:;" class="weui-btn  weui-btn_primary" > 返回</a>
 										</div>
 									</div>
 									</empty>

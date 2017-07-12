@@ -171,7 +171,7 @@ Zepto(function($){
               weui.toast('提交成功', 3000);
           }, 1500);
       }else {
-        alert( error);
+        //alert( error);
       }
     }, {
         regexp:all_regexp
@@ -186,9 +186,9 @@ Zepto(function($){
 			dataType: "JSON",
 			success: function(data){
 				weui.toast('临时激活成功', {
-				    duration: 2000,
+				    duration: 5000,
 				    className: 'custom-classname',
-				    callback: function(){ //wx.closeWindow();
+				    callback: function(){ window.history.go(-1);
 						}
 				});
 			},
@@ -205,9 +205,9 @@ Zepto(function($){
 			dataType: "JSON",
 			success: function(data){
 				weui.toast('永久激活成功', {
-						duration: 2000,
+						duration: 5000,
 						className: 'custom-classname',
-						callback: function(){ //wx.closeWindow();
+						callback: function(){ window.history.go(-1);
 						}
 				});
 			},
@@ -228,7 +228,7 @@ Zepto(function($){
 				weui.toast('设备删除成功', {
 						duration: 3000,
 						className: 'custom-classname',
-						callback: function(){ wx.closeWindow();
+						callback: function(){ window.history.go(-1);
 						}
 				});
 			},

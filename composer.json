@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.3.0",
         "overtrue/wechat": "~3.1",
-        "flc/alidayu": "dev-master"
+        "guzzlehttp/guzzle": "^6.2@dev"
     },
     "minimum-stability": "dev"
 }

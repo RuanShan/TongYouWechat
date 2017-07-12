@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6b7168ec9b6fe3ecb7876b6b76db521",
+    "content-hash": "b846d0cfea32ef14cb82309998983581",
     "packages": [
         {
             "name": "anerg2046/helper",
@@ -44,6 +44,47 @@
             ],
             "description": "some helper libaray function",
             "time": "2017-02-06T07:23:31+00:00"
+        },
+        {
+            "name": "curder/aliyun-core",
+            "version": "1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/curder/aliyun-core.git",
+                "reference": "dbe6d696fc94e6291b3e31de0b95b3670f513d0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/curder/aliyun-core/dbe6d696fc94e6291b3e31de0b95b3670f513d0d.zip",
+                "reference": "dbe6d696fc94e6291b3e31de0b95b3670f513d0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Curder\\AliyunCore\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "curder",
+                    "email": "curder@foxmail.com"
+                }
+            ],
+            "description": "阿里云 PHP SDK 的核心依赖包的 composer 封装",
+            "keywords": [
+                "aliyun",
+                "aliyun-core",
+                "sdk"
+            ],
+            "time": "2017-07-03T10:48:11+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -114,40 +155,6 @@
                 "caching"
             ],
             "time": "2016-10-29 11:16:17"
-        },
-        {
-            "name": "flc/alidayu",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/flc1125/alidayu.git",
-                "reference": "997e59daf9cb8e50f11c7bfeb8df111c58590816"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/flc1125/alidayu/997e59daf9cb8e50f11c7bfeb8df111c58590816.zip",
-                "reference": "997e59daf9cb8e50f11c7bfeb8df111c58590816",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Flc\\Alidayu\\": "src/Alidayu/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "阿里大于(鱼)API-SDK；适用任何PHP项目，包括Laravel、Yii、Thinkphp等...",
-            "keywords": [
-                "alidayu",
-                "flc"
-            ],
-            "time": "2017-01-25 08:20:31"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -409,6 +416,48 @@
             "time": "2017-06-19 01:22:40"
         },
         {
+            "name": "mrgoon/aliyun-sms-sdk",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MissMyCat/aliyun-sms-sdk.git",
+                "reference": "7c5c40d79e633abb6a01a4b70bc51e8df35bc7ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/MissMyCat/aliyun-sms-sdk/7c5c40d79e633abb6a01a4b70bc51e8df35bc7ea.zip",
+                "reference": "7c5c40d79e633abb6a01a4b70bc51e8df35bc7ea",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mrgoon\\AliyunSmsSdk\\": "aliyun-php-sdk-core/",
+                    "Mrgoon\\Dysmsapi\\Request\\V20170525\\": "Dysmsapi/Request/V20170525"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mrgoon",
+                    "email": "mrgoon@foxmail.com"
+                }
+            ],
+            "description": "阿里云短信服务核心代码",
+            "keywords": [
+                "Aliyun-Sms",
+                "aliyun",
+                "sdk"
+            ],
+            "time": "2017-06-28T11:25:32+00:00"
+        },
+        {
             "name": "overtrue/socialite",
             "version": "dev-master",
             "source": {
@@ -663,6 +712,45 @@
             "time": "2016-10-10 12:19:37"
         },
         {
+            "name": "superman2014/aliyun-php-sdk-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/superman2014/aliyun-php-sdk-core.git",
+                "reference": "7c506afbb0ec2ae977635c031495b430eab44b19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/superman2014/aliyun-php-sdk-core/7c506afbb0ec2ae977635c031495b430eab44b19.zip",
+                "reference": "7c506afbb0ec2ae977635c031495b430eab44b19",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Superman2014\\Aliyun\\Core\\": "aliyun-php-sdk-core/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "liujingyu",
+                    "email": "jingyu525@gmail.com"
+                }
+            ],
+            "description": "aliyun php sdk core",
+            "time": "2017-03-27 02:51:41"
+        },
+        {
             "name": "symfony/http-foundation",
             "version": "3.4.x-dev",
             "source": {
@@ -839,7 +927,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "flc/alidayu": 20
+        "guzzlehttp/guzzle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
