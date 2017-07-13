@@ -26,7 +26,7 @@ class IndexController extends CommonController {
 		$categories = $Category->select();
 		$this->check_login();
 		$this->assign('categories',$categories);
-		$this->assign('member',$member);
+		$this->assign('member',$this->member);
 		$this->display();
 	}
 
@@ -82,7 +82,7 @@ class IndexController extends CommonController {
 						'customer_id'    => 0,//客户id
 						'permanent_code' => $permanent_code,//永久激活码
 						'temporary_code' => $temporary_code,//临时激活码
-						'created_at' => date('Y-m-d H:i:s')
+						'created_at' => time()
 					);
 					$machine_id = $Machine->add($machine);
 				}

@@ -5,7 +5,7 @@ use EasyWeChat\Foundation\Application;
 use Think\Log;
 
 class SessionController extends WechatBaseController {
-	//登陆页面
+
 	public function index(){
 		$Config     = M('Config');
 		$Member = M('Member');
@@ -16,6 +16,9 @@ class SessionController extends WechatBaseController {
 
 		$app = new Application($this->options);
 		$oauth = $app->oauth;
+		$js = $app->js;
+		$this->assign('js',$js);
+
 		// 未登录
 		if (empty(session('wechat_user'))) {
 			session('target_url', '/home/session/index');
@@ -57,7 +60,7 @@ class SessionController extends WechatBaseController {
 			header('location:'. $targetUrl); // 跳转到 user/profile
 	}
 
-	//登陆处理
+	//登陆处理, ajax,  成功后关闭窗口，返回公众号
 	public function login(){
 		$Member     = M('Member');
 		$cond = array(
@@ -68,8 +71,8 @@ class SessionController extends WechatBaseController {
 		$code = I('vcode');
 
 		$result = $Member->where($cond)->find();
-		Log::write( print_r($result,true) );
-
+		Log::write( print_r($_POST,true) );
+		$data = ['status'=> 1];
 		//客户没有注册，创建客户。
 		if( !$result)
 		{
@@ -90,12 +93,14 @@ class SessionController extends WechatBaseController {
 				$result = $Member->where($cond)->find();
 
 			}else{
-				$this->error('登录失败，验证码不正确。',U('index'));
+				$data = ['status'=> 0, 'msg'=>'登录失败，验证码不正确。'];
+				//$this->error('登录失败，验证码不正确。',U('index'));
 			}
 		}
 
 			if($result['status'] == 0){
-				$this->error('登录失败，账号被禁用',U('index'));
+				$data = ['status'=> 0, 'msg'=>'登录失败，账号被禁用'];
+				//$this->error('登录失败，账号被禁用',U('index'));
 			}
 
 			if($this->validate_vcode($telephone, $code))
@@ -109,11 +114,12 @@ class SessionController extends WechatBaseController {
 				$data['login_count'] = $result['login_count'] + 1;
 				$data['telephone'] = $telephone; //更新电话号码
 				$Member->save($data);
-				$this->redirect( '/Home/Index/index');
+				//$this->redirect( '/Home/Index/index');
 			}else {
-				$this->error('登录失败，验证码不正确。',U('index'));
+				//$this->error('登录失败，验证码不正确。',U('index'));
+				$data = ['status'=> 0, 'msg'=>'登录失败，验证码不正确'];
 			}
-
+			$this->ajaxReturn($data);
 	}
 
 

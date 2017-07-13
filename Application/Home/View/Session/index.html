@@ -3,6 +3,11 @@
 	<head>
 		<title>{$config_data.name}</title>
 		<include file="Public/head" />
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+				wx.config( {$js->config(array('scanQRCode'), false)} );
+		</script>
+
 	</head>
 
 	<body>
@@ -41,8 +46,19 @@
 			    </div>
 			  </div>
 
-	      <div class="weui-btn-area">
-  	      <input id="submit_btn" type="submit" class="weui-btn weui-btn_primary" value="登录">
+	      <div class="weui-btn-area two-btn-area">
+					<div class="weui-flex">
+						<div class="weui-flex__item">
+							<empty name="member.telephone">
+								<input id="submit_btn" type="button" class="weui-btn weui-btn_disabled weui-btn_primary" value="注册">
+							 <else/>
+		  					 <input id="submit_btn" type="button" class="weui-btn weui-btn_disabled weui-btn_primary" value="登录">
+						   </empty>
+						</div>
+						<div class="weui-flex__item">
+						 <input id="close_btn" type="button" class="weui-btn weui-btn_primary" value="取消">
+					  </div>
+				  </div>
 	      </div>
 	    </form>
 		</div>

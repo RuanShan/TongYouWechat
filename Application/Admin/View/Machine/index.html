@@ -97,7 +97,6 @@
 												<th class="center"> 永久激活码</th>
 												<th class="center"> 临时激活码</th>
 												<th class="center"> 工程师</th>
-												<th class="center"> 客户</th>
  											</tr>
 										</thead>
 										<tbody>
@@ -112,11 +111,7 @@
 														<eq name="vo['engineer_id']" value="$member['id']">{$member.username}</eq>
   												</volist>
 												</td>
-												<td class="center">
-													<volist name="members" id="member"  >
-														<eq name="vo['customer_id']" value="$member['id']">{$member.username}</eq>
-  												</volist>
-												</td>
+
 											</tr>
                       </volist>
 										</tbody>

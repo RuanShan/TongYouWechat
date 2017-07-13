@@ -153,7 +153,7 @@ Zepto(function($){
         								});
                       }
                     });
-
+    $('#submit_btn').removeClass('weui-btn_disabled');
   });
   var all_regexp = {
       IDNUM: /(?:^\d{15}$)|(?:^\d{18}$)|^\d{17}[\dXx]$/,
@@ -166,16 +166,26 @@ Zepto(function($){
     weui.form.validate('.js__form', function (error) {
       if (!error) {
           var loading = weui.loading('提交中...');
-          setTimeout(function () {
-              loading.hide();
-              weui.toast('提交成功', 3000);
-          }, 1500);
+					$.post('/Home/Session/login', $('.js__form').serialize(),function(response){
+						loading.hide();
+						console.log( response);
+						if( response.status == 1)
+						{
+						  weui.toast('提交成功', {
+								duration: 2000,
+								callback: function(){ wx.closeWindow(); }
+							});
+					  }else {
+							weui.topTips(response.msg);
+					  }
+					})
       }else {
         //alert( error);
       }
     }, {
         regexp:all_regexp
     });
+		return false;
   });
 
 	//临时激活
@@ -187,7 +197,6 @@ Zepto(function($){
 			success: function(data){
 				weui.toast('临时激活成功', {
 				    duration: 5000,
-				    className: 'custom-classname',
 				    callback: function(){ window.history.go(-1);
 						}
 				});
@@ -206,7 +215,6 @@ Zepto(function($){
 			success: function(data){
 				weui.toast('永久激活成功', {
 						duration: 5000,
-						className: 'custom-classname',
 						callback: function(){ window.history.go(-1);
 						}
 				});
@@ -227,7 +235,6 @@ Zepto(function($){
 			success: function(data){
 				weui.toast('设备删除成功', {
 						duration: 3000,
-						className: 'custom-classname',
 						callback: function(){ window.history.go(-1);
 						}
 				});

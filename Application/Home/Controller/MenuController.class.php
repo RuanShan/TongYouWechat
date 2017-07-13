@@ -26,12 +26,12 @@ class MenuController extends WechatBaseController
                     [
                       "type" => "view",
                       "name" => "合作流程",
-                      'url'  => 'http://mp.weixin.qq.com/s/_y1bYLlEpetskkdX3jzj5A',
+                      'url'  => 'http://mp.weixin.qq.com/s/8Q8VM2mK0Ri5Ewodveyq_w',
                     ],
                     [
                       "type" => "view",
                       "name" => "案例展示",
-                      'url'  => 'http://mp.weixin.qq.com/s/_y1bYLlEpetskkdX3jzj5A',
+                      'url'  => 'http://mp.weixin.qq.com/s/o6gjzaxX_aHsFKGe7c0LRQ',
                     ],
                     [
                       "type" => "view",
@@ -52,7 +52,7 @@ class MenuController extends WechatBaseController
                   [
                     "type" => "view",
                     "name" => "定制开发",
-                    'url'  => 'http://mp.weixin.qq.com/s/_y1bYLlEpetskkdX3jzj5A',
+                    'url'  => 'http://mp.weixin.qq.com/s/o6gjzaxX_aHsFKGe7c0LRQ',
                   ]
                 ]
             ],

@@ -40,7 +40,8 @@ body {
 }
 .weui-cells, .weui-cells_form{ margin: 0;padding: 0 0 18px 0;}
 .activation-info{ padding: 18px 0; margin: 0 10%;  }
-.activation-info a.weui-btn{  margin: 18px;}
+.activation-info .weui-flex__item{  padding: 0 9px;}
+.two-btn-area .weui-flex__item{  padding: 0 9px;}
 .weui-form-preview__item{ text-align: left;}
 </style>
 
@@ -98,8 +99,7 @@ body {
 
 				<form action="<?php echo U('login');?>" method="post">
 					<div class="weui-cells weui-cells_form">
-
-						<div class="weui-cell weui-cell_select weui-cell_select-after">
+						<?php if(($member["group_id"]) == "2"): ?><div class="weui-cell weui-cell_select weui-cell_select-after">
 						        <div class="weui-cell__hd">
 						          <label for="" class="weui-label">设备类型</label>
 						        </div>
@@ -108,7 +108,7 @@ body {
 												<?php if(is_array($categories)): $i = 0; $__LIST__ = $categories;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><option value="<?php echo ($category['id']); ?>"><?php echo ($category["title"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 						          </select>
 						        </div>
-						</div>
+						</div><?php endif; ?>
 
 						<div class="weui-btn-area">
 			        <input id="scan_device" type="button" class="weui-btn weui-btn_primary weui-btn_loading" value="扫描设备">

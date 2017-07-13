@@ -57,7 +57,7 @@
 
 				<form action="{:U('login')}" method="post">
 					<div class="weui-cells weui-cells_form">
-
+						<eq name="member.group_id" value="2">
 						<div class="weui-cell weui-cell_select weui-cell_select-after">
 						        <div class="weui-cell__hd">
 						          <label for="" class="weui-label">设备类型</label>
@@ -70,6 +70,7 @@
 						          </select>
 						        </div>
 						</div>
+  					</eq>
 
 						<div class="weui-btn-area">
 			        <input id="scan_device" type="button" class="weui-btn weui-btn_primary weui-btn_loading" value="扫描设备">
