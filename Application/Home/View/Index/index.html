@@ -25,13 +25,13 @@
 											    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
 													var loading = weui.loading('当前设备码为'+result);
 
-													$.ajax({type:'POST', url:'/Home/Index/jihuo',
+													$.ajax({type:'POST', url: TongYou.routes.jihuo_url,
 													  data:{machine_code: result, category_id: category_id},
 														success: function(data){
 															loading.hide();
 															 if(data.status== 1)
 															 {
-																  location.href = "/Home/Index/display_code";
+																  location.href = TongYou.routes.display_code_url;
 															 }else{
 																 weui.alert(data.error);
 															 }

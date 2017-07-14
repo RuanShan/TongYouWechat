@@ -11,7 +11,7 @@ class IndexController extends CommonController {
 	protected $exe_path=null;
 
 	public function _initialize(){
-		$this->exe_path = (''.$_SERVER['DOCUMENT_ROOT'].'/exe/ActiveKey.exe');
+		$this->exe_path = (''.$_SERVER['DOCUMENT_ROOT'].__APP__.'/exe/ActiveKey.exe');
   }
 	//激活入口页面
 	public function index(){

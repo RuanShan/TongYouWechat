@@ -9,7 +9,7 @@ return array(
 	'DB_PWD'    => '', // 密码
 	'DB_PORT'   => 3306, // 端口
 	'DB_PARAMS' =>  array(), // 数据库连接参数
-	'DB_PREFIX' => 'think_', // 数据库表前缀
+	'DB_PREFIX' => 'wx_', // 数据库表前缀
 	'DB_CHARSET'=> 'utf8', // 字符集
 	'DB_DEBUG'  =>  TRUE, // 数据库调试模式 开启后可以记录SQL日志
 
@@ -26,10 +26,10 @@ return array(
             'level' => 'debug',
             'file' => 'D:\workspace\TongYouWechat\Application\Runtime\Logs\easywechat.log',
         ],
-        'oauth' => [
-            'scopes' => ['snsapi_userinfo'],
-						'callback' => '/home/member/oauth_callback',
-        ],
+        //'oauth' => [
+        //    'scopes' => ['snsapi_userinfo'],
+				//		'callback' => '/home/member/oauth_callback',
+        //],
     ],
 
 		'ALIYUN_SMS'=>[

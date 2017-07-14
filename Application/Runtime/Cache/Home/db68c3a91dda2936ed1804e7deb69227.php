@@ -8,10 +8,23 @@
 <meta name="description" content="<?php echo ($config_data["description"]); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <!--/ metas -->
-<link href="/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
-<script src="/Public/Home/js/weui.js"></script>
-<script src="/Public/Home/js/zepto.min.js"></script>
-<script src="/Public/Home/js/app.js"></script>
+<link href="/TongYouWechat/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
+<script src="/TongYouWechat/Public/Home/js/weui.js"></script>
+<script src="/TongYouWechat/Public/Home/js/zepto.min.js"></script>
+<script>
+var TongYou = {
+  routes:{
+    send_vcode_url:  "<?php echo U('/home/index/send_vcode');?>",
+    jihuo2t_url:"<?php echo U('/Home/Index/jihuo2?activate=t');?>",
+    jihuo2p_url:"<?php echo U('/Home/Index/jihuo2?activate=p');?>",
+    delete_machine_url:"<?php echo U('/Home/Index/delete_machine');?>",
+    login_url:"<?php echo U('/Home/Session/login');?>",
+    jihuo_url:"<?php echo U('/Home/index/jihuo');?>",
+    display_code_url:"<?php echo U('/Home/index/display_code');?>",
+  }
+}
+</script>
+<script src="/TongYouWechat/Public/Home/js/app.js"></script>
 
 <style>
 body {
@@ -23,6 +36,14 @@ body {
 .demos-header {
     padding: 35px 0;
 }
+.demos-header .avatar{
+  border-radius: 100%;
+  margin: 8px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
 .demos-title {
     text-align: center;
     font-size: 34px;
@@ -32,7 +53,8 @@ body {
 }
 .weui-cells, .weui-cells_form{ margin: 0;padding: 0 0 18px 0;}
 .activation-info{ padding: 18px 0; margin: 0 10%;  }
-.activation-info a.weui-btn{  margin: 18px;}
+.activation-info .weui-flex__item{  padding: 0 9px;}
+.two-btn-area .weui-flex__item{  padding: 0 9px;}
 .weui-form-preview__item{ text-align: left;}
 </style>
 

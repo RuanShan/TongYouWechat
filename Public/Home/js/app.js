@@ -144,7 +144,7 @@ Zepto(function($){
         									sendText:"动态验证码已发送到您的手机，10分钟内有效",
          									ctx: node,
         									auth:{
-        										url: '/home/index/send_vcode',
+        										url: TongYou.routes.send_vcode_url,
         										data:{
         											"mobile": $mobile.val(),
 
@@ -166,7 +166,7 @@ Zepto(function($){
     weui.form.validate('.js__form', function (error) {
       if (!error) {
           var loading = weui.loading('提交中...');
-					$.post('/Home/Session/login', $('.js__form').serialize(),function(response){
+					$.post(TongYou.routes.login_url, $('.js__form').serialize(),function(response){
 						loading.hide();
 						console.log( response);
 						if( response.status == 1)
@@ -191,7 +191,7 @@ Zepto(function($){
 	//临时激活
 	$('#tactivate_btn').click(function () {
 		$.ajax({
-			url: "/Home/Index/jihuo2?activate=t",
+			url: TongYou.routes.jihuo2t_url,
 			type: "POST",
 			dataType: "JSON",
 			success: function(data){
@@ -209,7 +209,7 @@ Zepto(function($){
 	//永久激活
 	$('#pactivate_btn').click(function () {
 		$.ajax({
-			url: "/Home/Index/jihuo2?activate=p",
+			url: TongYou.routes.jihuo2p_url,
 			type: "POST",
 			dataType: "JSON",
 			success: function(data){
@@ -229,7 +229,7 @@ Zepto(function($){
 	//删除产品注册信息
 	$('#delete_btn').click(function () {
 		$.ajax({
-			url: "/Home/Index/delete_machine",
+			url: TongYou.routes.delete_machine_url,
 			type: "POST",
 			dataType: "JSON",
 			success: function(data){

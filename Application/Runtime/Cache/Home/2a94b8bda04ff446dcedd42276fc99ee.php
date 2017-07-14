@@ -8,10 +8,23 @@
 <meta name="description" content="<?php echo ($config_data["description"]); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <!--/ metas -->
-<link href="/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
-<script src="/Public/Home/js/weui.js"></script>
-<script src="/Public/Home/js/zepto.min.js"></script>
-<script src="/Public/Home/js/app.js"></script>
+<link href="/TongYouWechat/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
+<script src="/TongYouWechat/Public/Home/js/weui.js"></script>
+<script src="/TongYouWechat/Public/Home/js/zepto.min.js"></script>
+<script>
+var TongYou = {
+  routes:{
+    send_vcode_url:  "<?php echo U('/home/index/send_vcode');?>",
+    jihuo2t_url:"<?php echo U('/Home/Index/jihuo2?activate=t');?>",
+    jihuo2p_url:"<?php echo U('/Home/Index/jihuo2?activate=p');?>",
+    delete_machine_url:"<?php echo U('/Home/Index/delete_machine');?>",
+    login_url:"<?php echo U('/Home/Session/login');?>",
+    jihuo_url:"<?php echo U('/Home/index/jihuo');?>",
+    display_code_url:"<?php echo U('/Home/index/display_code');?>",
+  }
+}
+</script>
+<script src="/TongYouWechat/Public/Home/js/app.js"></script>
 
 <style>
 body {
@@ -67,13 +80,13 @@ body {
 											    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
 													var loading = weui.loading('当前设备码为'+result);
 
-													$.ajax({type:'POST', url:'/Home/Index/jihuo',
+													$.ajax({type:'POST', url: TongYou.routes.jihuo_url,
 													  data:{machine_code: result, category_id: category_id},
 														success: function(data){
 															loading.hide();
 															 if(data.status== 1)
 															 {
-																  location.href = "/Home/Index/display_code";
+																  location.href = TongYou.routes.display_code_url;
 															 }else{
 																 weui.alert(data.error);
 															 }
