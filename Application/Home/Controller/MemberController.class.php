@@ -14,8 +14,9 @@ class MemberController extends WechatBaseController {
 		$app = new Application($this->options);
 		$oauth = $app->oauth;
 		// 未登录
-		if (empty(session('wechat_user'))) {
-			session('target_url', '/home/member/index');
+		$user = session('wechat_user');
+		if (empty($user)) {
+			session('target_url', U('/home/member/index'));
 			$response = $oauth->scopes(['snsapi_userinfo'])->redirect();
 			// $user 可以用的方法:
 			// $user->getId();  // 对应微信的 OPENID
@@ -43,7 +44,11 @@ class MemberController extends WechatBaseController {
 			$user = $oauth->user();
 
 			session('wechat_user', $user->toArray());
-			$targetUrl = empty(session('target_url')) ? '/' : session('target_url');
+			$targetUrl = session('target_url');
+			if(empty( $targetUrl ))
+			{
+				$targetUrl = U('/');
+			}
 			header('location:'. $targetUrl); // 跳转到 user/profile
 	}
 

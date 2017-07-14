@@ -19,9 +19,10 @@ class SessionController extends WechatBaseController {
 		$js = $app->js;
 		$this->assign('js',$js);
 
+		$wechat_user = session('wechat_user');
 		// 未登录
-		if (empty(session('wechat_user'))) {
-			session('target_url', '/home/session/index');
+		if (empty($wechat_user)) {
+			session('target_url', U('/home/session/index'));
 			$response = $oauth->scopes(['snsapi_userinfo'])->redirect();
 			// $user 可以用的方法:
 			// $user->getId();  // 对应微信的 OPENID
@@ -34,7 +35,8 @@ class SessionController extends WechatBaseController {
 
 		}
 		$user = session('wechat_user');
-		//var_dump($user);
+		Log::write( print_r($user, true ));
+//var_dump($user);
 		$address = $user['original']['country'].$user['original']['province'].$user['original']['city'];
 
 		$member = $Member->where( array('openid'=>$user['id']))->find();
@@ -56,7 +58,11 @@ class SessionController extends WechatBaseController {
 			$user = $oauth->user();
 
 			session('wechat_user', $user->toArray());
-			$targetUrl = empty(session('target_url')) ? '/' : session('target_url');
+			$targetUrl = session('target_url');
+			if(empty( $targetUrl ))
+			{
+				$targetUrl = U('/');
+			}
 			header('location:'. $targetUrl); // 跳转到 user/profile
 	}
 

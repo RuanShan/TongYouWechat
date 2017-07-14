@@ -171,8 +171,8 @@ Zepto(function($){
 						console.log( response);
 						if( response.status == 1)
 						{
-						  weui.toast('提交成功', {
-								duration: 2000,
+						  weui.toast('注册成功', {
+								duration: 4000,
 								callback: function(){ wx.closeWindow(); }
 							});
 					  }else {

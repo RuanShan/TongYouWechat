@@ -3,6 +3,7 @@ return array(
 	//'配置项'=>'配置值'
 	//数据库配置信息
 	'DB_TYPE'   => 'mysql', // 数据库类型
+
 	'DB_HOST'   => 'localhost', // 服务器地址
 	'DB_NAME'   => 'tongyou_wechat_dev', // 数据库名
 	'DB_USER'   => 'root', // 用户名
@@ -18,18 +19,19 @@ return array(
 	// easywechat 配置
 	'EASY_WECHAT' => [
         'debug' => true,
-        'app_id' => 'wxc4a9b776dfa6840d',
+				'app_id' =>'wxc4a9b776dfa6840d',
         'secret' => '64eecb1b6a738377ed8c3918a0d20c1e',
-        'token' => 'mytoken',
-        'aes_key' => null,
+        'token' => 'mytoken',      
+        'aes_key' => null,//'AsCXplmn6p2B2O7Vp6cEr61AzppHrJXPX9gTbGDtQRX',
         'log' => [
-            'level' => 'debug',
-            'file' => 'D:\workspace\TongYouWechat\Application\Runtime\Logs\easywechat.log',
+					'level' => 'debug',
+					//'file' => '/data/home/bxu2340690158/htdocs/wechat/Application/Runtime/Logs/easywechat.log',
+          'file' => 'D:\workspace\TongYouWechat\Application\Runtime\Logs\easywechat.log',
         ],
-        //'oauth' => [
-        //    'scopes' => ['snsapi_userinfo'],
-				//		'callback' => '/home/member/oauth_callback',
-        //],
+        'oauth' => [
+            'scopes' => ['snsapi_userinfo'],
+						'callback' => '/wechat/home/member/oauth_callback',
+        ],
     ],
 
 		'ALIYUN_SMS'=>[
