@@ -25,6 +25,7 @@ class IndexController extends CommonController {
 
 		$categories = $Category->select();
 		$this->check_login();
+
 		$this->assign('categories',$categories);
 		$this->assign('member',$this->member);
 		$this->display();
@@ -34,7 +35,7 @@ class IndexController extends CommonController {
 	// 激活页面
 	public function test_index()
 	{
-		$this->check_login();
+		//$this->check_login();
 
 		$this->display('index');
 	}
@@ -301,7 +302,22 @@ class IndexController extends CommonController {
 
   }
 
+	// 客服换班
+	public function shift_customer_service()
+	{
+		$this->check_login();
+		$Member = M('Member');
+		$cs_status = $this->member['cs_status'];
+		$data['status']  = 1;
 
+    $this->member['cs_status'] = ( $cs_status == 0 ?  1 : 0);
+
+		$Member->save($this->member);
+
+    $data['member'] = array('cs_status'=> $this->member['cs_status'] );
+		$this->ajaxReturn($data);
+
+	}
 	// 发送手机验证码
 	// ajax 请求
 	public function send_vcode()
@@ -320,7 +336,7 @@ class IndexController extends CommonController {
  			// Send message.
 			$response = $aliSms->send($mobile, 'SMS_76350172', ['number'=> $code]);
 
-			Log::write( print_r($response,true) );
+			//Log::write( print_r($response,true) );
 
 			if( $response->Code != 'OK')
 			{
@@ -331,9 +347,9 @@ class IndexController extends CommonController {
 		}
 		if( $code > 0 )
 		{
-			Log::write("yes, 2".$code);
+			//Log::write("yes, 2".$code);
 			$sms_data = ['vcode'=>$code, 'mobile'=>$mobile, 'created_at'=>time() ];
-			Log::write( print_r($sms_data,true) );
+			//Log::write( print_r($sms_data,true) );
 			session('sms_data',$sms_data);
 		}else {
 			$data['status']  = 0;
@@ -358,6 +374,14 @@ class IndexController extends CommonController {
 		$this->display('jihuo');
 	}
 
+	public function test_link()
+	{
+		$options = C('EASY_WECHAT');
+		$app = new Application( $options);
+		$js = $app->js;
+		$this->assign('js',$js);
+		$this->display( );
+	}
 	protected function check_login(){
 		//session('mid',2);
 		if( session('mid') == null){
@@ -367,7 +391,7 @@ class IndexController extends CommonController {
 		$AuthGroupAccess  = M('AuthGroupAccess');
 		$this->member = $Member->where('id=%d', array(session('mid')))->find();
 
-		Log::write( print_r($this->member,true) );
+		//Log::write( print_r($this->member,true) );
 
 		if( $this->member == null)
 		{

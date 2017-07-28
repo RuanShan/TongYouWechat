@@ -19,7 +19,10 @@ class MachineController extends CommonController {
 				$member_ids[] =  $val['engineer_id'];
 			}
 		}
-    $members = $Member->where(array('id'=>array('in',$member_ids)))->select();
+		if(!empty($member_ids))
+		{
+      $members = $Member->where(array('id'=>array('in',$member_ids)))->select();
+	  }
 
 		$this->assign('members',$members);
 		$this->assign('list',$list);

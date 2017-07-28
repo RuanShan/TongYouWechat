@@ -8,9 +8,9 @@
 <meta name="description" content="<?php echo ($config_data["description"]); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <!--/ metas -->
-<link href="/TongYouWechat/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
-<script src="/TongYouWechat/Public/Home/js/weui.js"></script>
-<script src="/TongYouWechat/Public/Home/js/zepto.min.js"></script>
+<link href="/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
+<script src="/Public/Home/js/weui.js"></script>
+<script src="/Public/Home/js/zepto.min.js"></script>
 <script>
 var TongYou = {
   routes:{
@@ -21,10 +21,11 @@ var TongYou = {
     login_url:"<?php echo U('/Home/Session/login');?>",
     jihuo_url:"<?php echo U('/Home/index/jihuo');?>",
     display_code_url:"<?php echo U('/Home/index/display_code');?>",
+    shift_customer_service_url:"<?php echo U('/Home/index/shift_customer_service');?>",
   }
 }
 </script>
-<script src="/TongYouWechat/Public/Home/js/app.js"></script>
+<script src="/Public/Home/js/app.js"></script>
 
 <style>
 body {
@@ -124,7 +125,11 @@ body {
 						</div><?php endif; ?>
 
 						<div class="weui-btn-area">
-			        <input id="scan_device" type="button" class="weui-btn weui-btn_primary weui-btn_loading" value="扫描设备">
+							<?php if(($member["group_id"]) == "3"): if(($member["cs_status"]) == "1"): ?><input id="customer_service" type="button" class="weui-btn weui-btn_primary" value="登出客服">
+								<?php else: ?>
+	  							<input id="customer_service" type="button" class="weui-btn weui-btn_primary" value="登录客服"><?php endif; ?>
+							<?php else: ?>
+		  	        <input id="scan_device" type="button" class="weui-btn weui-btn_primary weui-btn_loading" value="扫描设备"><?php endif; ?>
 			      </div>
 					</div>
 		    </form>

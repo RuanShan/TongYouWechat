@@ -35,7 +35,7 @@ class SessionController extends WechatBaseController {
 
 		}
 		$user = session('wechat_user');
-		Log::write( print_r($user, true ));
+		//Log::write( print_r($user, true ));
 //var_dump($user);
 		$address = $user['original']['country'].$user['original']['province'].$user['original']['city'];
 
@@ -77,14 +77,14 @@ class SessionController extends WechatBaseController {
 		$code = I('vcode');
 
 		$result = $Member->where($cond)->find();
-		Log::write( print_r($_POST,true) );
+		Log::write( print_r($_SESSION,true) );
 		$data = ['status'=> 1];
 		//客户没有注册，创建客户。
 		if( !$result)
 		{
 			if($this->validate_vcode($telephone, $code))
 			{
-				Log::write( "yes, i am here" );
+				//Log::write( "yes, i am here" );
 				$data = array(
 					'openid' => I('openid'),
 					'headimgurl' => I('headimgurl'),
@@ -111,8 +111,8 @@ class SessionController extends WechatBaseController {
 
 			if($this->validate_vcode($telephone, $code))
 			{
-				session('mid',$result['id']);	//用户ID
-				session('username',$result['username']);	//用户名
+				session('mid', $result['id'] );	//用户ID
+				//session('username',$result['username']);	//用户名
 				//保存登录信息
 				$data['id'] = $result['id'];	//用户ID
 				$data['login_ip'] = get_client_ip();	//最后登录IP

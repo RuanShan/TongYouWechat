@@ -3,7 +3,10 @@ return array(
 	//'配置项'=>'配置值'
 	//数据库配置信息
 	'DB_TYPE'   => 'mysql', // 数据库类型
-
+	//'DB_HOST'   => 'bdm291307491.my3w.com', // 服务器地址
+	//'DB_NAME'   => 'bdm291307491_db', // 数据库名
+	//'DB_USER'   => 'bdm291307491', // 用户名
+	//'DB_PWD'    => 'tongyou123', // 密码
 	'DB_HOST'   => 'localhost', // 服务器地址
 	'DB_NAME'   => 'tongyou_wechat_dev', // 数据库名
 	'DB_USER'   => 'root', // 用户名
@@ -22,6 +25,9 @@ return array(
 				'app_id' =>'wxc4a9b776dfa6840d',
         'secret' => '64eecb1b6a738377ed8c3918a0d20c1e',
         'token' => 'mytoken',
+        //'app_id' => 'wxa67c731d19a585d9',//'wxc4a9b776dfa6840d',
+        //'secret' => '90afca54cd700d3ab0817a83a26ce037',//'64eecb1b6a738377ed8c3918a0d20c1e',
+        //'token' => 'tongyouweixintoken',//'mytoken',
         'aes_key' => null,//'AsCXplmn6p2B2O7Vp6cEr61AzppHrJXPX9gTbGDtQRX',
         'log' => [
 					'level' => 'debug',
@@ -30,7 +36,7 @@ return array(
         ],
         'oauth' => [
             'scopes' => ['snsapi_userinfo'],
-						'callback' => '/home/member/oauth_callback',
+						'callback' => '/wechat/home/member/oauth_callback',
         ],
     ],
 
@@ -42,6 +48,5 @@ return array(
 			'disable'=> false
 		],
 		'SESSION_OPTIONS'  =>  array('expire'=>3600*24*365), // session 配置数组
-		//'SHOW_PAGE_TRACE' =>true,
 
 );

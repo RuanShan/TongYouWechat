@@ -25,7 +25,7 @@
         url: ctx + "/sms/validataSmsCode",
         data: data,
         type: "POST",
-        dataType: "JSON",
+        dataType: "json",
         success: function(data){
           obj.fn(data);
         },
@@ -193,7 +193,7 @@ Zepto(function($){
 		$.ajax({
 			url: TongYou.routes.jihuo2t_url,
 			type: "POST",
-			dataType: "JSON",
+			dataType: "json",
 			success: function(data){
 				weui.toast('临时激活成功', {
 				    duration: 5000,
@@ -211,7 +211,7 @@ Zepto(function($){
 		$.ajax({
 			url: TongYou.routes.jihuo2p_url,
 			type: "POST",
-			dataType: "JSON",
+			dataType: "json",
 			success: function(data){
 				weui.toast('永久激活成功', {
 						duration: 5000,
@@ -231,7 +231,7 @@ Zepto(function($){
 		$.ajax({
 			url: TongYou.routes.delete_machine_url,
 			type: "POST",
-			dataType: "JSON",
+			dataType: "json",
 			success: function(data){
 				weui.toast('设备删除成功', {
 						duration: 3000,
@@ -251,6 +251,31 @@ Zepto(function($){
 	//返回上一页
 	$('#back_btn').click(function () {
 		window.history.go(-1);
+	});
+
+	//返回上一页
+	$('#customer_service').click(function () {
+		var loading = weui.loading('提交中...');
+
+		$.ajax({
+			url: TongYou.routes.shift_customer_service_url,
+			type: "POST",
+			dataType: "json",
+			success: function(data){
+				loading.hide();			
+				if( data.member.cs_status == 0)
+				{//当前状态是未登录客服
+          $('#customer_service').attr('value', '登录客服');
+					weui.toast('登出成功');
+				}else{
+          $('#customer_service').attr('value', '登出客服');
+					weui.toast('登录成功');
+				}
+			},
+			error:function(xhr, error, msg){
+				console.info(msg);
+			}
+		});
 	});
 
 })

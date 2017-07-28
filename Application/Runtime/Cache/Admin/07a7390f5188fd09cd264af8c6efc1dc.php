@@ -25,6 +25,7 @@
 		<link rel="stylesheet" href="/Public/Admin/css/main-responsive.css">
 		<link rel="stylesheet" href="/Public/Admin/plugins/iCheck/skins/all.css">
 		<link rel="stylesheet" href="/Public/Admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+		<link rel="stylesheet" href="/Public/Admin/plugins/bootstrap-datepicker/css/datepicker.css">
 		<link rel="stylesheet" href="/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 		<link rel="stylesheet" href="/Public/Admin/css/theme_light.css" type="text/css" id="skin_color">
 		<link rel="stylesheet" href="/Public/Admin/css/print.css" type="text/css" media="print"/>
@@ -35,6 +36,17 @@
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="shortcut icon" href="favicon.ico" />
+		<script>
+		var TongYou = {
+		  routes:{
+				admin_list_user_url:"<?php echo U('/Admin/User/lists');?>",
+				admin_search_user_url:"<?php echo U('/Admin/User/search');?>",
+				admin_export_user_url:"<?php echo U('/Admin/User/export');?>",
+		  }
+		}
+
+ 		</script>
+
 	</head>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
@@ -489,17 +501,43 @@
 								</div>
 								<div class="panel-body">
 									<div class="row">
-										<div class="col-md-6">
-										  </div>
-										<div class="col-md-6">
-											<div class="dataTables_filter" id="sample_1_filter">
-											  <label>
-													<select name="group_id" class="form-control">
-														<option value="0">请选择分组 </option>
-													<?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i;?><option value="<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?> </option><?php endforeach; endif; else: echo "" ;endif; ?>
-												  </select>
-												</label>
+										<div class="col-md-12">
+											<div class="dataTables_filter clearfix user_filter_wrapper"  >
+
+												<form class="form-inline export_form" role="form" action="<?php echo U('export');?>" method="get">
+													<div class="form-group">
+														<label class=" control-label" for="group_id">
+															用户组
+														</label>
+														<div class="input-group">
+															<select id="group_id" name="group_id" class="form-control">
+																<option value="0">所有分组 </option>
+															<?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i;?><option value="<?php echo ($group["id"]); ?>"><?php echo ($group["title"]); ?> </option><?php endforeach; endif; else: echo "" ;endif; ?>
+															</select>
+														</div>
+													</div>
+													&nbsp;&nbsp;
+													<div class="form-group">
+														<label class=" control-label">
+															注册时间
+														</label>
+														<div class="input-group date">
+																<input type="text" data-date-format="yyyy-mm-dd" name="from_date" data-date-viewmode="years" value="<?php echo date('Y-m-d'); ?>" class="form-control">
+																<span class="input-group-addon add-on"> <i class="fa fa-calendar"></i> </span>
+														</div> -
+														<div class="input-group date">
+																<input type="text" data-date-format="yyyy-mm-dd" name="to_date" data-date-viewmode="years" value="<?php echo date('Y-m-d'); ?>" class="form-control date-picker">
+																<span class="input-group-addon add-on"> <i class="fa fa-calendar"></i> </span>
+														</div>
+													</div>
+													&nbsp;&nbsp;
+													<?php if($hasFilter): ?><button type="button" class="btn btn-default remove_filter_btn">取消过滤</button><?php endif; ?>
+													<button type="button" class="btn btn-primary user_filter_btn">查找数据</button>
+													<button type="submit" class="btn btn-info ">下载数据</button>
+
+												</form>
 											</div>
+
 										</div>
 									</div>
 
@@ -573,6 +611,8 @@
 		<script src="/Public/Admin/plugins/less/less-1.5.0.min.js"></script>
 		<script src="/Public/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
 		<script src="/Public/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="/Public/Admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
 		<script src="/Public/Admin/js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
@@ -580,6 +620,16 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
+				$('.input-group.date').datepicker({
+					'format':"yyyy-mm-dd"
+          });
+
+				jQuery('.user_filter_btn').click(function(){
+					jQuery('.export_form').attr('action', TongYou.routes.admin_list_user_url).submit();
+				});
+				jQuery('.remove_filter_btn').click(function(){
+					location.href = TongYou.routes.admin_list_user_url;
+				});
 			});
 		</script>
 	</body>

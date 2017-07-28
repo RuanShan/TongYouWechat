@@ -4773,6 +4773,16 @@ td.column-right{
 	margin-right:2px;
 }
 
-div.dataTables_filter label {
-    float: right;
+div.user_filter_wrapper  {
+	margin: 8px 0;
+}
+.export_form{
+	float: left;
+}
+.export_form .input-group {
+    display: inline-table;
+    vertical-align: middle;
+}
+.export_form .form-control, .export_form .input-group .input-group-addon, .export_form .input-group .input-group-btn {
+    width: auto;
 }

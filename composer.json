@@ -14,7 +14,8 @@
     "require": {
         "php": ">=5.3.0",
         "overtrue/wechat": "~3.1",
-        "guzzlehttp/guzzle": "^6.2@dev"
+        "guzzlehttp/guzzle": "^6.2@dev",
+        "phpoffice/phpexcel": "dev-master"
     },
     "minimum-stability": "dev"
 }

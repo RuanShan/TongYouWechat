@@ -4,6 +4,7 @@ namespace Home\Controller;
 
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Message\Video;
+use EasyWeChat\Message\Image;
 
 class WechatController extends WechatBaseController
 {
@@ -27,8 +28,15 @@ class WechatController extends WechatBaseController
                             return $message->EventKey."扫码事件";
                             break;
                         case 'CLICK':
+                          if( $message->EventKey == 'CLICK_0004' )
+                          {
+                            $media_id = $this->GetCustomerServiceImage();
+                            $text = new Image(['media_id' => $media_id]);
+                            return $text;
+                          }else {
                             return $message->EventKey."点击事件";
-                            break;
+                          }
+                          break;
                         default:
                             return '收到事件消息';
                             break;
@@ -61,5 +69,23 @@ class WechatController extends WechatBaseController
         $response = $server->serve();
 
         $response->send();
+    }
+
+    //取得当前在岗的客服的二维码
+    protected function GetCustomerServiceImage()
+    {
+      $Member = M('Member');
+      //$media_id =  'lSOwmeHQZMIGBir05FjW-g_lNd2A1t9XmK8b_dIESRo';
+      $media_id =  'tup-JXMTM1PN3C3BlRNgvhYjWcsVsl1ErfWWNeeI_hA';
+
+      $member = $Member->where('group_id=3 AND cs_status=1 AND cs_media_id IS NOT NULL')->find();
+
+  		//Log::write( print_r($this->member,true) );
+
+  		if( $member != null)
+  		{
+  			  $media_id =  $member['cs_media_id'];
+  		}
+      return $media_id;
     }
 }
