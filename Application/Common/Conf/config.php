@@ -41,7 +41,8 @@ return array(
 			'region_id'  =>'cn-beijing',
 			'disable'=> false
 		],
-		'SESSION_OPTIONS'  =>  array('expire'=>3600*24*365), // session 配置数组
-		//'SHOW_PAGE_TRACE' =>true,
+		'SESSION_OPTIONS'  =>  array('name'=>'PHPSESSID_TYWX','expire'=>3600*24*365), // session 配置数组
+		'COOKIE_EXPIRE'    =>  3600*24*365,       // Cookie有效期
+		'COOKIE_PREFIX'    => 'ty_',
 
 );

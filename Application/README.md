@@ -31,3 +31,6 @@ https://api.alidayu.com/doc2/apiDetail?spm=a3142.7629140.1999205496.19.JTmig8&ap
 
 #web微信加好友请求
 https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxverifyuser?r=1500607992850&pass_ticket=ATWaT039yMuHsn1buq7tkp4Pmbz8aH80A4E82am8wXgXYjVHPymKA7o%252FXK8NKYrd
+
+#微信开发出现“该公众号暂时无法提供服务，请稍后再试”的坑
+http://blog.csdn.net/buoll/article/details/54150865

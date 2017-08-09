@@ -30,11 +30,31 @@ class WechatController extends WechatBaseController
                         case 'CLICK':
                           if( $message->EventKey == 'CLICK_0004' )
                           {
-                            $media_id = $this->GetCustomerServiceImage();
-                            $text = new Image(['media_id' => $media_id]);
+                            $media_id = $this->GetCustomerServiceImage( 3 );
+                            if( $media_id != null)
+                            {
+                                $image = new Image(['media_id' => $media_id]);
+                                return $image;
+                            }else
+                            {
+                              $text = '客服不在线，请在工作时间联系客服8:00-22:00';
+                              return $text;
+                            }
+                          }
+                          elseif( $message->EventKey == 'CLICK_0005' )
+                          {
+                              $media_id = $this->GetCustomerServiceImage( 4 );
+                              if( $media_id != null)
+                              {
+                                  $image = new Image(['media_id' => $media_id]);
+                                  return $image;
+                              }else{
+                                $text = '客服不在线，请在工作时间联系客服8:00-22:00';
+                                return $text;                              }
+                          }
+                          else {
+                            $text = '客服不在线，请在工作时间联系客服8:00-22:00';
                             return $text;
-                          }else {
-                            return $message->EventKey."点击事件";
                           }
                           break;
                         default:
@@ -72,14 +92,20 @@ class WechatController extends WechatBaseController
     }
 
     //取得当前在岗的客服的二维码
-    protected function GetCustomerServiceImage()
+    protected function GetCustomerServiceImage($group_id)
     {
       $Member = M('Member');
-      //$media_id =  'lSOwmeHQZMIGBir05FjW-g_lNd2A1t9XmK8b_dIESRo';
-      $media_id =  'tup-JXMTM1PN3C3BlRNgvhYjWcsVsl1ErfWWNeeI_hA';
+      $media_id = null;
+      $member = null;
+      //$media_id = 'lSOwmeHQZMIGBir05FjW-g_lNd2A1t9XmK8b_dIESRo';
 
-      $member = $Member->where('group_id=3 AND cs_status=1 AND cs_media_id IS NOT NULL')->find();
-
+      if( $group_id == 4 )
+      {
+        $member = $Member->where('group_id=4 AND cs_status=1 AND cs_media_id IS NOT NULL')->find();
+      }
+      else {
+        $member = $Member->where('group_id=3 AND cs_status=1 AND cs_media_id IS NOT NULL')->find();
+      }
   		//Log::write( print_r($this->member,true) );
 
   		if( $member != null)

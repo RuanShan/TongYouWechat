@@ -376,11 +376,12 @@ class IndexController extends CommonController {
 
 	public function test_link()
 	{
-		$options = C('EASY_WECHAT');
-		$app = new Application( $options);
-		$js = $app->js;
-		$this->assign('js',$js);
-		$this->display( );
+		//$options = C('EASY_WECHAT');
+		//$app = new Application( $options);
+		//$js = $app->js;
+		//$this->assign('js',$js);
+		//$this->display( );
+		var_dump(phpinfo());
 	}
 	protected function check_login(){
 		//session('mid',2);

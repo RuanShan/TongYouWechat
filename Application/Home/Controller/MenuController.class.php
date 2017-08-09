@@ -77,8 +77,13 @@ class MenuController extends WechatBaseController
                   ],
                   [
                         "type"=> "click",
-                        "name" => "我的客服",
+                        "name" => "售前客服",
                         'key' => 'CLICK_0004'
+                  ],
+                  [
+                        "type"=> "click",
+                        "name" => "售后客服",
+                        'key' => 'CLICK_0005'
                   ],
                 ]
             ],

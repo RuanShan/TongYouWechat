@@ -2,6 +2,7 @@
 namespace Admin\Controller;
 use Admin\Common\Controller\CommonController;
 use Think\Log;
+use EasyWeChat\Foundation\Application;
 
 class UserController extends CommonController {
 
@@ -68,6 +69,34 @@ class UserController extends CommonController {
 			'status'   => I('post.status'),
 			'group_id'   => I('post.group_id')
 		);
+
+		foreach($_FILES as $key=>$val){
+			if($_FILES[$key]['name']!=''){
+				$upload = new \Think\Upload();// 实例化上传类
+				$upload->maxSize   =     3145728 ;// 设置附件上传大小
+				$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+				$upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
+
+				/*$image = new \Think\Image();
+				$image->open($_FILES[$key]['tmp_name']);
+				$image->thumb(600, 500)->save($_FILES[$key]['tmp_name']);*/
+
+				// 上传单个文件
+				$info   =   $upload->uploadOne($_FILES[$key]);
+				if(!$info) {// 上传错误提示错误信息
+					$this->error($upload->getError());
+				}else{// 上传成功 获取上传文件信息
+					$data[$key] = $info['savepath'].$info['savename'];
+					$path = './Uploads/'.$data[$key];
+          $media_id = $this->uploadWeixin($path);
+					$data['cs_media_id'] = $media_id;
+				}
+				if(I('id')){
+					$pic[$key] = $Member->where('id='.I('id'))->getField($key);
+					@unlink('./Uploads/'.$pic[$key]);
+				}
+			}
+		}
 
 			$data['id'] = I('id');
 			$result = $Member->save($data);
@@ -158,5 +187,19 @@ class UserController extends CommonController {
 		}
 
 		return $map;
+	}
+
+	public function uploadWeixin( $filePath )
+	{
+		$options = C('EASY_WECHAT');
+		$app = new Application( $options);
+		$material = $app->material;
+		//$result = $material->uploadImage("./Uploads/cs/wechat/betester.png");
+		$result = $material->uploadImage($filePath);
+		// {
+		//    "media_id":MEDIA_ID,
+		//    "url":URL
+		// }
+		return $result['media_id'];
 	}
 }

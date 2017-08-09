@@ -25,6 +25,7 @@
 		<link rel="stylesheet" href="__PUBLIC__/Admin/css/main-responsive.css">
 		<link rel="stylesheet" href="__PUBLIC__/Admin/plugins/iCheck/skins/all.css">
 		<link rel="stylesheet" href="__PUBLIC__/Admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+		<link rel="stylesheet" href="__PUBLIC__/Admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
 		<link rel="stylesheet" href="__PUBLIC__/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 		<link rel="stylesheet" href="__PUBLIC__/Admin/css/theme_light.css" type="text/css" id="skin_color">
 		<link rel="stylesheet" href="__PUBLIC__/Admin/css/print.css" type="text/css" media="print"/>
@@ -54,6 +55,8 @@
 		<script src="__PUBLIC__/Admin/plugins/less/less-1.5.0.min.js"></script>
 		<script src="__PUBLIC__/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
 		<script src="__PUBLIC__/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+
 		<script src="__PUBLIC__/Admin/js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
@@ -63,7 +66,7 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				FormElements.init();
+				//FormElements.init();
 			});
 		</script>
 	</head>
@@ -125,7 +128,7 @@
 									用户表单
 								</div>
 								<div class="panel-body">
-									<form role="form" method="post" action="{:U('User/post',array('type'=>$_GET['type']))}" class="form-horizontal" >
+									<form role="form" method="post" action="{:U('User/post',array('type'=>$_GET['type']))}" class="form-horizontal"  enctype="multipart/form-data">
 
 										<div class="form-group">
 											<label class="col-sm-2 control-label">
@@ -168,6 +171,38 @@
 												</select>
 
  											</div>
+										</div>
+										<neq name="data.cs_qrcode" value="">
+										<div class="form-group">
+											<div class="col-sm-4 col-sm-offset-2">
+												<img src="__ROOT__/Uploads/{$data.cs_qrcode}" width="200">
+											</div>
+										</div>
+										</neq>
+										<div class="form-group">
+											<label class="col-sm-2 control-label">
+												客服二维码
+											</label>
+											<div class="col-sm-3">
+												<div class="fileupload fileupload-new" data-provides="fileupload">
+													<div class="input-group">
+														<div class="form-control uneditable-input">
+															<i class="fa fa-file fileupload-exists"></i>
+															<span class="fileupload-preview"></span>
+														</div>
+														<div class="input-group-btn">
+															<div class="btn btn-light-grey btn-file">
+																<span class="fileupload-new"><i class="fa fa-folder-open-o"></i> 选择文件</span>
+																<span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> 重新选择</span>
+																<input type="file" name="cs_qrcode" class="file-input">
+															</div>
+															<a href="#" class="btn btn-light-grey fileupload-exists" data-dismiss="fileupload">
+																<i class="fa fa-times"></i> 删除选择
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 control-label">
