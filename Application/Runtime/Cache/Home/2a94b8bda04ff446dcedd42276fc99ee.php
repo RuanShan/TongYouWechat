@@ -125,7 +125,7 @@ body {
 						</div><?php endif; ?>
 
 						<div class="weui-btn-area">
-							<?php if(($member["group_id"]) == "3"): if(($member["cs_status"]) == "1"): ?><input id="customer_service" type="button" class="weui-btn weui-btn_primary" value="登出客服">
+							<?php if(in_array(($member["group_id"]), explode(',',"3,4"))): if(($member["cs_status"]) == "1"): ?><input id="customer_service" type="button" class="weui-btn weui-btn_primary" value="登出客服">
 								<?php else: ?>
 	  							<input id="customer_service" type="button" class="weui-btn weui-btn_primary" value="登录客服"><?php endif; ?>
 							<?php else: ?>

@@ -36,7 +36,6 @@ class SessionController extends WechatBaseController {
 		}
 		$user = session('wechat_user');
 		//Log::write( print_r($user, true ));
-//var_dump($user);
 		$address = $user['original']['country'].$user['original']['province'].$user['original']['city'];
 
 		$member = $Member->where( array('openid'=>$user['id']))->find();
@@ -45,6 +44,14 @@ class SessionController extends WechatBaseController {
 		if( !$member )
 		{
 			$member = [ 'openid'=>$user['id'], 'username'=> $user['nickname'], 'address'=>$address, 'headimgurl'=>$user['avatar']  ];
+		}else{
+			$last_accessed_at = $member['last_accessed_at'];
+			$second_span = time() - strtotime($last_accessed_at);
+			if( $second_span > 60*60*24*30*12 )//
+			{
+				//用户登陆过期
+				$member = [ 'openid'=>$member['openid'], 'telephone'=>$member['telephone'], 'username'=> $member['username'], 'address'=>$member['address'], 'headimgurl'=>$member['headimgurl']  ];
+			}
 		}
 		$this->assign('member', $member);
 
@@ -119,6 +126,7 @@ class SessionController extends WechatBaseController {
 				$data['login_time'] = date('Y-m-d H:i:s');		//最后登录时间
 				$data['login_count'] = $result['login_count'] + 1;
 				$data['telephone'] = $telephone; //更新电话号码
+				$data['last_accessed_at'] = date('Y-m-d H:i:s');		//最后登录时间
 				$Member->save($data);
 				//$this->redirect( '/Home/Index/index');
 			}else {

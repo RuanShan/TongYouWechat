@@ -73,7 +73,7 @@
   					</eq>
 
 						<div class="weui-btn-area">
-							<eq name="member.group_id" value="3">
+							<in  name="member.group_id" value="3,4">
 								<eq name="member.cs_status" value="1">
 									<input id="customer_service" type="button" class="weui-btn weui-btn_primary" value="登出客服">
 								<else/>
@@ -81,7 +81,7 @@
   							</eq>
 							<else/>
 		  	        <input id="scan_device" type="button" class="weui-btn weui-btn_primary weui-btn_loading" value="扫描设备">
-  						</eq>
+  						</in >
 			      </div>
 					</div>
 		    </form>

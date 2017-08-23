@@ -191,7 +191,7 @@ class IndexController extends CommonController {
 		$machine_id = $order['machine_id'];
 		$machine = $Machine->where('id='.$machine_id)->find();
 		$category = $Category->where('id='.$machine['category_id'])->find();
-		Log::write( print_r( $machine, true) );
+		//Log::write( print_r( $machine, true) );
 
 		$pactived_by = $Member->where('id=%d', array($machine['pactivated_by']))->find();
 		$tactived_by = $Member->where('id=%d', array($machine['tactivated_by']))->find();
@@ -310,11 +310,11 @@ class IndexController extends CommonController {
 		$cs_status = $this->member['cs_status'];
 		$data['status']  = 1;
 
-    $this->member['cs_status'] = ( $cs_status == 0 ?  1 : 0);
+		$this->member['cs_status'] = ( $cs_status == 0 ?  1 : 0);
 
 		$Member->save($this->member);
 
-    $data['member'] = array('cs_status'=> $this->member['cs_status'] );
+		$data['member'] = array('cs_status'=> $this->member['cs_status'] );
 		$this->ajaxReturn($data);
 
 	}
@@ -384,13 +384,34 @@ class IndexController extends CommonController {
 		var_dump(phpinfo());
 	}
 	protected function check_login(){
-		//session('mid',2);
-		if( session('mid') == null){
-			$this->error('您还没有登录！',U('/Home/Session/'));
+		// 取得微信授权
+		$options = C('EASY_WECHAT');
+		$app = new Application($options);
+		$oauth = $app->oauth;
+		// 未登录
+		$user = session('wechat_user');
+		if (empty($user)) {
+			session('target_url', U('/home/index/index'));
+			$response = $oauth->scopes(['snsapi_userinfo'])->redirect();
+			// $user 可以用的方法:
+			// $user->getId();  // 对应微信的 OPENID
+			// $user->getNickname(); // 对应微信的 nickname
+			// $user->getName(); // 对应微信的 nickname
+			// $user->getAvatar(); // 头像网址
+			// $user->getOriginal(); // 原始API返回的结果
+			// $user->getToken(); // access_token， 比如用于地址共享时使用
+			$response->send();
+			//var_dump($response);
+
 		}
+
+		$user = session('wechat_user');
+		//Log::write( print_r($user,true) );
+		$openid = $user['id'];
+
 		$Member = M('Member');
 		$AuthGroupAccess  = M('AuthGroupAccess');
-		$this->member = $Member->where('id=%d', array(session('mid')))->find();
+		$this->member = $Member->where(array('openid'=>$openid))->find();
 
 		//Log::write( print_r($this->member,true) );
 
@@ -398,6 +419,20 @@ class IndexController extends CommonController {
 		{
 			session('mid', null);
 			$this->error('您还没有登录！',U('/Home/Session/'));
+		}else{
+			$last_accessed_at = $this->member['last_accessed_at'];
+			$second_span = time() - strtotime($last_accessed_at);
+			if( $second_span < 60*60*24*30*12 )
+			{
+				session('mid', $openid);
+				$data['last_accessed_at'] = date('Y-m-d H:i:s');
+				$Member->where(array('openid'=>$openid))->save($data );
+
+			}else
+			{
+    			session('mid', null);
+	    		$this->error('您还没有登录！',U('/Home/Session/'));
+			}
 		}
 
 		//$this->auth_group_access = $AuthGroupAccess->where('uid=%d', array( $this->member['id']))->find();
