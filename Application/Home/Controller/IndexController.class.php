@@ -43,6 +43,7 @@ class IndexController extends CommonController {
 	//扫描设备码
 	public function jihuo()
 	{
+		$active_key=new Com("ActiveKeyDll.ActiveKey");
 
 		$Member     = M('Member');
 		$Machine     = M('Machine');
@@ -61,14 +62,20 @@ class IndexController extends CommonController {
 			//只有工程师才能扫设备，添加machine
 			if( $this->member['group_id'] == 2)
 			{
-				$cmd = $this->exe_path.' TongYou '.$machine_code;
-				exec($cmd, $ret);
 
-				$combo_info = $ret[0];
-				// status, temporary_code, permanent_code
+				//$cmd = $this->exe_path.' TongYou '.$machine_code;
+				//exec($cmd, $ret);
+				//$combo_info = $ret[0];
+				//// status, temporary_code, permanent_code;
+				//$splited_info = explode(',', $combo_info);
+				//Log::write( $cmd.$combo_info );
+				//$status = intval( $splited_info[0]);
+				$password='TongYou';
+				$combo_info = $active_key.GetActiveKeyForSysdata($machine_code, $password);
 				$splited_info = explode(',', $combo_info);
-				$status = intval( $splited_info[0]);
 				Log::write( $cmd.$combo_info );
+				$status = intval( $splited_info[0]);
+
 				//机器码是否有效
 				if( $status == 1)
 				{
@@ -364,13 +371,13 @@ class IndexController extends CommonController {
   //测试代码
 	public function test_jihuo()
 	{
-		var_dump( $this->exe_path );
-		$machine_code = I('machine_code', '1234567890');
-		$cmd = $this->exe_path.' TongYou '.$machine_code;
-		exec($cmd, $arr);
-		var_dump( $arr );
-		$info = $arr[0];
-		$this->assign('info',$info);
+		$active_key=new \Com("ActiveKeyDll.ActiveKey");
+
+		$codeNumber=''; $password='';
+ 		$status = $active_key->GetActiveKeyForSysdata($codeNumber, $password);
+		Log::write( $status );
+
+		$this->assign('info',$status);
 		$this->display('jihuo');
 	}
 
