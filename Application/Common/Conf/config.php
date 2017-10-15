@@ -30,7 +30,8 @@ return array(
         ],
         'oauth' => [
             'scopes' => ['snsapi_userinfo'],
-						'callback' => '/home/member/oauth_callback',
+						// apache alias  tongyouwx
+						'callback' => '/tongyouwx/home/member/oauth_callback',
         ],
     ],
 

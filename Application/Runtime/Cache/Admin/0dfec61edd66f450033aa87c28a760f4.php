@@ -18,18 +18,18 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-		<link rel="stylesheet" href="/Public/Admin/plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/Public/Admin/fonts/style.css">
-		<link rel="stylesheet" href="/Public/Admin/css/main.css">
-		<link rel="stylesheet" href="/Public/Admin/css/main-responsive.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-		<link rel="stylesheet" href="/Public/Admin/css/theme_light.css" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="/Public/Admin/css/print.css" type="text/css" media="print"/>
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/fonts/style.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/main.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/main-responsive.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/iCheck/skins/all.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/theme_light.css" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/print.css" type="text/css" media="print"/>
 		<!--[if IE 7]>
-		<link rel="stylesheet" href="/Public/Admin/plugins/font-awesome/css/font-awesome-ie7.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
@@ -86,24 +86,24 @@
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
-		<script src="/Public/Admin/plugins/respond.min.js"></script>
-		<script src="/Public/Admin/plugins/excanvas.min.js"></script>
-		<script type="text/javascript" src="/Public/Admin/js/jquery.1.10.2.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/respond.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/excanvas.min.js"></script>
+		<script type="text/javascript" src="/tongyouwx/Public/Admin/js/jquery.1.10.2.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="/Public/Admin/js/jquery.2.0.3.js"></script>
+		<script src="/tongyouwx/Public/Admin/js/jquery.2.0.3.js"></script>
 		<!--<![endif]-->
-		<script src="/Public/Admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="/Public/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="/Public/Admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="/Public/Admin/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="/Public/Admin/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="/Public/Admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="/Public/Admin/plugins/less/less-1.5.0.min.js"></script>
-		<script src="/Public/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="/Public/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="/Public/Admin/js/main.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/less/less-1.5.0.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="/tongyouwx/Public/Admin/js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<script>
 			jQuery(document).ready(function() {

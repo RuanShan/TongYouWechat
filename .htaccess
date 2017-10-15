@@ -1,6 +1,9 @@
 <IfModule mod_rewrite.c>
   Options +FollowSymlinks
   RewriteEngine On
+  # 本地调试使用 apache aliase
+  # http://www.thinkphp.cn/topic/1461.html
+  RewriteBase /tongyouwx
 
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f

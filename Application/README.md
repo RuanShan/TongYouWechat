@@ -38,8 +38,13 @@ http://blog.csdn.net/buoll/article/details/54150865
 #PHP调用C#开发的dll类库方法
 regasm  HelloWorld.dll<回车>
 gacutil /I HelloWorld.dll<回车>
+
+PHP的INI中已开启了com.allow_dcom = true 和配置了extension=php_com_dotnet.dll
+
 http://www.jb51.net/article/52846.htm
 http://blog.csdn.net/chengtg/article/details/6162668
 https://stackoverflow.com/questions/11727455/calling-a-windows-dll-from-php
 Start->cmd->(right click)Run as Administrator and then run the command
 http://blog.163.com/weibin_li/blog/static/1901464172012325115517181/
+
+C:\phpStudy>gacutil /I C:\phpStudy\active.dltongyou.com\Application\exe\ActiveKeyDll.dll

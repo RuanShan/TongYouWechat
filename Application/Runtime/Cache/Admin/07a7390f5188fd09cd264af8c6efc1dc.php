@@ -18,19 +18,19 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-		<link rel="stylesheet" href="/Public/Admin/plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/Public/Admin/fonts/style.css">
-		<link rel="stylesheet" href="/Public/Admin/css/main.css">
-		<link rel="stylesheet" href="/Public/Admin/css/main-responsive.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/bootstrap-datepicker/css/datepicker.css">
-		<link rel="stylesheet" href="/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-		<link rel="stylesheet" href="/Public/Admin/css/theme_light.css" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="/Public/Admin/css/print.css" type="text/css" media="print"/>
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/fonts/style.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/main.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/main-responsive.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/iCheck/skins/all.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap-datepicker/css/datepicker.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/theme_light.css" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/print.css" type="text/css" media="print"/>
 		<!--[if IE 7]>
-		<link rel="stylesheet" href="/Public/Admin/plugins/font-awesome/css/font-awesome-ie7.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
@@ -303,7 +303,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//Public/Admin/images/avatar-2.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-2.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Nicole Bell</span>
@@ -317,7 +317,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//Public/Admin/images/avatar-1.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-1.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
@@ -331,7 +331,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//Public/Admin/images/avatar-3.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-3.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Steven Thompson</span>
@@ -345,7 +345,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//Public/Admin/images/avatar-1.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-1.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
@@ -359,7 +359,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//Public/Admin/images/avatar-5.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-5.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Kenneth Ross</span>
@@ -594,26 +594,26 @@
 		<!-- end: FOOTER -->
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
-		<script src="/Public/Admin/plugins/respond.min.js"></script>
-		<script src="/Public/Admin/plugins/excanvas.min.js"></script>
-		<script type="text/javascript" src="/Public/Admin/js/jquery.1.10.2.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/respond.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/excanvas.min.js"></script>
+		<script type="text/javascript" src="/tongyouwx/Public/Admin/js/jquery.1.10.2.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="/Public/Admin/js/jquery.2.0.3.js"></script>
+		<script src="/tongyouwx/Public/Admin/js/jquery.2.0.3.js"></script>
 		<!--<![endif]-->
-		<script src="/Public/Admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="/Public/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="/Public/Admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="/Public/Admin/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="/Public/Admin/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="/Public/Admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="/Public/Admin/plugins/less/less-1.5.0.min.js"></script>
-		<script src="/Public/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="/Public/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="/Public/Admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/less/less-1.5.0.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
-		<script src="/Public/Admin/js/main.js"></script>
+		<script src="/tongyouwx/Public/Admin/js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->

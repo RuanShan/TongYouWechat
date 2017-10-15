@@ -43,7 +43,8 @@ class IndexController extends CommonController {
 	//扫描设备码
 	public function jihuo()
 	{
-		$active_key=new Com("ActiveKeyDll.ActiveKey");
+
+		$active_key=new \Com("ActiveKeyDll.ActiveKey");
 
 		$Member     = M('Member');
 		$Machine     = M('Machine');
@@ -55,7 +56,7 @@ class IndexController extends CommonController {
   	//二维码
 		$machine_code = I('machine_code', '1234567890');
 		$category_id = I('category_id' );
-		$machine = $Machine->where('machine_code=\'%s\'', array($machine_code))->find();
+		$machine = $Machine->where( array('machine_code'=>$machine_code))->find();
 		$machine_id = 0;
 		if(!isset($machine) )
 		{
@@ -71,9 +72,8 @@ class IndexController extends CommonController {
 				//Log::write( $cmd.$combo_info );
 				//$status = intval( $splited_info[0]);
 				$password='TongYou';
-				$combo_info = $active_key.GetActiveKeyForSysdata($machine_code, $password);
+				$combo_info = $active_key->GetActiveKeyForSysdata($machine_code, $password);
 				$splited_info = explode(',', $combo_info);
-				Log::write( $cmd.$combo_info );
 				$status = intval( $splited_info[0]);
 
 				//机器码是否有效
@@ -99,10 +99,10 @@ class IndexController extends CommonController {
 			$machine_id = $machine['id'];
 			$category_id = $machine['category_id'];
 		}
-		Log::write( print_r( $machine,true) );
+		//Log::write( print_r( $machine,true) );
 
 		$data['status']  = 0;
-		if( $machine )
+		if( isset($machine) )
 		{
 			$data['status']  = 1;
 			// 如果是用户，则永久激活
@@ -372,7 +372,6 @@ class IndexController extends CommonController {
 	public function test_jihuo()
 	{
 		$active_key=new \Com("ActiveKeyDll.ActiveKey");
-
 		$codeNumber=''; $password='';
  		$status = $active_key->GetActiveKeyForSysdata($codeNumber, $password);
 		Log::write( $status );

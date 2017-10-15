@@ -8,9 +8,9 @@
 <meta name="description" content="<?php echo ($config_data["description"]); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <!--/ metas -->
-<link href="/TongYouWechat/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
-<script src="/TongYouWechat/Public/Home/js/weui.js"></script>
-<script src="/TongYouWechat/Public/Home/js/zepto.min.js"></script>
+<link href="/tongyouwx/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
+<script src="/tongyouwx/Public/Home/js/weui.js"></script>
+<script src="/tongyouwx/Public/Home/js/zepto.min.js"></script>
 <script>
 var TongYou = {
   routes:{
@@ -21,10 +21,11 @@ var TongYou = {
     login_url:"<?php echo U('/Home/Session/login');?>",
     jihuo_url:"<?php echo U('/Home/index/jihuo');?>",
     display_code_url:"<?php echo U('/Home/index/display_code');?>",
+    shift_customer_service_url:"<?php echo U('/Home/index/shift_customer_service');?>",
   }
 }
 </script>
-<script src="/TongYouWechat/Public/Home/js/app.js"></script>
+<script src="/tongyouwx/Public/Home/js/app.js"></script>
 
 <style>
 body {

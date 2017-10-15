@@ -8,9 +8,9 @@
 <meta name="description" content="<?php echo ($config_data["description"]); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <!--/ metas -->
-<link href="/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
-<script src="/Public/Home/js/weui.js"></script>
-<script src="/Public/Home/js/zepto.min.js"></script>
+<link href="/tongyouwx/Public/Home/css/weui.min.css" rel="stylesheet" type="text/css" />
+<script src="/tongyouwx/Public/Home/js/weui.js"></script>
+<script src="/tongyouwx/Public/Home/js/zepto.min.js"></script>
 <script>
 var TongYou = {
   routes:{
@@ -25,7 +25,7 @@ var TongYou = {
   }
 }
 </script>
-<script src="/Public/Home/js/app.js"></script>
+<script src="/tongyouwx/Public/Home/js/app.js"></script>
 
 <style>
 body {
