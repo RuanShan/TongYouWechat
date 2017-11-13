@@ -18,29 +18,29 @@
 		<meta content="" name="author" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/fonts/style.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/css/main.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/css/main-responsive.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/css/theme_light.css" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/css/print.css" type="text/css" media="print"/>
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/fonts/style.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/main.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/main-responsive.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/iCheck/skins/all.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/theme_light.css" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/css/print.css" type="text/css" media="print"/>
 		<!--[if IE 7]>
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/font-awesome/css/font-awesome-ie7.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/select2/select2.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/datepicker/css/datepicker.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/jQuery-Tags-Input/jquery.tagsinput.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
-		<link rel="stylesheet" href="/TongYouErWeiMaSaoMao/Public/Admin/plugins/summernote/build/summernote.css">
+    <link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/select2/select2.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/datepicker/css/datepicker.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/jQuery-Tags-Input/jquery.tagsinput.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
+		<link rel="stylesheet" href="/tongyouwx/Public/Admin/plugins/summernote/build/summernote.css">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
@@ -299,7 +299,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//TongYouErWeiMaSaoMao/Public/Admin/images/avatar-2.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-2.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Nicole Bell</span>
@@ -313,7 +313,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//TongYouErWeiMaSaoMao/Public/Admin/images/avatar-1.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-1.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
@@ -327,7 +327,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//TongYouErWeiMaSaoMao/Public/Admin/images/avatar-3.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-3.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Steven Thompson</span>
@@ -341,7 +341,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//TongYouErWeiMaSaoMao/Public/Admin/images/avatar-1.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-1.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
@@ -355,7 +355,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src=".//TongYouErWeiMaSaoMao/Public/Admin/images/avatar-5.jpg">
+															<img alt="" src=".//tongyouwx/Public/Admin/images/avatar-5.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Kenneth Ross</span>
@@ -426,13 +426,19 @@
               <li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
                 <span class="column_item">
                 <i class="clip-user-5"></i>
-                  <span class="title"> <a href="<?php echo U('User/lists',array('id'=>1));?>">客户</a> </span><span class="selected"></span>
+                  <span class="title"> <a href="<?php echo U('User/lists');?>">用户</a> </span><span class="selected"></span>
                 </span>
               </li>
-              <li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
+							<li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
                 <span class="column_item">
-                <i class="clip-user-5"></i>
-                  <span class="title"> <a href="<?php echo U('User/lists',array('id'=>2));?>">工程师</a> </span><span class="selected"></span>
+                <i class="clip-list"></i>
+                  <span class="title"> <a href="<?php echo U('Category/index');?>">设备分类</a> </span><span class="selected"></span>
+                </span>
+              </li>
+							<li class="<?php if(($_SESSION['menu']['module']) == "Slide"): ?>active<?php endif; ?>">
+                <span class="column_item">
+                <i class="clip-gamepad"></i>
+                  <span class="title"> <a href="<?php echo U('Machine/index');?>">设备</a> </span><span class="selected"></span>
                 </span>
               </li>
               <li>
@@ -444,6 +450,7 @@
 					<!-- end: MAIN NAVIGATION MENU -->
 				</div>
 				<!-- end: SIDEBAR -->
+
 			</div>
 			<!-- start: PAGE -->
 			<div class="main-content">
@@ -546,43 +553,43 @@
 		<!-- end: FOOTER -->
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/respond.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/excanvas.min.js"></script>
-		<script type="text/javascript" src="/TongYouErWeiMaSaoMao/Public/Admin/js/jquery.1.10.2.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/respond.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/excanvas.min.js"></script>
+		<script type="text/javascript" src="/tongyouwx/Public/Admin/js/jquery.1.10.2.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/js/jquery.2.0.3.js"></script>
+		<script src="/tongyouwx/Public/Admin/js/jquery.2.0.3.js"></script>
 		<!--<![endif]-->
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/less/less-1.5.0.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/js/main.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/less/less-1.5.0.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="/tongyouwx/Public/Admin/js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-    <script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/autosize/jquery.autosize.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/select2/select2.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/jquery.maskedinput/src/jquery.maskedinput.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/jquery-maskmoney/jquery.maskMoney.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-daterangepicker/moment.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-colorpicker/js/commits.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/jQuery-Tags-Input/jquery.tagsinput.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/summernote/build/summernote.min.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/ckeditor/ckeditor.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/plugins/ckeditor/adapters/jquery.js"></script>
-		<script src="/TongYouErWeiMaSaoMao/Public/Admin/js/form-elements.js"></script>
+    <script src="/tongyouwx/Public/Admin/plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/autosize/jquery.autosize.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/select2/select2.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jquery.maskedinput/src/jquery.maskedinput.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jquery-maskmoney/jquery.maskMoney.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-daterangepicker/moment.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-colorpicker/js/commits.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/jQuery-Tags-Input/jquery.tagsinput.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/summernote/build/summernote.min.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/ckeditor/ckeditor.js"></script>
+		<script src="/tongyouwx/Public/Admin/plugins/ckeditor/adapters/jquery.js"></script>
+		<script src="/tongyouwx/Public/Admin/js/form-elements.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {

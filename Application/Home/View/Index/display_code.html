@@ -26,6 +26,8 @@
 										临时激活码：{$machine.temporary_code}<br>
 										永久激活码：{$machine.permanent_code}
 									</p>
+
+
 									<div class="weui-flex">
 										<div class="weui-flex__item">
 											<a id="tactivate_btn" href="javascript:;" class="weui-btn  weui-btn_primary" >  临时激活</a>
@@ -69,7 +71,26 @@
 							</eq>
 						</div>
 
-
+		</div>
+		<div id="activation-dialog" class="hide">
+			<div class="weui-mask "></div>
+			<div class="weui-dialog ">
+				<div class="weui-dialog__hd"><strong class="weui-dialog__title">商户信息</strong></div>
+						<div class="">
+							<form id="activation-info-form">
+								<div class="weui-cell">
+										<div class="weui-cell__hd"><label class="weui-label">商户姓名</label></div>
+										<div class="weui-cell__bd">
+												<input name="memo" class="weui-input memo" type="text" required placeholder="请输入客户姓名">
+										</div>
+								</div>
+							</form>
+						</div>
+						<div class="weui-dialog__ft">
+							<a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default no">取消</a>
+							<a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary yes">确定</a>
+						</div>
+			</div>
 		</div>
 	</body>
 </html>

@@ -18,22 +18,22 @@ return array(
 	'URL_MODEL' => 2,
 	// easywechat 配置
 	'EASY_WECHAT' => [
-        'debug' => true,
+    'debug' => true,
 		'app_id' =>'wxc4a9b776dfa6840d',
-        'secret' => '64eecb1b6a738377ed8c3918a0d20c1e',
-        'token' => 'mytoken',
-        'aes_key' => null,//'AsCXplmn6p2B2O7Vp6cEr61AzppHrJXPX9gTbGDtQRX',
-        'log' => [
+    'secret' => '64eecb1b6a738377ed8c3918a0d20c1e',
+    'token' => 'mytoken',
+    'aes_key' => null,//'AsCXplmn6p2B2O7Vp6cEr61AzppHrJXPX9gTbGDtQRX',
+    'log' => [
 			'level' => 'debug',
 			//'file' => '/data/home/bxu2340690158/htdocs/wechat/Application/Runtime/Logs/easywechat.log',
-			'file' => 'D:\workspace\TongYouWechat\Application\Runtime\Logs\easywechat.log',
+			'file' => 'D:\projects\TongYouWechat\Application\Runtime\Logs\easywechat.log',
         ],
-        'oauth' => [
-            'scopes' => ['snsapi_userinfo'],
-						// apache alias  tongyouwx
-						'callback' => '/tongyouwx/home/member/oauth_callback',
-        ],
+    'oauth' => [
+        'scopes' => ['snsapi_userinfo'],
+				// apache alias  tongyouwx
+				'callback' => '/tongyouwx/home/member/oauth_callback',
     ],
+  ],
 
 		'ALIYUN_SMS'=>[
 			'access_key'    => 'xx',

@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 
-
+use Think\Log;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Message\Video;
 use EasyWeChat\Message\Image;
@@ -106,7 +106,7 @@ class WechatController extends WechatBaseController
       else {
         $member = $Member->where('group_id=3 AND cs_status=1 AND cs_media_id IS NOT NULL')->find();
       }
-  		//Log::write( print_r($this->member,true) );
+  		//Log::write( print_r($member,true) );
 
   		if( $member != null)
   		{

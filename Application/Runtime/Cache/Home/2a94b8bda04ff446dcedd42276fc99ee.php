@@ -22,11 +22,11 @@ var TongYou = {
     jihuo_url:"<?php echo U('/Home/index/jihuo');?>",
     display_code_url:"<?php echo U('/Home/index/display_code');?>",
     shift_customer_service_url:"<?php echo U('/Home/index/shift_customer_service');?>",
+    
   }
 }
 </script>
 <script src="/tongyouwx/Public/Home/js/app.js"></script>
-
 <style>
 body {
     font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -57,6 +57,10 @@ body {
 .activation-info .weui-flex__item{  padding: 0 9px;}
 .two-btn-area .weui-flex__item{  padding: 0 9px;}
 .weui-form-preview__item{ text-align: left;}
+.hide{
+  display: none;
+}
+
 </style>
 
 		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>

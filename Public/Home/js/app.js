@@ -188,41 +188,71 @@ Zepto(function($){
 		return false;
   });
 
-	//临时激活
+	//点击临时激活
 	$('#tactivate_btn').click(function () {
-		$.ajax({
-			url: TongYou.routes.jihuo2t_url,
-			type: "POST",
-			dataType: "json",
-			success: function(data){
-				weui.toast('临时激活成功', {
-				    duration: 5000,
-				    callback: function(){ window.history.go(-1);
-						}
+		//弹出客户信息输入框，
+		$('#activation-dialog').removeClass('hide');
+		$('#activation-dialog input.memo').focus();
+
+	});
+	//输入客户姓名，点击确定
+	$('#activation-dialog a.yes').click(function(){
+		//先验证form
+		weui.form.validate('#activation-info-form', function (error) {
+			if (!error) {
+				$.ajax({
+					url: TongYou.routes.jihuo2t_url,
+					type: "POST",
+					dataType: "json",
+					data: $("#activation-info-form").serialize(),
+					success: function(data){
+						//关闭输入框
+						$('#activation-dialog').addClass('hide');
+						weui.toast('临时激活成功', {
+								duration: 5000,
+								callback: function(){ window.history.go(-1);
+								}
+						});
+					},
+					error:function(xhr, error, msg){
+						console.info(msg);
+						$('#activation-dialog').addClass('hide');
+						weui.toast('临时激活失败，请联系客服。', {
+								duration: 5000,
+								callback: function(){ window.history.go(-1);
+								}
+						});
+					}
 				});
-			},
-			error:function(xhr, error, msg){
-				console.info(msg);
 			}
 		});
 	});
+	$('#activation-dialog a.no').click(function(){
+		$('#activation-dialog').addClass('hide');
+	});
 	//永久激活
 	$('#pactivate_btn').click(function () {
-		$.ajax({
-			url: TongYou.routes.jihuo2p_url,
-			type: "POST",
-			dataType: "json",
-			success: function(data){
-				weui.toast('永久激活成功', {
-						duration: 5000,
-						callback: function(){ window.history.go(-1);
-						}
+		//weui.form.validate('#activation-info-form', function (error) {
+		//	if (!error) {
+				//先验证form
+				$.ajax({
+					url: TongYou.routes.jihuo2p_url,
+					type: "POST",
+					data: $('#activation-info-form').serialize(),
+					dataType: "json",
+					success: function(data){
+						weui.toast('永久激活成功', {
+								duration: 5000,
+								callback: function(){ window.history.go(-1);
+								}
+						});
+					},
+					error:function(xhr, error, msg){
+						console.info(msg);
+					}
 				});
-			},
-			error:function(xhr, error, msg){
-				console.info(msg);
-			}
-		});
+		//	}
+		//});
 	});
 
 
@@ -231,6 +261,7 @@ Zepto(function($){
 		$.ajax({
 			url: TongYou.routes.delete_machine_url,
 			type: "POST",
+			data: $('#activation-info-form').serialize(),
 			dataType: "json",
 			success: function(data){
 				weui.toast('设备删除成功', {
@@ -262,7 +293,7 @@ Zepto(function($){
 			type: "POST",
 			dataType: "json",
 			success: function(data){
-				loading.hide();			
+				loading.hide();
 				if( data.member.cs_status == 0)
 				{//当前状态是未登录客服
           $('#customer_service').attr('value', '登录客服');

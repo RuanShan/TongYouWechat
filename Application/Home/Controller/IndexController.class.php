@@ -58,6 +58,8 @@ class IndexController extends CommonController {
 		$category_id = I('category_id' );
 		$machine = $Machine->where( array('machine_code'=>$machine_code))->find();
 		$machine_id = 0;
+
+
 		if(!isset($machine) )
 		{
 			//只有工程师才能扫设备，添加machine
@@ -99,31 +101,33 @@ class IndexController extends CommonController {
 			$machine_id = $machine['id'];
 			$category_id = $machine['category_id'];
 		}
-		//Log::write( print_r( $machine,true) );
 
 		$data['status']  = 0;
 		if( isset($machine) )
 		{
-			$data['status']  = 1;
 			// 如果是用户，则永久激活
 			if( $this->member['group_id'] == 1 )
 			{
-				$machine['pactivated_at'] = date('Y-m-d H:i:s');
-				$machine['pactivated_by'] = $this->member['id'] ;
-				$Machine->save($machine);
+				// 如果用户付全款了
+				if( $machine['payment_status'] == 1 )
+				{
+					$data['status']  = 1;
+					$machine['pactivated_at'] = date('Y-m-d H:i:s');
+					$machine['pactivated_by'] = $this->member['id'] ;
+					$Machine->save($machine);
+				}else
+				{
+					$data['error'] = '您所注册的产品试用期已过，请联系您的销售，购买正式版本！';
+				}
+			}else{
+				$data['status']  = 1;
 			}
-			//工程师和客户都创建订单，以便后面确认工程师扫码了几次。
-			//$data['code']  = $machine['temporary_code'];
-			//$data['code']  = $machine['permanent_code'];
-			//创建订单
-			$order  = array(
-				'category_id' => $machine['category_id'],//产品类型
-				'member_id' => $this->member['id'],
-				'machine_id' =>$machine_id,
-				'created_at' => time()
-			);
-			$order_id = $Order->add($order);
-			session('oid',$order_id);
+
+			if( $data['status']  == 1)
+			{
+				//下一步用户激活时使用
+				session('machine_id',$machine_id);
+			}
 
 		}else{
 			$data['error'] = '无法识别该设备，请联系客服';
@@ -139,33 +143,43 @@ class IndexController extends CommonController {
 
 		$Order     = M('Order');
 		$Machine     = M('Machine');
-		$order_id = session('oid');
-		if( empty($order_id)){
+		$machine_id = session('machine_id');
+		if( empty($machine_id)){
 			$this->error('操作失败！');
 		}
 
-		$order = $Order->where('id='.$order_id)->find();
-		if(!$order){
-			$this->error('操作失败！');
-		}
-
- 		$machine_id = $order['machine_id'];
 		$machine = $Machine->where('id='.$machine_id)->find();
+		if(!$machine){
+			$this->error('操作失败！');
+		}
 
-		Log::write( print_r( $_GET,true) );
+		//Log::write( print_r( $_POST,true) );
 
 		$activate = $_GET['activate']; // 取值 t：临时,p：永久
+		$memo = $_POST['memo'];
  		if( $activate == 'p')
 		{
-
 			$machine['pactivated_at'] = date('Y-m-d H:i:s');
 			$machine['pactivated_by'] = $this->member['id'] ;
 			$Machine->save($machine);
 		}else {
+			$machine['memo']=$memo;
 			$machine['tactivated_at'] = date('Y-m-d H:i:s');
 			$machine['tactivated_by'] = $this->member['id'] ;
 			$Machine->save($machine);
 		}
+
+		//工程师和客户都创建订单，以便后面确认工程师扫码了几次。
+		//创建订单
+		//是否需要检查当前
+		$order  = array(
+			'category_id' => $machine['category_id'],//产品类型
+			'member_id' => $this->member['id'],
+			'machine_id' =>$machine_id,
+			'created_at' => time()
+		);
+		$order_id = $Order->add($order);
+
 		$this->ajaxReturn(  array('status' => 1 ));
 
 	}
@@ -181,22 +195,20 @@ class IndexController extends CommonController {
 		$Member = M('Member');
 		$Order     = M('Order');
 		$Category     = M('Category');
+		$Machine     = M('Machine');
 		$this->check_login();
 
-		$order_id = session('oid');
-		if( empty($order_id)){
+		$machine_id = session('machine_id');
+		if( empty($machine_id)){
 			$this->error('操作失败！');
 		}
 
- 		$order = $Order->where('id='.$order_id)->find();
-		if(!$order){
-			$this->error('操作失败！');
-		}
-
-		$Machine     = M('Machine');
-		///机器id
-		$machine_id = $order['machine_id'];
 		$machine = $Machine->where('id='.$machine_id)->find();
+		if(!$machine){
+			$this->error('操作失败！');
+		}
+
+		///机器id
 		$category = $Category->where('id='.$machine['category_id'])->find();
 		//Log::write( print_r( $machine, true) );
 
@@ -216,6 +228,22 @@ class IndexController extends CommonController {
 			$this->assign('actived_by', $pactived_by);
 			$this->assign('actived_type', '永久激活');
 		}
+
+		//用户可能多次扫码，检查订单是否存在，创建订单
+		$condition['machine_id'] = $machine['id'];
+		$condition['member_id'] =  $this->member['id'];
+		$condition['category_id'] =  $machine['category_id'];
+		$order = $Order->where($condition)->find();
+		if( !$order)
+		{
+			$order  = array(
+				'category_id' => $machine['category_id'],//产品类型
+				'member_id' => $this->member['id'],
+				'machine_id' =>$machine_id,
+				'created_at' => time()
+			);
+			$order_id = $Order->add($order);
+		}
  		$this->assign('js',$js);
 
 		$this->display();
@@ -232,20 +260,20 @@ class IndexController extends CommonController {
 		$Category     = M('Category');
 		$Machine     = M('Machine');
 
-		$order_id = session('oid');
-		if( empty($order_id)){
+		$machine_id = session('machine_id');
+		if( empty($machine_id)){
 			$this->error('操作失败！');
 		}
 
-		$order = $Order->where('id='.$order_id)->find();
-		if(!$order){
+		$machine = $Machine->where('id='.$machine_id)->find();
+		if(!$machine){
 			$this->error('操作失败！');
 		}
 
-		$Order->where('machine_id='.$order['machine_id'])->delete();
-		$Machine->where('id='.$order['machine_id'])->delete();
+		$Order->where('machine_id='.$machine['id'])->delete();
+		$Machine->where('id='.$machine['id'])->delete();
 
-		session('oid', null);
+		session('machine_id', null);
 
 		$this->ajaxReturn(  array('status' => 1 ));
 

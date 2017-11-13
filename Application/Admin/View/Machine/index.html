@@ -89,29 +89,71 @@
 									 设备列表
 								</div>
 								<div class="panel-body">
+									<div>
+										<div class="dataTables_filter clearfix user_filter_wrapper"  >
+											<form class="form-inline export_form" role="form" action="{:U('index')}" method="get">
+												<div class="form-group">
+													<label class=" control-label" for="group_id">
+														付款状态
+													</label>
+													<div class="input-group">
+														<select id="payment_status" name="payment_status" class="form-control">
+															<option value="-1" {$payment_status== -1?'selected':''}>全部 </option>
+															<option value="0" {$payment_status== 0?'selected':''}>未付款 </option>
+															<option value="1" {$payment_status== 1?'selected':''}>已全款 </option>
+														</select>
+													</div>
+												</div>
+												<button type="submit" class="btn btn-primary user_filter_btn">查找数据</button>
+
+											</form>
+										</div>
+									</div>
  									<table class="table table-striped table-bordered table-hover" id="sample-table-2">
 										<thead>
 											<tr>
 												<th width="100" class="center">ID</th>
-												<th class="center"> 设备号</th>
+                        <th class="center"> 登录日期</th>
+                        <th class="center"> 工程师</th>
+                        <th class="center"> 设备名称</th>
+                        <th class="center"> 设备号</th>
+                        <th class="center"> 临时激活码</th>
 												<th class="center"> 永久激活码</th>
-												<th class="center"> 临时激活码</th>
-												<th class="center"> 工程师</th>
+                        <th class="center"> 付款状态</th>
+                        <th class="center"> 商户</th>
+												<th width="100" class="center">编辑</th>
+
  											</tr>
 										</thead>
 										<tbody>
                     	<volist name="list" id="vo" empty="暂时没有数据">
 											<tr>
-												<td class="center">{$vo.id}</td>
-												<td class="center">{$vo.machine_code}</td>
-												<td class="center">{$vo.permanent_code}</td>
-												<td class="center">{$vo.temporary_code}</td>
-												<td class="center">
+                        <td class="center">{$vo.id}</td>
+                        <td class="center">{$vo.created_at|date="y-m-d",###}</td>
+                        <td class="center">
 													<volist name="members" id="member"  >
 														<eq name="vo['engineer_id']" value="$member['id']">{$member.username}</eq>
   												</volist>
 												</td>
-
+                        <td class="center">
+                          <volist name="categories" id="category"  >
+                            <eq name="vo['category_id']" value="$category['id']">{$category.title}</eq>
+                          </volist>
+                        </td>
+												<td class="center">{$vo.machine_code}</td>
+												<td class="center">{$vo.temporary_code}</td>
+                        <td class="center">{$vo.permanent_code}</td>
+                        <td class="center">
+                          <eq name="vo.payment_status" value="1">已全款 <else/>未全款 </eq>
+                        </td>
+                        <td class="center">{$vo.memo}</td>
+												<td class="center">
+												<div class="visible-md visible-lg hidden-sm hidden-xs">
+													<eq name="vo.payment_status" value="0">
+														<a href="{:U('machine/post',array( 'id'=>$vo['id'], 'p'=>$p, 'payment_status'=>1))}" onclick="if(confirm('确定商户全款给付?')==false)return false;" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="全款给付"><i class="fa fa-edit"></i></a>
+													</eq>
+												</div>
+												</td>
 											</tr>
                       </volist>
 										</tbody>
